@@ -1,0 +1,28 @@
+<div class="form-horizontal">
+	<div class="col-md-12">
+		<div class="form-group" ng-repeat="author in book.authors">
+			<div id="author.id">
+				<label class="col-md-1 control-label">作者:</label>
+				<div class="col-md-4">
+					<input name="artist" readonly class="form-control dialog-edit-input" ng-model="author.name">
+					<button class="btn btn-default dialog-edit-button" ng-click="book.chooseAuthor($index)">选择</button>
+				</div>
+					
+				<label class="col-md-1 control-label">标签:</label>
+				<div class="col-md-5">
+					<input name="showName" class="form-control dialog-edit-input" ng-model="author.showName">
+					<input type="radio" id="authorType{{$index}}" name="authorType{{$index}}" value="0" ng-checked="author.authorType === '0'" ng-model="author.authorType">
+					<label for="authorType{{$index}}">编</label>
+					<input type="radio" id="authorType{{$index}}" name="authorType{{$index}}" value="1" ng-checked="author.authorType == '1'" ng-model="author.authorType">
+					<label for="authorType{{$index}}">著</label>
+					<input type="radio" id="authorType{{$index}}" name="authorType{{$index}}" value="2" ng-checked="author.authorType == '2'" ng-model="author.authorType">
+					<label for="authorType{{$index}}">译</label>
+				</div>
+				<div class="col-md-1 dialog-edit-handle">
+					<a class="dialog-edit-i" ng-click="book.addAuthor($index)"><i class="fa fa-plus"></i></a>
+					<a class="dialog-edit-i" ng-click="book.delAuthor($index)"><i class="fa fa-minus"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,125 @@
+<div id="stagePeriodicalEditPanel" >
+    <div class="tab-header">
+        <div class="title">
+            <i class="fa fa-bars"></i><span class="file-detail-span" class="file-detail-span">分期期刊信息</span>
+        </div>
+        <div class="tool">
+            <button id="btn_resSort_get" class="btn btn-default" ng-show="stagePeriodical.show"
+                    ng-click="stagePeriodical.saveEntity()"><i class="fa fa-floppy-o"></i>&nbsp;保存
+            </button>
+        </div>
+    </div>
+    <div class="single-panel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist" style="clear:both">
+            <li class="active"><a data-target="#detailInfo" role="tab" data-toggle="tab">基本信息</a></li>
+            <li><a data-target="#stagePeriodicalContent" role="tab" data-toggle="tab">期刊内容</a></li>
+            <li><a data-target="#stagePeriodicalResouce" role="tab" data-toggle="tab">期刊资源</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="detailInfo" class="tab-pane active">
+                <form id="stagePeriodicalInfobaseFormId">
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="stagePeriodicalName" class="col-md-2 control-label"> <span class="notNull">*</span>期刊名称：</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input id="stagePeriodicalName" type="text" readonly ng-click="stagePeriodical.selectPerName()"
+                                           class="form-control" ng-model="stagePeriodical.entity.stagePeriodicalName">
+                                    <span class="input-group-addon" ng-click="stagePeriodical.selectPerName()"><i class="glyphicon glyphicon-plus-sign" ></i></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checkbox col-md-11 col-md-offset-1">
+                                        <label>
+                                            <input id="core" type="checkbox" ng-model="stagePeriodical.entity.IsCore"> 是否为核心期刊
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="stagePeriodicalPublishDate" class="col-md-2 control-label"> <span class="notNull">*</span>刊发日期：</label>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input id="stagePeriodicalPublishDate" type="text" cs-Datetime="" readonly="true"
+                                           class="form-control" ng-model="stagePeriodical.entity.stagePeriodicalPublishDate">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="stagePeriodicalStage" class="col-md-3 control-label">
+                                        <span class="notNull">*</span>期&nbsp;数：</label>
+                                    <label class="col-md-1 control-label" >第</label>
+                                    <input id="stagePeriodicalStage" type="text" class="col-md-2 form-control"
+                                         ng-model="stagePeriodical.entity.stagePeriodicalStage" style="width: 55px">
+                                    <label class="col-md-1 control-label" >期 </label>
+                                    <label class="col-md-2 control-label" for="stagePeriodicalTotalStage">总&nbsp;第</label>
+                                    <input id="stagePeriodicalTotalStage" type="text" class="col-md-2 form-control"
+                                               ng-model="stagePeriodical.entity.stagePeriodicalTotalStage" style="width: 55px">
+                                    <label class="col-md-1 control-label">期</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="stagePeriodicalKeyword" class="col-md-2 control-label">关&nbsp;&nbsp;键&nbsp;&nbsp;字：</label>
+                            <div class="col-md-10">
+                                <input id="stagePeriodicalKeyword" type="text"
+                                       class="form-control" ng-model="stagePeriodical.entity.stagePeriodicalKeyword">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="stagePeriodicalIntroduction" class="col-md-2 control-label"> <span class="notNull">*</span>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介：</label>
+                            <div class="col-md-10">
+                                <textarea id="stagePeriodicalIntroduction" type="text" rows="5"
+                                          class="form-control" ng-model="stagePeriodical.entity.stagePeriodicalIntroduction"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="stagePeriodicalContent" class="tab-pane">
+                <form id="stagePeriodicalContentFormId">
+                    <div class=" col-md-3 form-horizontal">
+                        <div class="col-md-12">
+                            <ul class="nav nav-tabs" role="tablist" style="clear:both">
+                                <li class="active"><a data-target="#treeColumnTreeCN" role="tab" data-toggle="tab">中文</a></li>
+                                <li><a data-target="#treeColumnTreeEN" role="tab" data-toggle="tab">英文</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="treeColumnTreeCN" class="tab-pane active">
+                                    <ul id="commonTreeCN" class="ztree"></ul>
+                                </div>
+                                <div id="treeColumnTreeEN" class="tab-pane">
+                                    <ul id="commonTreeEN" class="ztree"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 form-horizontal">
+                        <div id="stagePeriodicalColumnList"></div>
+                        <!--<div id="periodicalColumnList"></div>-->
+                    </div>
+                </form>
+            </div>
+            <div id="stagePeriodicalResouce" class="tab-pane">
+                <form id="stagePeriodicalResouceFormId">
+                    <div class="col-md-12 form-horizontal">
+                        <div id="ResouceList"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display: none">
+    <input type="hidden" ng-model="stagePeriodical.entity.perType">   <!-- 期刊列表，从选择总期带入-->
+</div>

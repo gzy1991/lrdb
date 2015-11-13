@@ -1,0 +1,32 @@
+<div class="form-horizontal col-xs-12"  id="newsSelectId"  lar-search-block =""> 
+        <div class="form-group">
+            <label for="actNewsTitle" class="col-xs-2 control-label">新闻标题:</label>
+            <div class="col-xs-3">
+               <input  id="actNewsTitle" name="actNewsTitle" type="text" class="form-control" ng-model="activityInfo.newsChoose.query.newsTitle">
+            </div>           
+        
+            <label for="actNewsAuthor" class="col-xs-2 control-label">作者:</label>
+            <div class="col-xs-3">
+               <input  id="actNewsAuthor" name="actNewsAuthor" type="text" class="form-control" ng-model="activityInfo.newsChoose.query.newsAuthor" >
+            </div> 
+            
+            <div class="col-xs-1" style="text-align:center;font-size:14px;line-height:34px;padding-right:0;padding-left:0;">
+			    <a style="padding-right:10px;"><i class="fa fa-search" style="cursor:pointer" title="查询" ng-click="activityInfo.newsChoose.search()"></i></a>
+			    <a><i class="fa fa-repeat" style="cursor:pointer" title="重置" ng-click="activityInfo.newsChoose.reset()"></i></a>
+		    </div>          
+        </div>             
+        <div class="form-group">
+            <label for="actNewsType" class="col-xs-2 control-label">新闻类别:</label>
+            <div class="col-xs-3">
+                  <input id="actNewsType" name="actNewsType" type="text" class="form-control"  lar-select="activityInfo.newsChoose.newsTypes"  lar-option="--不限--"  lar-model="activityInfo.newsChoose.query.newsTypes" >
+            </div>
+            <label for="actNewsSource" class="col-xs-2 control-label">来源:</label>
+            <div class="col-xs-3">
+                <input id="actNewsSource" name="actNewsSource" type="text" class="form-control" ng-model="activityInfo.newsChoose.query.newsSource">
+            </div>                        
+       </div>
+</div>
+<div class="col-xs-12">
+    <div id="newsListId">
+    </div>
+</div>

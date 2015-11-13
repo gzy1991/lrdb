@@ -1,0 +1,525 @@
+<div id="EditPersonPanel">
+    <div style="float:left">
+        <div style="padding:10px;font-size:24px"><i class="menu-icon fa fa-user"></i><span id="org_PersonName"></span></div>
+        <!--<div style="padding-left:32px;font-size:13px;padding-bottom:14px"><span class="last" id="org_PersonDeptName"></span></div>-->
+    </div>
+    <div style="float:right;padding-top:23px;padding-right:33px">
+        <button type="button" class="btn btn-default" id="savePsnBtn"><i class="menu-icon fa fa-save"></i>&nbsp;保存</button>
+    </div>
+
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" style="clear:both" id="PsnTabId">
+        <li class="active"><a data-target="#PersonBaseInfo" role="tab" data-toggle="tab">人员信息</a></li>
+        <li><a data-target="#PersonRoleInfo" role="tab" data-toggle="tab">所属角色</a></li>
+        <li><a data-target="#PersonGWInfo" role="tab" data-toggle="tab">所属岗位</a></li>
+        <li><a data-target="#PersonExtendInfo" role="tab" data-toggle="tab">扩展信息</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="PersonBaseInfo">
+            <form id="PersonBaseInfoForm">
+                <fieldset class="pd-fieldset">
+                    <legend>基本信息</legend>
+                    <div class="row">
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="userCode" class="col-md-4 col-sm-2 control-label"><span class="requird">*</span>员工编号:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input id="userCode" type="text" name="userCode" class="form-control">
+                                    <input id="userUuid" type="text" name="userUuid" style="display:none">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="userName" class="col-md-4 col-sm-2 control-label"><span class="requird">*</span>用户名称:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input id="userName" type="text" name="userName" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="" class="col-md-4 col-sm-2 control-label">性别:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="男">男
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="sex" value="女">女
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="birthday" class="col-md-4 col-sm-2 control-label">生日:</label>
+                                <div class="col-md-8 col-sm-10 has-feedback">
+                                    <!--<input id="birthday" type="text" name="birthday" class="form-control" readonly>
+                                    <span class="glyphicon glyphicon-plus form-control-feedback"></span>-->
+                                    <!--<div class="input-group date form_datetime" id="birthday" data-date="2012-12-21T15:25:00Z">
+                                        <input size="16" type="text" value="" readonly>
+                                        <span class="input-group-addon"><i class="icon-remove"></i></span>
+                                        <span class="input-group-addon"><i class="icon-th"></i></span>
+                                    </div>-->
+                                    <div class="input-group">
+                                        <!--<span class="input-group-addon" onclick="$('#birthday').datetimepicker('show')"><span class="glyphicon glyphicon-th"></span></span>-->
+                                        <input type="text" readonly class="form-control" name="birthday" id="birthday">
+                                    <span class="input-group-addon" style="cursor: pointer;" onclick="$('#birthday').val('')">
+                                        <span class="glyphicon glyphicon-remove"></span>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="officePhone" class="col-md-4 col-sm-2 control-label">办公电话:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input id="officePhone" type="text" name="officePhone" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="phone" class="col-md-4 col-sm-2 control-label">移动电话:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input id="phone" type="text" name="phone" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="fax" class="col-md-4 col-sm-2 control-label">传真:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input type="text" id="fax" class="form-control" id="fax" name="fax">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="email" class="col-md-4 col-sm-2 control-label">邮箱:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input type="text"  class="form-control" id="email" name="email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="zwName" class="col-md-4 col-sm-2 control-label">职务:</label>
+                                <div class="col-md-8 col-sm-10 has-feedback">
+                                    <!--<select class="form-control" id="sle_PersonZW" name="zwUuid">
+                                        <option value="">&#45;&#45; 请选择 &#45;&#45;</option>
+                                    </select>-->
+                                    <input id="zwName" name="zwName" type="text" class="form-control input-sm" readonly >
+                                    <span class="glyphicon glyphicon-plus form-control-feedback"></span>
+                                    <input id="zwUuid" name="zwUuid" type="text" class="form-control input-sm" style="display: none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="directLeaderName" class="col-md-4 col-sm-2 control-label">直属领导:</label>
+                                <div class="col-md-8 col-sm-10 has-feedback">
+                                    <input id="directLeaderName" type="text" class="form-control" name="directLeaderName" readonly>
+                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                    <input id="directLeader" type="text" style="display: none" name="directLeader">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-4 col-sm-2 control-label">是否冻结:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="locked" value=1>是
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="locked" value=0 checked>否
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-4 col-sm-2 control-label">冻结原因:</label>
+                                <div class="col-md-8 col-sm-10"  style="margin-top: 7px;">
+                                    <code id="lockedReason"></code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 form-horizontal">
+                            <div class="form-group">
+                                <label for="sort" class="col-md-4 col-sm-2 control-label">显示序号:</label>
+                                <div class="col-md-8 col-sm-10">
+                                    <input id="sort" type="text" class="form-control" name="sort">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </form>
+            <fieldset class="pd-fieldset" id="PsnDeptListDiv">
+                <legend>部门信息</legend>
+                <div class="row">
+                    <div class="col-md-6 form-horizontal">
+                        <div class="form-group">
+                            <label for="deptName" class="col-md-4 col-sm-2 control-label">选择部门:</label>
+                            <div class="col-md-8 col-sm-10 has-feedback">
+                                <input id="deptName" type="text" class="form-control input-sm" readonly >
+                                <span class="glyphicon glyphicon-plus form-control-feedback"></span>
+
+                                <input id="deptCode" type="text"  style="display:none">
+                                <input id="deptUuid" type="text"  style="display:none">
+                                <input id="ou" type="text"  style="display:none">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-horizontal">
+                        <div class="form-group">
+                            <label for="" class="col-md-4 col-sm-2 control-label">是否兼职:</label>
+                            <div class="col-md-8 col-sm-10">
+                                <!--
+                                <label class="radio-inline">
+                                    <input type="radio" name="jzFlag" value="1">是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="jzFlag" value="0" checked>否
+                                </label>
+                                -->
+                                <select class="form-control" style="width: 65px" id="jzFlag">
+                                    <option value="-1" selected></option>
+                                    <option value="1">是</option>
+                                    <option value="0">否</option>
+                                </select>
+
+                                <button class="btn btn-sm btn-success" style="float:right;margin-top: -30px" id="addDeptBtn" type="button">添加</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding:0 10px 0 10px">
+                    <table class="table table-bordered table-hover org_table" style="margin-top:10px" id="PsnDeptList">
+                        <tr>
+                            <td style="display: none">部门UUID</td>
+                            <td style="width:7%">序号</td>
+                            <td style="width:23%">部门名称</td>
+                            <td style="width:13%">部门编号</td>
+                            <td style="width:40%">部门OU</td>
+                            <td style="width:10%">是否兼职</td>
+                            <td style="width:7%">操作</td>
+                        </tr>
+                    </table>
+                    <!-- 模板 -->
+                    <script id="T_PersonDept" type="text/html">
+                        <tbody>
+                            <tr>
+                                <td style="display: none">部门UUID</td>
+                                <td style="width:7%">序号</td>
+                                <td style="width:23%">部门名称</td>
+                                <td style="width:13%">部门编号</td>
+                                <td style="width:40%">部门OU</td>
+                                <td style="width:10%">是否兼职</td>
+                                <td style="width:7%">操作</td>
+                            </tr>
+                            <%for(var i=0,item;item=Depts[i++];){%>
+                            <tr>
+                                <td style="display: none"><%=item.deptUuid %></td>
+                                <td style="text-align:center"><%=i%></td>
+                                <td title="<%=item.deptName %>"><%=item.deptName %></td>
+                                <td title="<%=item.deptCode %>"><%=item.deptCode %></td>
+                                <td title="<%=item.ou %>"><%=item.ou %></td>
+                                <td title='<%=(item.jz==-1?"":(item.jz==1?"是":"否")) %>'><%=(item.jz==-1?"":(item.jz==1?"是":"否")) %></td>
+                                <td align="center">
+                                    <i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i>
+                                </td>
+                            </tr>
+                            <%}%>
+                        </tbody>
+                    </script>
+                </div>
+            </fieldset>
+        </div>
+        <div class="tab-pane" id="PersonRoleInfo">
+            <fieldset class="pd-fieldset">
+                <legend style="margin-bottom: 0">
+                    <span>角色列表</span>
+                    <a class="table-add" id="user_addRoleBtn">
+                        <i class="fa fa-plus-circle" ></i>添加
+                    </a>
+                </legend>
+                <table class="table table-bordered table-hover org_table" style="margin-top:10px" id="PsnRoleList">
+                    <tr>
+                        <td style="display: none">角色UUID</td>
+                        <td style="width:50px">序号</td>
+                        <td>角色编号</td>
+                        <td>角色名称</td>
+                        <td>所属分类</td>
+                        <td style="display: none">管理人员</td>
+                        <td style="width:50px">操作</td>
+                    </tr>
+                </table>
+                <!-- 模板 -->
+                <script id="T_PersonRoles" type="text/html">
+                    <tbody>
+                    <tr>
+                        <td style="display: none">角色UUID</td>
+                        <td style="width:50px">序号</td>
+                        <td>角色编号</td>
+                        <td>角色名称</td>
+                        <td>所属分类</td>
+                        <td style="display: none">管理人员</td>
+                        <td style="width:50px">操作</td>
+                    </tr>
+                    <%for(var i=0,item;item=Roles[i++];){%>
+                    <tr>
+                        <td style="display: none"><%=item.roleUuid %></td>
+                        <td style="text-align:center"><%=i%></td>
+                        <td title="<%=item.roleCode %>"><%=item.roleCode %></td>
+                        <td title="<%=item.roleName %>"><%=item.roleName %></td>
+                        <td title="<%=item.dirName %>"><%=item.dirName %></td>
+                        <td style="display: none"><%=item.managerName %></td>
+                        <td style="text-align:center;font-size:14px">
+                            <i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i>
+                        </td>
+                    </tr>
+                    <%}%>
+                    </tbody>
+
+                    <!--<tr ng-repeat="role in Org.Person.Roles">
+                        <td style="text-align:center">{{$index+1}}</td>
+                        <td>{{ role.roleCode }}</td>
+                        <td>{{ role.roleName }}</td>
+                        <td>{{ role.dirName }}</td>
+                        <td>{{ role.manager }}</td>
+                        <td style="text-align:center;font-size:14px">
+                            <i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除" ng-click="Org.Person.delRole($index)"></i>
+                        </td>
+                    </tr>-->
+                </script>
+            </fieldset>
+        </div>
+        <div class="tab-pane" id="PersonGWInfo">
+            <table class="table table-bordered table-hover org_table" style="margin-top:10px" id="PsnGwList">
+                <tr>
+                    <td style="display: none">岗位UUID</td>
+                    <td style="width:50px">序号</td>
+                    <td>所属部门编号</td>
+                    <td>所属部门名称</td>
+                    <td>岗位编号</td>
+                    <td>岗位名称</td>
+                    <td style="width:50px">操作</td>
+                </tr>
+            </table>
+            <!-- 模板 -->
+            <script id="T_PersonGW" type="text/html">
+                <tbody>
+                    <tr>
+                        <td style="display: none">岗位UUID</td>
+                        <td style="width:50px">序号</td>
+                        <td>所属部门编号</td>
+                        <td>所属部门名称</td>
+                        <td>岗位编号</td>
+                        <td>岗位名称</td>
+                        <td style="width:50px">操作</td>
+                    </tr>
+                    <%for(var i=0,item;item=GWs[i++];){%>
+                    <tr>
+                        <td style="display: none"><%=item.gwUuid %></td>
+                        <td style="text-align:center"><%=i%></td>
+                        <td title="<%=item.deptCode %>"><%=item.deptCode %></td>
+                        <td title="<%=item.deptName %>"><%=item.deptName %></td>
+                        <td title="<%=item.gwCode %>"><%=item.gwCode %></td>
+                        <td title="<%=item.gwName %>"><%=item.gwName %></td>
+                        <td style="text-align:center;font-size:14px">
+                            <i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i>
+                        </td>
+                    </tr>
+                    <%}%>
+                    <!--<tr ng-repeat="gw in Org.Person.GW">
+                        <td style="text-align:center">{{$index+1}}</td>
+                        <td>{{ gw.gwCode }}</td>
+                        <td>{{ gw.gwName }}</td>
+                        <td>{{ gw.deptCode }}</td>
+                        <td>{{ gw.deptName }}</td>
+                        <td style="text-align:center;font-size:14px">
+                            <i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除" ng-click="Org.Person.delGW($index)"></i>
+                        </td>
+                    </tr>-->
+                </tbody>
+            </script>
+        </div>
+        <div class="tab-pane" id="PersonExtendInfo">
+            <form id="PersonExtendInfoForm">
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend1" class="col-md-4 col-sm-2 control-label">用户信息1:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend1" type="text" class="form-control" name="extend1">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend2" class="col-md-4 col-sm-2 control-label">用户信息2:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend2" type="text" class="form-control" name="extend2">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend3" class="col-md-4 col-sm-2 control-label">用户信息3:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend3" type="text" class="form-control" name="extend3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend4" class="col-md-4 col-sm-2 control-label">用户信息4:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend4" type="text" class="form-control" name="extend4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend5" class="col-md-4 col-sm-2 control-label">用户信息5:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend5" type="text" class="form-control" name="extend5">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend6" class="col-md-4 col-sm-2 control-label">用户信息6:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend6" type="text" class="form-control" name="extend6">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend7" class="col-md-4 col-sm-2 control-label">用户信息7:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend7" type="text" class="form-control" name="extend7">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend8" class="col-md-4 col-sm-2 control-label">用户信息8:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend8" type="text" class="form-control" name="extend8">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend9" class="col-md-4 col-sm-2 control-label">用户信息9:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend9" type="text" class="form-control" name="extend9">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend10" class="col-md-4 col-sm-2 control-label">用户信息10:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend10" type="text" class="form-control" name="extend10">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend11" class="col-md-4 col-sm-2 control-label">用户信息11:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend11" type="text" class="form-control" name="extend11">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend12" class="col-md-4 col-sm-2 control-label">用户信息12:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend12" type="text" class="form-control" name="extend12">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend13" class="col-md-4 col-sm-2 control-label">用户信息13:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend13" type="text" class="form-control" name="extend13">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend14" class="col-md-4 col-sm-2 control-label">用户信息14:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend14" type="text" class="form-control" name="extend14">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend15" class="col-md-4 col-sm-2 control-label">用户信息15:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend15" type="text" class="form-control" name="extend15">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend16" class="col-md-4 col-sm-2 control-label">用户信息16:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend16" type="text" class="form-control" name="extend16">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend17" class="col-md-4 col-sm-2 control-label">用户信息17:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend17" type="text" class="form-control" name="extend17">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend18" class="col-md-4 col-sm-2 control-label">用户信息18:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend18" type="text" class="form-control" name="extend18">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend19" class="col-md-4 col-sm-2 control-label">用户信息19:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input id="extend19" type="text" class="form-control" name="extend19">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 form-horizontal">
+                    <div class="form-group">
+                        <label for="extend20" class="col-md-4 col-sm-2 control-label">用户信息20:</label>
+                        <div class="col-md-8 col-sm-10">
+                            <input type="text" class="form-control" id="extend20" name="extend20">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

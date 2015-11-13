@@ -1,0 +1,209 @@
+<div role="tabpanel" style="padding: 0">
+	<ul class=" nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a
+			href="#pdMonitorMachineInfo" role="tab" data-toggle="tab">物理机信息</a></li>
+		<li role="presentation"><a href="#pdMonitorServerInfo" role="tab"
+			data-toggle="tab">License</a></li>
+		<li role="presentation"><a href="#pdMonitorComponents" role="tab"
+			data-toggle="tab">组件</a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div class="tab-pane active" role="tabpanel" id="pdMonitorMachineInfo">
+			<div class="container-fluid">
+				<div class="row">
+					<fieldset class="pd-fieldset">
+						<div class="col-md-12">
+							<legend style="margin-bottom: 0">当前服务器物理机信息：</legend>
+						</div>
+						<div class="col-md-12 form-horizontal">
+							<div id="ipv4NetInterfaceInfoGrid"
+								style="padding-right: 0; padding-top: 0"></div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="pdMonitorServerInfo">
+			<div class="container-fluid">
+				<div class="row">
+					<form id="serverInfo">
+						<fieldset class="pd-fieldset">
+							<div class="col-md-12 form-horizontal">
+								<legend style="margin-bottom: 0">Sword平台授权信息：</legend>
+							</div>
+							<div class="col-md-12 form-horizontal">
+								<div class="form-group">
+									<div class="col-md-8 col-md-offset-4">
+										<span id="serverInfoStatus"
+											style="font: 900 29pt 黑体;"></span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 form-horizontal">
+								<div class="form-group">
+									<label for="runningModel"
+										class="col-md-4 col-sm-2 control-label">当前服务器运行模式:</label>
+									<div class="col-md-8 col-sm-10">
+										<input id="runningModel" type="text" name="runningModel"
+											class="form-control" readonly="readonly">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 form-horizontal">
+								<div class="form-group">
+									<label for="swordInfoMacAddress"
+										class="col-md-4 col-sm-2 control-label">合法运行的MAC地址为:</label>
+									<div class="col-md-8 col-sm-10">
+										<input id="swordInfoMacAddress" type="text"
+											name="swordInfoMacAddress" class="form-control" readonly="readonly">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 form-horizontal">
+								<div class="form-group">
+									<label for="swordInfoOrgRootName"
+										class="col-md-4 col-sm-2 control-label">根组织机构名称:</label>
+									<div class="col-md-8 col-sm-10">
+										<input id="swordInfoOrgRootName" type="text"
+											name="swordInfoOrgRootName" class="form-control" readonly="readonly">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 form-horizontal">
+								<div class="form-group">
+									<label for="swordInfoMaxUser"
+										class="col-md-4 col-sm-2 control-label">最大用户数:</label>
+									<div class="col-md-8 col-sm-10">
+										<input id="swordInfoMaxUser" type="text"
+											name="swordInfoMaxUser" class="form-control" readonly="readonly">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 form-horizontal">
+								<div class="form-group">
+									<label for="swordInfoComponentsGrid"
+										class="col-md-4 col-sm-2 control-label">允许开放的组件:</label>
+									<div class="col-md-8 col-sm-10">
+										<!-- 									<textarea id="swordInfoComponents" name="swordInfoComponents"
+										rows="5" cols="20"></textarea> -->
+										<div id="swordInfoComponentsGrid"
+											style="padding-right: 0; padding-top: 10px"></div>
+									</div>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+
+					<fieldset class="pd-fieldset">
+						<div class="container-fluid">
+						<div class="row">
+								<div class="col-md-12 form-horizontal" style=" margin-bottom: 10px;">
+									<legend style="margin-bottom: 0">上传新证书：</legend>
+								</div>
+									<div class="col-md-6 form-horizontal">
+										<div class="form-group">
+											<label class="col-md-4 col-sm-2 control-label">上传新证书:</label>
+											<div class="col-md-8 col-sm-10">
+												<form action="monitor/logMonitor/searchLogFile" method="post" enctype="multipart/form-data" id="uploadLicenseForm" name ="uploadLicenseForm">
+													<input type="file" name="uploadLicense" id="uploadLicense"  />
+													<input id="UploadLicenseController" type="hidden" name="SwordControllerName" value="UploadLicenseController"  >
+												</form>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 form-horizontal">
+										<button id="uploadLicenseBtn" class="btn btn-default" type="button">上传</button>
+									</div>
+							</div>
+							<div class="row">
+								<form id="serverInfoNew">
+									<div class="col-md-12 form-horizontal">
+										<div class="form-group">
+											<div class="col-md-8 col-md-offset-4">
+												<span id="serverInfoStatusNew"
+													style="font: 900 29pt 黑体;"></span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 form-horizontal">
+										<div class="form-group">
+											<label for="runningModelNew"
+												class="col-md-4 col-sm-2 control-label">当前服务器运行模式:</label>
+											<div class="col-md-8 col-sm-10">
+												<input id="runningModelNew" type="text"
+													name="runningModelNew" class="form-control"
+													readonly="readonly">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 form-horizontal">
+										<div class="form-group">
+											<label for="swordInfoMacAddressNew"
+												class="col-md-4 col-sm-2 control-label">合法运行的MAC地址为:</label>
+											<div class="col-md-8 col-sm-10">
+												<input id="swordInfoMacAddressNew" type="text"
+													name="swordInfoMacAddressNew" class="form-control"
+													readonly="readonly">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 form-horizontal">
+										<div class="form-group">
+											<label for="swordInfoOrgRootNameNew"
+												class="col-md-4 col-sm-2 control-label">根组织机构名称:</label>
+											<div class="col-md-8 col-sm-10">
+												<input id="swordInfoOrgRootNameNew" type="text"
+													name="swordInfoOrgRootNameNew" class="form-control"
+													readonly="readonly">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 form-horizontal">
+										<div class="form-group">
+											<label for="swordInfoMaxUserNew"
+												class="col-md-4 col-sm-2 control-label">最大用户数:</label>
+											<div class="col-md-8 col-sm-10">
+												<input id="swordInfoMaxUserNew" type="text"
+													name="swordInfoMaxUserNew" class="form-control"
+													readonly="readonly">
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 form-horizontal">
+										<div class="form-group">
+											<label for="swordInfoComponentsGridNew"
+												class="col-md-4 col-sm-2 control-label">允许开放的组件:</label>
+											<div class="col-md-8 col-sm-10">
+												<div id="swordInfoComponentsGridNew"
+													style="padding-right: 0; padding-top: 10px"></div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-offset-6 col-md-5">
+							<button id="upgradeLicense" class="btn btn-default" type="button">生效</button>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="pdMonitorComponents">
+			<div class="container-fluid">
+				<div class="row">
+					<fieldset class="pd-fieldset">
+						<div class="col-md-12 form-horizontal">
+							<legend style="margin-bottom: 0">允许开放的组件:</legend>
+						</div>
+						<div class="col-md-12 form-horizontal">
+							<div id="swordComponentsGrid"
+								style="padding-right: 0; padding-top: 0"></div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,97 @@
+<style>
+	#worktime .mb15{
+		margin-bottom: 15px;
+	}
+	#worktime .mt15{
+		margin-top: 15px;
+	}
+	#worktime .fs18{
+		font-size: 18px;
+	}
+	#worktime .config-title{
+		height: 35px;
+		line-height: 35px;
+		text-align: center;
+	}
+</style>
+<div id="worktime" class="container-fluid">
+		<div class="row">
+			<ul class="nav nav-tabs" role="tablist">
+		        <li role="presentation" class="active"><a href="#tab_base" role="tab" data-toggle="tab"><!-- <i class="fa fa-tasks"></i>&nbsp; -->基本配置</a></li>
+		        <li role="presentation"><a href="#tab_holiday" role="tab" data-toggle="tab"><!--<i class="fa fa-pagelines"></i>&nbsp; -->节假日配置</a></li>
+		        <li role="presentation"><a href="#tab_assign" role="tab" data-toggle="tab"><!--<i class="fa fa-yelp"></i>&nbsp; -->自定义配置</a></li>
+		    </ul>
+	    </div>
+	    <div class="tab-content">
+	    	<!-- 基本配置 -->
+	        <div role="tabpanel" class="tab-pane active" id="tab_base">
+	        	<div class="row">
+		        	<div class="config-title bg-info mb15">工作时间配置（全局）</div>
+					<div id="grid-workhour"></div>
+			       	<div class="config-title bg-info mb15 mt15">休息日配置</div>
+	        	</div>
+		   		<form class="form-horizontal" id="form-weekend">
+						<input type="hidden" name="id" />
+						<div class="form-group">
+				           	<label class="col-sm-3 control-label">休息日（周末）：</label>
+				            <div class="col-sm-9">
+					            <label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="6"> 周六
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="7"> 周日
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="1"> 周一
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="2"> 周二
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="3"> 周三
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="4"> 周四
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" name="weekend" value="5"> 周五
+								</label>
+				            </div>
+				        </div>
+					<div class="form-group">
+			            <div class="col-sm-offset-3 col-sm-9">
+				            <button id="btn-weekend-save" type="button" class="btn btn-default">保存</button>
+			            </div>
+					</div>
+				</form>
+	        </div>
+	        <!-- 节假日配置 -->
+	        <div role="tabpanel" class="tab-pane" id="tab_holiday">
+	        	<!-- 
+	        	<div class="config-title bg-info mb15 mt15">节假日配置</div>
+	        	 -->
+				<form class="form-horizontal" id="form-weekend">
+					<div class="form-group">
+			           	<label class="col-sm-3 control-label">节假日（年份）：</label>
+			           	<div class="col-sm-3">
+			           		<select class="form-control" id="select-holiday-year" name="select-holiday-year">
+			                </select>
+			            </div>
+			        </div>
+				</form>
+				<div class="row">
+		            <div id="grid-holiday">
+					</div>
+				</div>
+	        </div>
+	        <!-- 自定义配置 -->
+	        <div role="tabpanel" class="tab-pane" id="tab_assign">
+	        	<!-- 
+	        	<div class="config-title bg-info mb15 mt15">指定工作日配置</div>
+	        	 -->
+		       	<div class="row">
+					<div id="grid-assign"></div>
+				</div>
+	        </div>
+		</div>   
+</div>

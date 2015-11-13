@@ -1,0 +1,64 @@
+<style>
+    .pageInfo_nav{
+        width: 400px;
+    }
+</style>
+<div class="container-fluid">
+	<div class="pageInfo_nav">
+	    <ul class="nav nav-tabs nav-justified" role="tablist">
+	        <!--
+	        <li role="presentation" class="active"><a href="#tab_login" role="tab" data-toggle="tab"><i class="fa fa-tasks"></i>&nbsp;登录/Home页面</a></li>
+	        <li role="presentation"><a href="#tab_home" role="tab" data-toggle="tab"><i class="fa fa-pagelines"></i>&nbsp;系统首页</a></li>
+	        -->
+	    </ul>
+	</div>
+	<div class="pageInfo_tabs">
+	    <div class="tab-content">
+	        <div role="tabpanel" class="tab-pane active" id="tab_login">
+	            <form id="form_pageinfo" class="form-horizontal">
+	            	<div class="form-group">
+	                    <div class="col-sm-offset-3 col-sm-5">
+	                    	<button id="btn_pageinfo_refresh" class="btn btn-default" type="button">刷新</button>
+	                        <button id="btn_pageinfo_save" class="btn btn-primary" type="button">保存</button>
+	                    </div>
+	                </div>
+	            	<input type="hidden" id="uuid" name="uuid" >
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label" for="systemName">系统名称</label>
+	                    <div class="col-sm-5">
+	                        <input type="text" class="form-control" id="systemName" name="systemName" placeholder="请输入系统名称" />
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label" for="systemTheme">主题样式</label>
+			            <div class="col-sm-5">
+			                <select class="form-control" id="systemTheme" name="theme">
+			                	<option value="blue" selected>蓝色</option>
+			                	<option value="gray">灰色</option>
+			                </select>
+			            </div>  
+	                </div>
+	                <!-- 
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label" for="loginBackgroudUrl">登录页面背景图</label>
+	                    <div class="col-sm-5">
+	                        <input type="text" class="form-control" id="loginBackgroudUrl" name="menuName" placeholder="请选择登录页面的背景图" />
+	                    </div>
+	                </div>
+	                <div class="form-group">
+	                    <label class="col-sm-3 control-label" for="loginBackgroudUrl">home页面logo图</label>
+	                    <div class="col-sm-5">
+	                        <input type="text" class="form-control" id="loginBackgroudUrl" name="menuName" placeholder="请选择登录页面的背景图" />
+	                    </div>
+	                </div>
+	                 -->
+	            </form>
+	        </div>
+	        <!--
+	        <div role="tabpanel" class="tab-pane" id="tab_home">
+	
+	        </div>
+	        -->
+	    </div>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司-->
+<!--   
+     采集设置的设置
+  @author YaoGuanhong
+  @创建时间 2015年8月19日 上午9:43
+  @History 修订历史<br> -->
+
+<div class="tab-header">
+	<div class="title">
+		<i class="fa fa-pencil-square-o"> </i>
+	</div>
+	<div class="tool">
+		<button type="button" class="btn btn-default"
+			id="saveCollectionSetting">
+			<i class="fa fa-save">保存设置</i>
+		</button>
+	</div>
+</div>
+
+<style>
+#form_menu .mb15 {
+	margin-bottom: 15px;
+}
+
+#form_menu .mt15 {
+	margin-top: 15px;
+}
+
+#form_menu .fs18 {
+	font-size: 18px;
+}
+</style>
+
+<div class="single-panel">
+	<form id="monitor_collection_setting" class="form-horizontal">
+		<fieldset>
+			<legend class="mb15 mt15 fs18 text-primary">采集指标设置</legend>
+
+			<div class="  form-group">
+				<label class="col-md-3 control-label" for="collection_Name">采集指标名称：</label>
+				<div class="col-md-9 ">
+					<input id="collection_Name" name="collection_Name" class="form-control" readonly="readonly">
+					</div>
+			</div>
+			<div class="form-group ">
+				<label class="col-md-3 control-label" for="collection_Freq">采集频率设置：</label>
+				<div class="col-md-9">
+					<input type="radio" name="collection_freq" id="r0" value="30">30秒
+					<input type="radio" name="collection_freq"
+						style="margin-left: 20px;" id="r1" value="60">1分钟 <input
+						type="radio" name="collection_freq" style="margin-left: 20px;"
+						id="r2" value="300">5分钟 <input type="radio"
+						name="collection_freq" style="margin-left: 20px;" id="r3"
+						value="0">全局默认
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="collection_enable">是否开启采集：</label>
+				<div class="col-md-9">
+					<label class="radio-inline"> <input type="radio"
+							name="itemEnable" id="collection_enable" value="Y">开启
+						</label> <label class="radio-inline"> <input type="radio"
+							name="itemEnable" id="collection_enable" value="N">关闭
+						</label>
+				</div>
+			</div>				
+		</fieldset>
+	</form>
+</div>

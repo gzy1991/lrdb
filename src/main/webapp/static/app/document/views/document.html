@@ -1,0 +1,54 @@
+<div id="docSearchCons" class="col-xs-12" lar-search-block>
+<div class="form-horizontal">
+	<div class="form-group">
+		<label class="col-xs-1 control-label">文件名称:</label>
+		<div class="col-xs-3">
+			<input class="form-control" id="docTitle" name="docTitle" ng-model="document.query.conditions.docTitle">
+		</div>
+		<label class="col-xs-1 control-label">文件格式:</label>
+		<div class="col-xs-3">
+			<input class="form-control" id="docFormat" name="docFormat" lar-select="document.seldocFormat" lar-option="--请选择 --" lar-model="document.query.conditions.docFormat">
+		</div>
+		<label class="col-xs-1 control-label">艺术类型:</label>
+		<div class="col-xs-3">
+			<input class="form-control" id="artType" name="artType" lar-select="document.seldocFormat" lar-option="--请选择 --" lar-model="document.query.conditions.artType">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-xs-1 control-label">所属机构:</label>
+		<div class="col-xs-3">
+			<input class="form-control" id="docOrg" name="docOrg" lar-select="document.seldocFormat" lar-option="--请选择 --" lar-model="document.query.conditions.docOrg">
+		</div>
+		<label class="col-xs-1 control-label">资源密级:</label>
+		<div class="col-xs-3">
+			<input class="form-control" id="docSecret" name="docSecret" lar-select="document.seldocFormat" lar-option="--请选择 --" lar-model="document.query.conditions.docSecret">
+		</div>
+		<label class="col-xs-1 control-label">文件状态:</label>
+		<div class="col-xs-3">
+			<input class="form-control" id="docStatus" name="docStatus" lar-select="document.seldocFormat" lar-option="--请选择 --" lar-model="document.query.conditions.docStatus">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-xs-1 control-label">入库时间:</label>
+		<div class="col-xs-3">
+			<div class="input-group">
+				<input type="text" readonly="readonly" class="form-control" id="minTime" ng-model = "document.query.conditions.minTime">
+				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+			</div>
+		</div>
+		<label class="col-xs-1 control-label" style="text-align:center;">至</label>
+		<div class="col-xs-3">
+			<div class="input-group">
+				<input type="text" readonly="readonly" class="form-control" id="maxTime" ng-model = "document.query.conditions.maxTime">
+				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="col-xs-12">
+	<div id="documentGrid"></div>
+</div>
+
+<div ng-include src="document.template.detail"></div>

@@ -1,0 +1,38 @@
+<div class="form-horizontal">
+	<div class="col-md-12" id="awardSearchBlock" lar-search-block="">
+		<div class="form-group">
+			<label class="col-md-1 control-label" for="queryAwardName">奖节名称:</label>
+			<div class="col-md-3">
+				<input id="queryAwardName" name="queryAwardName" type="text" class="form-control" lar-select="award.awards" lar-search-able="true" lar-model="award.query.cons.name">
+			</div>
+			<label class="col-md-1 control-label" for="queryArttype">艺术类别:</label>
+			<div class="col-md-3">
+				<input id="queryArttype" name="queryArttype" type="text" class="form-control" lar-select="award.arttypes" lar-option="--全部--" lar-model="award.query.cons.arttype">
+			</div>
+			<label class="col-md-1 control-label" for="queryStartTime">创办时间:</label>
+			<div class="col-md-3">
+				<div class="input-group">
+					<input id="queryStartTime" name="queryStartTime" readonly type="text" class="form-control" cs-datetime="{startView:4,format:'yyyy',minView:4}" ng-model="award.query.cons.start">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-1 control-label" for="queryAwardLevel">奖节级别:</label>
+			<div class="col-md-3">
+				<input id="queryAwardLevel" name="queryAwardLevel" type="text" class="form-control" lar-select="award.levels" lar-option="--不限--" lar-model="award.query.cons.level">
+			</div>
+			<label class="col-md-1 control-label" for="queryAwardNature">奖节性质:</label>
+			<div class="col-md-3">
+				<input id="queryAwardNature" name="queryAwardNature" type="text" class="form-control" lar-select="award.natures" lar-option="--不限--" lar-model="award.query.cons.nature">
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-12">
+		<div id="awardGrid"></div>
+	</div>
+	
+	<div class="col-md-12">
+		<div ng-include src="award.template.awardEdit"></div>
+	</div>
+</div>

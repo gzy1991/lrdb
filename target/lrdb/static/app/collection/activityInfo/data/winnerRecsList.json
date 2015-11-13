@@ -1,0 +1,35 @@
+{
+    "allDataCount":4,
+    "curPageData": [      
+        {
+            "winnerName":"李雪健",
+            "birthdayYear":"43",
+        	"sexName":"男",
+        	"birthPlaceName":"北京",
+        	"artTypeNames":"演员"
+        },        
+        {
+        	"winnerName":"李谷一",
+        	"birthdayYear":"43",
+        	"sexName":"女",
+       		"birthPlaceName":"北京",
+        	"artTypeNames":"音乐家"
+        },     
+        {
+        	"winnerName":"于文华",
+        	"birthdayYear":"43",
+        	"sexName":"女",
+       		"birthPlaceName":"北京",
+        	"artTypeNames":"音乐家"
+        },
+        {
+        	"winnerName":"濮存昕",
+        	"birthdayYear":"43",
+        	"sexName":"男",
+       		"birthPlaceName":"北京",
+        	"artTypeNames":"音乐家"
+        }
+      
+    ],
+    "status" : "200"
+}

@@ -1,0 +1,16 @@
+.tree-dialog{
+    height: 100%;
+    position: relative;
+}
+.tree-dialog .tree-search{
+    position: absolute;
+    top: 0;
+    height: 26px;
+}
+.tree-dialog .ztree{
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    bottom: 0;
+    overflow:auto;
+}

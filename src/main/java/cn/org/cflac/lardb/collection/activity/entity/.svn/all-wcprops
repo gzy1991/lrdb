@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity
+END
+TActivityAwardteamAwardlistOrganEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/css/!svn/ver/1638/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAwardteamAwardlistOrganEntity.java
+END
+TActivityOpusNameEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityOpusNameEntity.java
+END
+TActivityAddressSponsorEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAddressSponsorEntity.java
+END
+TActivityAwardteamAwardlistEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAwardteamAwardlistEntity.java
+END
+TActivityNewsRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityNewsRelEntity.java
+END
+TActivityAwardteamAwardlistOpusEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/css/!svn/ver/1638/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAwardteamAwardlistOpusEntity.java
+END
+TActivityAddressOrganEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAddressOrganEntity.java
+END
+TActivityAddressOrganizerEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAddressOrganizerEntity.java
+END
+TActivityNewsRelPKEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/css/!svn/ver/1638/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityNewsRelPKEntity.java
+END
+TActivityAwardteamAwardlistPersonEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/css/!svn/ver/1638/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAwardteamAwardlistPersonEntity.java
+END
+TActivityPersonEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityPersonEntity.java
+END
+TActivityAddressSiteEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAddressSiteEntity.java
+END
+TActivityFestivalawardRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityFestivalawardRelEntity.java
+END
+TActivityAwardteamEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityAwardteamEntity.java
+END
+TActivityJudgeEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityJudgeEntity.java
+END
+TActivityFestivalawardRelPKEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityFestivalawardRelPKEntity.java
+END
+TActivityResourceEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/css/!svn/ver/1478/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityResourceEntity.java
+END
+TActivityInfoEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/entity/TActivityInfoEntity.java
+END

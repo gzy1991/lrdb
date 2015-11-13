@@ -1,0 +1,312 @@
+<div class="col-md-12">
+	<div class="col-md-12">
+		<h2><strong>multi-uploader</strong></h2>
+	</div>
+	<hr class="cs-example-hr-upload">
+</div>
+
+<div class="col-md-6 form-horizontal">
+	<div class="col-md-12 api-hint-title">
+		<p>引入资源</p>
+	</div>
+	<div class="col-md-12" style="height:400px;overflow:auto;">
+		<div>
+			<pre style="padding-right:0;">
+<span class="code-note">&lt;!-- 引入JS：multi-uploader.js --&gt;</span>
+define([multi-uploader文件夹/multi-uploader],function(multiUploader){})
+
+<span class="code-note">&lt;!-- 需要准备的资源有四种CSS、SWF、JS、HTML --&gt;</span>
+<span class="code-note">&lt;!-- 以下部分在架构中有所提供，不需手动添加及更改 --&gt;</span>
+getStaticPath() + '/modules/webuploader/webuploader.js'
+getStaticPath() + '/modules/webuploader/css/webuploader.css'
+getStaticPath() + '/modules/webuploader/Uploader.swf'
+getStaticPath() + '/modules/util/css/grid.css'
+
+<span class="code-note">&lt;!-- 编辑模板html及相关配置js、css 有需要时可以更改其中内容--&gt;</span>
+settings-uploader文件夹/settings-uploader.js
+upload文件夹/upload.css
+.../detailHtml/imgHtml.html
+.../detailHtml/docHtml.html
+.../detailHtml/audioHtml.html
+.../detailHtml/videoHtml.html
+
+<span class="code-note">&lt;!-- settings-uploader.js的配置内容（可根据需求自定义，根据本系统更改对应属性的值） --&gt;</span>
+//需要获取的字典数据url
+var urls = {
+    //艺术类别
+    url_arttype : getStaticPath()+'/app/common/data/artTypeList.json',
+    //所属机构
+    url_org : getStaticPath() + '/app/collection/doc/data/orgTree.json',
+    //文档格式
+    url_format_doc : getStaticPath()+'/app/common/data/docFormat.json',
+    //图片格式
+    url_format_img : getStaticPath()+'/app/common/data/imgFormat.json',
+    //音频格式
+    url_format_audio : getStaticPath()+'/app/common/data/audioType.json',
+    //视频格式
+    url_format_video : getStaticPath()+'/app/common/data/videoType.json',
+    //标准主题
+    url_theme : getStaticPath()+'/app/common/data/standardLabels.json',
+    //文件密级
+    url_secretLevel : getStaticPath()+'/app/common/data/secretLevel.json',
+    //文件状态
+    url_status : getStaticPath()+'/app/common/data/resStatus.json',
+    //视频字幕
+    url_subtitle : getStaticPath()+'/app/common/data/subtitles.json'
+};
+	
+//文件内容属性的字段转换
+var key = {
+    //艺术类别
+    'detail-arttype' : 'detailArttype',
+    //所属机构
+    'detail-belongOrg' : 'detailBelongOrg',
+    //文档格式
+    'detail-format' : 'detailFormat',
+    //标准主题
+    'detail-standardTheme' : 'detailStandardTheme',
+    //文件密级
+    'detail-secretLevel' : 'detailSecretLevel',
+    //文件状态
+    'detail-status' : 'detailStatus',
+    //视频字幕
+    'detail-subtitles' : 'detailSubtitles',
+    //文件名称
+    'detail-name' : 'detailName',
+    //自定义主题
+    'detail-userTheme' : 'detailUserTheme',
+    //文件语言
+    'detail-language' : 'detailLanguage',
+    //文件简介
+    'detail-intro' : 'detailIntro',
+    //文件播放时间长度
+    'detail-timing' : 'detailTiming',
+    //图片像素
+    'detail-pixel' : 'detailPixel',
+    //图片分辨率
+    'detail-resolution' : 'detailResolution',
+    //视频清晰度
+    'detail-definition' : 'detailDefinition'
+};
+	
+//上传文件路径
+var remoteUrl = getServer() + '/sword/fileUpload';
+	
+//字典数据字段转换，用于inputSelect初始化
+var dataField = {
+    id : 'id',
+    name : 'name',
+    data : 'data'
+};
+	
+//编辑模板html存放地址
+var htmlAddr = {
+    img : getStaticPath() + '/app/common/detailHtml/imgHtml.html',
+    doc : getStaticPath() + '/app/common/detailHtml/docHtml.html',
+    audio : getStaticPath() + '/app/common/detailHtml/audioHtml.html',
+    video : getStaticPath() + '/app/common/detailHtml/videoHtml.html'
+};
+			</pre>
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class="col-md-12 api-hint-title">
+		<p>常用示例1</p>
+	</div>
+	<div class="col-md-12">
+		<div>
+			<pre>
+<span class="code-note">&lt;!-- 可编辑、有初始化数据 --&gt;</span>
+<span class="code-note">&lt;!-- html部分 --&gt;</span>
+&lt;div class="form-horizontal"&gt;
+    &lt;div class="col-md-12"&gt;
+        &lt;div id="multi"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">&lt;!-- js部分 --&gt;</span>
+multiUploader.init($scope,{
+    edit : true,   //是否可编辑，默认为false
+    uploader : 'multi-uploader',  //实例化上传组件名称
+    param : {
+        placeAt : '#multi'  //#id，多附件上传所在的DOM节点选择器
+    },
+    data : {
+        ABCDEFG : {
+            fileId : 'ABCDEFG',
+            url : '',
+            'detailName' : 'multiTest1',
+            'detailFormat' : ['760004']
+        },
+        HIJKLMN : {
+            fileId : 'HIJKLMN',
+            url : '',
+            'detailName' : 'multiTest2',
+            'detailFormat' : ['760004888']
+        }
+    }
+});
+			</pre>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div id="multi"></div>
+	</div>
+	
+	<div class="col-md-12" style="margin-top:-25px;">
+		<button id="button1" class="btn btn-default">console.info($scope['multi-uploader']);</button>
+	</div>
+	
+	<div class="col-md-12 api-hint-title">
+		<p>常用示例2</p>
+	</div>
+	<div class="col-md-12">
+		<div>
+			<pre>
+<span class="code-note">&lt;!-- 不可编辑、有初始化数据 --&gt;</span>
+<span class="code-note">&lt;!-- html部分 --&gt;</span>
+&lt;div class="form-horizontal"&gt;
+    &lt;div class="col-md-12"&gt;
+        &lt;div id="multi2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+<span class="code-note">&lt;!-- js部分 --&gt;</span>
+multiUploader.init($scope,{
+    uploader : 'multi-uploader2',  //实例化上传组件名称
+    param : {
+        placeAt : '#multi2'  //#id，多附件上传所在的DOM节点选择器
+    },
+    data : {
+        ABCDEFG : {
+            fileId : 'ABCDEFG',
+            url : '',
+            'detailName' : 'multiTest1',
+            'detailFormat' : ['760004']
+        },
+        HIJKLMN : {
+            fileId : 'HIJKLMN',
+            url : '',
+            'detailName' : 'multiTest2',
+            'detailFormat' : ['760004888']
+        }
+    }
+});
+			</pre>
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div id="multi2"></div>
+	</div>
+	
+	<div class="col-md-12" style="margin-top:-25px;margin-bottom:10px;">
+		<button id="button2" class="btn btn-default">console.info($scope['multi-uploader2']);</button>
+	</div>
+</div>
+
+<div class="col-md-6 form-horizontal">
+	<div class="col-md-12 api-hint-title" style="padding-left:0;">
+		<p>参数及方法说明</p>
+	</div>
+	<div class="col-md-12 alert alert-info" style="padding-top:0;">
+		<h5 class="api-title">组件说明</h5>
+		<ul>
+			<li>支持上传文件的编辑功能</li>
+			<li>支持已上传数据初始化</li>
+			<li>支持编辑内容自定义配置</li>
+		</ul>
+		<div style="padding-left:10px;line-height:0.9;">
+			<div><span class="code-note">注：各类文件支持编辑的格式如下，除此之外均不支持编辑。文件大小均精确到小数点后两位，除以下格式文件外，单位均为Byte：</span></div>
+			<div><span class="code-note">doc : 'doc docx ppt pptx xls xlsx pdf';文档大小的单位为KB</span></div>
+			<div><span class="code-note">img : 'png jpg bmp tiff gif';图片大小的单位为KB</span></div>
+			<div><span class="code-note">audio : 'mp3 wma wav';音频大小的单位为MB</span></div>
+			<div><span class="code-note">video : 'mp4 flv avi wmv rmvb mov mpg';视频大小的单位为GB</span></div>
+		</div>
+		
+		<h5 class="api-title">方法</h5>
+		<ul>
+			<li>
+				<strong>multiUploader.getAllData($scope,uploader)</strong> - &nbsp;&nbsp;调用以获取对应上传附件的数据，数据会绑定到$scope[uploader]上。uploader是上传组件实例化对象名称。
+			</li>
+			<li>
+				<strong>multiUploader.init($scope,config)</strong> - &nbsp;&nbsp;初始化多个上传组件，config为参数。
+			</li>
+		</ul>
+		<h5 class="api-title">参数</h5>
+		<ul>
+			<li>
+				<strong>uploader</strong> - String&nbsp;&nbsp;组件实例化对象的唯一名称，不可重复，默认'multi-uploader'
+			</li>
+			<li>
+				<strong>edit</strong> - Boolean&nbsp;&nbsp;是否可编辑，true为可编辑，默认为false。
+			</li>	
+			<li>
+				<strong>param</strong> - Object&nbsp;&nbsp;设置上传组件模式
+				<ul>
+					<li>placeAt - String&nbsp;&nbsp;组件容器的DOM节点选择器，默认'#multi'</li>
+					<li>file - String&nbsp;&nbsp;主要用于控制上传组件中编辑模板的选择，指定一个模板后可避免重复发请求获取html文件；次要用于计算文件大小。默认为''，即所有类别文档将根据文件后缀进行判断从而选择编辑模板</li>
+				</ul>
+			</li>
+			<li>
+				<strong>data</strong> - Object|Boolean&nbsp;&nbsp;初始化数据，即已上传附件数据，默认为false。
+				<pre>
+<span class="code-note">object-data的属性名称必须与settings-uploader中key的对应字段相符。注：初始化inputSelect的数据必须使用数组</span>
+{
+    //对象名称与该文件fileId保持一致
+    ID1 : {              
+        fileId : ID1,    //必须给文件唯一标识ID
+        size : 2.59,      //文件大小，必须有值
+        detailName : 'lala',                        
+        detailBelongOrg : ['XXJ'],
+        detailArttype : ['760K004','76020'],
+        detailFormat : ['76020']      //文档格式，为空时无法进行编辑
+        type : 'rar'      //'img'/'doc'/'audio'/'video'/文档后缀
+        ...
+        ...
+        ...
+    },
+    ID2 : {              
+        fileId : ID2,    //必须给文件唯一标识ID
+        size : 2.59,      //文件大小，必须有值
+        detailName : 'lala',                        
+        detailBelongOrg : ['XXJ'],
+        detailArttype : ['760K004','76020'],
+        detailFormat : ['76020']      //文档格式，为空时无法进行编辑
+        type : 'rar'      //'img'/'doc'/'audio'/'video'/文档后缀
+        ...
+        ...
+        ...
+    }
+
+}
+				</pre>
+			</li>
+			<li>
+				<strong>template</strong> - Object&nbsp;&nbsp;配置编辑项，当不需要某编辑项时将其设置为false。
+				<ul>
+					<li>'detail-arttype' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-belongOrg' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-format' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-standardTheme' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-secretLevel' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-status' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-subtitles' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-name' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-userTheme' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-language' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-intro' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-timing' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-pixel' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-resolution' - Boolean&nbsp;&nbsp;默认为true。</li>
+					<li>'detail-definition' - Boolean&nbsp;&nbsp;默认为true。</li>
+				</ul>
+			</li>
+		</ul>
+		<span class="code-note">其他参数请参考webuploader的官方API</span>
+	</div>
+</div>

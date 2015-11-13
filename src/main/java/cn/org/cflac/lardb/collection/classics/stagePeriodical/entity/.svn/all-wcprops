@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/css/!svn/ver/1682/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity
+END
+TStageArtistUnitEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/css/!svn/ver/1682/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity/TStageArtistUnitEntity.java
+END
+TStagePeriodicalArticleInfoEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/css/!svn/ver/1682/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity/TStagePeriodicalArticleInfoEntity.java
+END
+TStagePeriodicalColumntreeEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/css/!svn/ver/1506/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity/TStagePeriodicalColumntreeEntity.java
+END
+TStageperiodicalPhotocollectionEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/css/!svn/ver/1506/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity/TStageperiodicalPhotocollectionEntity.java
+END
+TStagePeriodicalResourceEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/css/!svn/ver/1506/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity/TStagePeriodicalResourceEntity.java
+END
+TStagePeriodicalInfoEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/css/!svn/ver/1682/lrdb/src/main/java/cn/org/cflac/lardb/collection/classics/stagePeriodical/entity/TStagePeriodicalInfoEntity.java
+END

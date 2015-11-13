@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/css/!svn/ver/1742/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/service
+END
+AwardIntroductionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/css/!svn/ver/1492/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/service/AwardIntroductionService.java
+END
+AwardCourseService.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/css/!svn/ver/1492/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/service/AwardCourseService.java
+END
+AwardInfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/css/!svn/ver/1742/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/service/AwardInfoService.java
+END
+AwardUnitService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/css/!svn/ver/1492/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/service/AwardUnitService.java
+END

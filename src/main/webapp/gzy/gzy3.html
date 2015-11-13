@@ -1,0 +1,49 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gzy3</title>
+
+    <script src="jquery-2.1.4.min.js">
+    </script>
+    <script>
+    $(document).ready(function(){
+        $("#btn1").click(function(){
+    $.ajax({
+    	method:'POST',
+    	dataType:'json',
+    	url:"http://localhost:8080/lrdb/sword/gzy/getGzyPage?curPage=1&pageSize=20&field=test_id&order=asc",
+    	success: function(data){
+    		/* alert("success"); */
+    		$("#test").html(function(){
+    			console.info(data);
+    			alert("长度："+data.model.curPageData.length);
+     			$("#test").html(data.model.curPageData[0].testId+"  "+data.model.curPageData[0].testName)+"<br />";  
+     			$("#test").append("<br />"+data.model.curPageData[1].testId+"  "+data.model.curPageData[1].testName); 
+     			$("#test").append("<br />"+data.model.curPageData[2].testId+"  "+data.model.curPageData[2].testName); 
+     			
+     			 for(var i=3;i<9;i++){
+     				$("#test").append("<br />"+data.model.curPageData[i].testId+"  "+data.model.curPageData[i].testName); 
+     			}
+    		});
+        },
+       complete: function(XMLHttpRequest, textStatus){
+	   },
+	   error: function(){
+		   alert("error");
+	   }
+    
+    })
+    });
+        
+    })
+    </script>
+</head>
+<body>
+
+<h3 id="test">123</h3>
+<button id="btn1" type="button">获得外部的内容</button>
+
+</body>
+</html>

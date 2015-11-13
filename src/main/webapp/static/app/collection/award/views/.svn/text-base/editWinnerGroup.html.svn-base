@@ -1,0 +1,14 @@
+<div class="form-horizontal">
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>奖项分组名:</label>
+		<div class="col-md-10">
+			<input id="winnerGroupName" name="winnerGroupName" class="form-control" ng-model="session.winnerGroup.winnersGroupingName">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>奖项分组排序:</label>
+		<div class="col-md-10">
+			<input id="winnerGroupOrder" name="winnerGroupOrder" class="form-control" ng-model="session.winnerGroup.winnersGroupingSortNumber">
+		</div>
+	</div>
+</div>

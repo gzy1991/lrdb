@@ -1,0 +1,435 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.css.sword</groupId>
+	<artifactId>sword-room</artifactId>
+	<version>0.9.5</version>
+	<name>${artifactId}</name>
+	<!-- <packaging>war</packaging> -->
+	<packaging>${packaging.type}</packaging>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<sword-web>1.0.4</sword-web>
+		<sword-fileupload.version>0.10.2</sword-fileupload.version>
+	</properties>
+
+	<dependencies>
+		<!-- 底层框架相关 -->
+		<dependency>
+			<groupId>com.css.sword</groupId>
+			<artifactId>sword-web</artifactId>
+			<version>${sword-web}</version>
+		</dependency>
+
+		<!-- MySQL jar包 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.25</version>
+		</dependency>
+		<!-- 注册与登录验证加密算法 -->
+		<dependency>
+			<groupId>com.lambdaworks</groupId>
+			<artifactId>scrypt</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
+		<!-- POI Office文档解析 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.11</version>
+		</dependency>
+		<!-- 增加对操作.xlsx、.pptx、docx文件的支持 -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.11</version>
+		</dependency>
+
+		<!-- fileupload相关类 -->
+		<dependency>
+			<groupId>com.css.sword.extensions</groupId>
+			<artifactId>fileupload</artifactId>
+			<version>${sword-fileupload.version}</version>
+		</dependency>
+		
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- RSA加密实现，登录时密码传输加密 -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15</artifactId>
+			<version>1.45</version>
+		</dependency>
+		
+		<!-- 时间，登录错误两小时计算 -->
+		<!-- 目前该jar包已整合到sword-web中 -->
+		<!-- 
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.6</version>
+		</dependency> 
+		-->
+		
+		<dependency>
+			<groupId>com.gs</groupId>
+			<artifactId>quicktools-core</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.2-b01</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<!-- 定义profile -->
+	<profiles>
+		<!-- 打war包 -->
+		<profile>
+			<id>war</id>
+			<activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <packaging.type>war</packaging.type>
+            </properties>
+			<dependencies>
+				<dependency>
+					<groupId>com.css.sword</groupId>
+					<artifactId>sword-web</artifactId>
+					<version>${sword-web}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.css.sword.extensions</groupId>
+					<artifactId>fileupload</artifactId>
+					<version>${sword-fileupload.version}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>mysql</groupId>
+					<artifactId>mysql-connector-java</artifactId>
+					<version>5.1.25</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.lambdaworks</groupId>
+					<artifactId>scrypt</artifactId>
+					<version>1.4.0</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.poi</groupId>
+					<artifactId>poi</artifactId>
+					<version>3.11</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.poi</groupId>
+					<artifactId>poi-ooxml</artifactId>
+					<version>3.11</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>jstl</groupId>
+					<artifactId>jstl</artifactId>
+					<version>1.2</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.bouncycastle</groupId>
+					<artifactId>bcprov-jdk15</artifactId>
+					<version>1.45</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.gs</groupId>
+					<artifactId>quicktools-core</artifactId>
+					<version>2.4.0</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>commons-io</groupId>
+					<artifactId>commons-io</artifactId>
+					<version>2.4</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>commons-lang</groupId>
+					<artifactId>commons-lang</artifactId>
+					<version>2.6</version>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+			<build>
+			<plugins>
+				<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<!-- 打成war包时排除class文件，排除所有lib下的文件 -->
+					<packagingExcludes>
+						WEB-INF/classes/com/css/sword/**
+						src/main/webapp/WEB-INF/lib/**
+					</packagingExcludes>
+				</configuration>
+			</plugin>
+			</plugins>
+			</build>
+		</profile>
+		<!-- 打jar包 -->
+		<profile>
+			<id>jar</id>
+			<properties>
+                <packaging.type>jar</packaging.type>
+            </properties>
+			<build>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.6</version>
+					<executions>
+						<execution>
+							<phase>process-classes</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+							<configuration>
+								<classesDirectory>target/classes</classesDirectory>
+								<finalName>${artifactId}-${version}</finalName>
+								<!-- <outputDirectory>src/main/webapp/WEB-INF/lib</outputDirectory> -->
+								<includes>
+									<include>com/css/sword/**</include>
+								</includes>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+			</build>
+		</profile>
+		
+	    <profile>
+	    <!-- 暂时无法混淆成功~~jdk版本与混淆器版本存在兼容性问题 -->
+			<id>publish</id>
+			<dependencies>
+				<dependency>
+					<groupId>com.css.sword</groupId>
+					<artifactId>sword-web</artifactId>
+					<version>${sword-web}</version>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>com.css.sword.extensions</groupId>
+					<artifactId>fileupload</artifactId>
+					<version>${sword-fileupload.version}</version>
+					<scope>provided</scope>
+				</dependency>
+			</dependencies>
+			
+			<!-- <build>
+				<plugins>
+					<plugin>
+						<groupId>com.pyx4me</groupId>
+						<artifactId>proguard-maven-plugin</artifactId>
+						<version>2.0.4</version>
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<goals>
+									<goal>proguard</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<injar>${artifactId}.war</injar>
+							<outjar>${artifactId}.min.war</outjar>
+							<obfuscate>true</obfuscate>
+							<proguardInclude>${proguard.config.dir}/proguard.conf</proguardInclude>
+							添加依赖，这里你可以按你的需要修改
+							<libs>						 
+								<lib>${java.home}/lib/rt.jar</lib>
+								<lib>lib/fcexporter_jdk1.5.jar</lib>
+								<lib>lib/fcexporthandler.jar</lib>	
+								<lib>lib/jsp-api.jar</lib>
+								<lib>lib/servlet-api.jar</lib>
+							</libs>
+							<exclusions>
+		                        <exclusion>
+		                            <groupId>com.css.sword</groupId>
+									<artifactId>sword-framework-all</artifactId>
+		                        </exclusion>
+		                    </exclusions>
+							<addMavenDescriptor>false</addMavenDescriptor>
+						</configuration>
+						<dependencies> 
+							使用4.8版本来混淆
+							<dependency>
+								<groupId>net.sf.proguard</groupId>
+								<artifactId>proguard-anttask</artifactId>
+								<version>5.2</version>
+								<scope>runtime</scope>
+							</dependency>
+						</dependencies>
+					</plugin>
+					生成源码jar
+					<plugin>
+					    <groupId>org.apache.maven.plugins</groupId>
+					    <artifactId>maven-source-plugin</artifactId>
+					    <version>2.1.2</version>
+					    <executions>
+					      <execution>
+					        <id>attach-sources</id>
+					        <phase>verify</phase>
+					        <goals>
+					          <goal>jar-no-fork</goal>
+					        </goals>
+					      </execution>
+					    </executions>
+					</plugin>
+					生成javadoc
+					<plugin>          
+					    <groupId>org.apache.maven.plugins</groupId>
+					    <artifactId>maven-javadoc-plugin</artifactId>
+					    <version>2.7</version>
+					    <executions>
+					      <execution>
+					        <id>attach-javadocs</id>
+					          <goals>
+					            <goal>jar</goal>
+					          </goals>
+					      </execution>
+					    </executions>
+					</plugin>
+				</plugins>
+			</build> -->
+	    </profile>
+    </profiles>
+	
+	<!-- 都使用项目组私有maven仓库 -->
+	<repositories>
+		<repository>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<id>public</id>
+			<name>Public Repositories</name>
+			<!-- <url>http://10.20.20.7:8081/nexus/content/groups/public/</url> -->
+			<url>http://10.12.10.146:8080/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>public</id>
+			<name>Public Repositories</name>
+			<url>http://10.20.20.7:8081/nexus/content/groups/public/</url>
+			<!-- <url>http://10.12.10.146:8080/nexus/content/groups/public/</url> -->
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<distributionManagement>
+		<repository>
+			<id>nexus</id>
+			<url>http://10.20.20.7:8081/nexus/content/repositories/thirdparty/</url>
+			<!-- <url>http://10.12.10.146:8080/nexus/content/repositories/thirdparty/</url> -->
+		</repository>
+	</distributionManagement>
+	
+	<build>
+		<finalName>${artifactId}-${version}</finalName>
+		<plugins>
+			<!-- 确定项目的开发编译版本都1.7 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.0.2</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF8</encoding>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-compiler-javac</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<classesDirectory>target/classes</classesDirectory>
+							<finalName>${artifactId}-${version}</finalName>
+							<outputDirectory>src/main/webapp/WEB-INF/lib</outputDirectory>
+							<includes>
+								<include>com/css/sword/**</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin> -->
+			<!-- <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					打成war包时排除class文件
+					<packagingExcludes>
+						WEB-INF/classes/com/css/sword/**
+					</packagingExcludes>
+					<webResources>
+						<resource>
+							<directory>${runtime.env}</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin> -->
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,28 @@
+
+        
+{
+  "allDataCount": 5,
+  "curPageData":   [
+        	{
+                "id": "760004",
+                "name": "png"
+            },
+            {
+                "id": "760K004",
+                "name": "bmp"
+            },
+            {
+                "id": "76020000",
+                "name": "jpg"
+            },
+            {
+                "id": "76035",
+                "name": "tiff"
+            },
+            {
+                "id": "76015",
+                "name": "gif"
+            }
+        ],
+  "status": "200"
+}

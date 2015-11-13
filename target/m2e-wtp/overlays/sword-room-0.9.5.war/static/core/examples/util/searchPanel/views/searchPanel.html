@@ -1,0 +1,38 @@
+<h2>searchPanel样例</h2>
+
+<div id="searchPanelDemo"></div>
+<!-- requireJS Load -->
+<script type="text/javascript">
+require(["jquery","PDUtilDir/searchPanel"],function($,searchPanel){
+    searchPanel({
+        id : "searchPanelDemo",
+        itemWidth:"200px",
+        items:[
+            {
+                field : "test1",
+                name : "test1"
+            },
+            {
+                field : "test2",
+                name : "test2"
+            },
+            {
+                field : "test3",
+                name : "test3"
+            }
+        ],
+        toolbar : [
+            {
+                id:"search_submit",
+                name:"查询",
+                click:function(){console.log("search_submit")}
+            },
+            {
+                id:"search_reset",
+                name:"重置",
+                click:function(){console.log("search_reset")}
+            }
+        ]
+    });
+ });
+</script>

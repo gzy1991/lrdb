@@ -1,0 +1,15 @@
+
+<div class="form-horizontal">
+	<div class="form-group">
+	<div class="col-md-12">
+		<label class="col-md-2 control-label" for="queryHouseName">出版社名称:</label>
+		<div class="col-md-6">
+			<input id="queryHouseName" name="queryHouseName" class="form-control dialog-edit-input" ng-model="book.house.query.cons.queryHouseName">
+			<button class="btn btn-default dialog-edit-button" ng-click="book.house.query.query()">查询</button>
+		</div>
+	</div>
+	</div>
+	<div class="col-md-12">
+		<div id="houseGrid"></div>
+	</div>
+</div>

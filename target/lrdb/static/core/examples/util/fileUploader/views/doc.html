@@ -1,0 +1,161 @@
+<h1 id="-">附件配置</h1>
+<blockquote>
+    <p>目前未提供前端UI，修改<code>pd_web_fileupload_config</code>表中的<code>base_dir</code>字段即可设置附件要上传的根目录;
+        例如<code>d:\swordfileupload\</code>;  </p>
+</blockquote>
+<h1 id="-">单附件上传</h1>
+<h2 id="-">使用样例</h2>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace square js"><span>[</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>PDUtilDir/fileupload/singleFileUpload</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta brace square js"><span>]</span></span><span class="meta delimiter object comma js"><span>,</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>SFU</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="storage modifier js"><span>var</span></span><span>&nbsp;settings&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeAt</span><span class="keyword operator js"><span>:</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>imageUpload</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</span><span class="keyword operator js"><span>:</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>fe2499ad9be69f048c16da19108e2ec4</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>onDeletedFile</span></span><span>:</span><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>file</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>onUploadSuccess</span></span><span>:</span><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>file</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;SFU</span><span class="meta delimiter method period js"><span>.</span></span><span>init</span><span class="meta brace round js"><span>(</span></span><span>settings</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre>
+<h2 id="-">附件配置对象</h2>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">属性名称</th>
+        <th style="text-align:center">类型</th>
+        <th style="text-align:center">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">placeAt</td>
+        <td style="text-align:center">String/DOM</td>
+        <td style="text-align:center">必选，把附件上传组件放在指定容器的id，可为<code>DOM对象</code></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">data</td>
+        <td style="text-align:center">String</td>
+        <td style="text-align:center">可选，已经上传的附件id</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileMiddleDir</td>
+        <td style="text-align:center">String</td>
+        <td style="text-align:center">可选，基于<code>base_dir</code>的目录路径，用于按模块存放附件；例如：<code>system/org/</code></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileNumLimit</td>
+        <td style="text-align:center">int</td>
+        <td style="text-align:center">可选，默认值：undefined， 验证文件总数量, 超出则不允许加入队列。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileSizeLimit</td>
+        <td style="text-align:center">int</td>
+        <td style="text-align:center">[可选] [默认值：undefined] 验证文件总大小是否超出限制, 超出则不允许加入队列。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileSingleSizeLimit</td>
+        <td style="text-align:center">int</td>
+        <td style="text-align:center">[可选] [默认值：undefined] 验证单个文件大小是否超出限制, 超出则不允许加入队列。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">accept</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:center">[可选] [默认值：null] 指定接受哪些类型的文件。 具体设置可参看webUploader的<a href="http://fex-team.github.io/webuploader/doc/index.html">API</a></td>
+    </tr>
+    </tbody>
+</table>
+<h2 id="-">事件</h2>
+<blockquote>
+    <p>在配置对象中配置</p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">参数</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">onDeletedFile</td>
+        <td style="text-align:center">file</td>
+        <td style="text-align:left">可通过<code>file.swordFileId</code>拿到附件id，this为附件上传组件对象</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">onUploadedFile</td>
+        <td style="text-align:center">file</td>
+        <td style="text-align:left">可通过<code>file.swordFileId</code>拿到附件id，this为附件上传组件对象</td>
+    </tr>
+    </tbody>
+</table>
+<p><br></p>
+<hr>
+<h1 id="-">多附件上传</h1>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace square js"><span>[</span></span><span class="string quoted single js"><span class="punctuation definition string begin js"><span>'</span></span><span>PDUtilDir/fileupload/multiFileUpload</span><span class="punctuation definition string end js"><span>'</span></span></span><span class="meta brace square js"><span>]</span></span><span class="meta delimiter object comma js"><span>,</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>MFU</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="storage modifier js"><span>var</span></span><span>&nbsp;settings&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;placeAt</span><span class="keyword operator js"><span>:</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>attachContent</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</span><span class="keyword operator js"><span>:</span></span><span class="meta brace square js"><span>[</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>5a50d697c0af806aa01e06120d04f977</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta delimiter object comma js"><span>,</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>6c01e4492f264befab4c0532811f8dff</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta brace square js"><span>]</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>onDeletedFile</span></span><span>:</span><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>file</span></span><span>,</span><span class="variable parameter function js"><span>savedFilesId</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>onUploadSuccess</span></span><span>:</span><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>file</span></span><span>,</span><span class="variable parameter function js"><span>savedFilesId</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;</span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;MFU</span><span class="meta delimiter method period js"><span>.</span></span><span>init</span><span class="meta brace round js"><span>(</span></span><span>settings</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div></pre>
+<h2 id="-">附件配置对象</h2>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">属性名称</th>
+        <th style="text-align:center">类型</th>
+        <th style="text-align:center">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">placeAt</td>
+        <td style="text-align:center">String/DOM</td>
+        <td style="text-align:center">必选，把附件上传组件放在指定容器的id，可为<code>DOM对象</code></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">data</td>
+        <td style="text-align:center">String</td>
+        <td style="text-align:center">可选，已经上传的附件id</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileMiddleDir</td>
+        <td style="text-align:center">String</td>
+        <td style="text-align:center">可选，基于<code>base_dir</code>的目录路径，用于按模块存放附件；例如：<code>system/org/</code></td>
+    </tr>
+    <tr>
+        <td style="text-align:center">allowUpload</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">[可选] [默认值：true]，是否允许上传附件</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileNumLimit</td>
+        <td style="text-align:center">int</td>
+        <td style="text-align:center">[可选] [默认值：undefined]， 验证文件总数量, 超出则不允许加入队列。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileSizeLimit</td>
+        <td style="text-align:center">int</td>
+        <td style="text-align:center">[可选] [默认值：undefined] 验证文件总大小是否超出限制, 超出则不允许加入队列。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">fileSingleSizeLimit</td>
+        <td style="text-align:center">int</td>
+        <td style="text-align:center">[可选] [默认值：undefined] 验证单个文件大小是否超出限制, 超出则不允许加入队列。</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">accept</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:center">[可选] [默认值：null] 指定接受哪些类型的文件。 具体设置可参看webUploader的<a href="http://fex-team.github.io/webuploader/doc/index.html">API</a></td>
+    </tr>
+    </tbody>
+</table>
+<h2 id="-">事件</h2>
+<blockquote>
+    <p>在配置对象中配置</p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">参数</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">onDeletedFile</td>
+        <td style="text-align:center">file，savedFilesId</td>
+        <td style="text-align:left">可通过<code>file.swordFileId</code>拿到附件id，可通过<code>savedFilesId.join(";")</code>拿到已经上传成功的附件ID字符串;this为当前行对象</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">onUploadSuccess</td>
+        <td style="text-align:center">file，savedFilesId</td>
+        <td style="text-align:left">可通过<code>file.swordFileId</code>拿到附件id，可通过<code>savedFilesId.join(";")</code>拿到已经上传成功的附件ID字符串;this为附件上传组件对象；每上传成功一个附件就会触发</td>
+    </tr>
+    </tbody>
+</table>

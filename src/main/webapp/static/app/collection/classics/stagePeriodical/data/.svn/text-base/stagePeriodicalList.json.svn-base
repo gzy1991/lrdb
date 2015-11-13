@@ -1,0 +1,79 @@
+{
+  "allDataCount": 2,
+  "curPageData": [
+    {
+      "perName" : "人民音乐",
+      "perDate" : "2013-11-24",
+      "perStage" : "第1期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2014-1-24",
+      "perStage" : "第2期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2014-3-24",
+      "perStage" : "第3期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2014-5-24",
+      "perStage" : "第4期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2014-7-24",
+      "perStage" : "第5期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2014-9-24",
+      "perStage" : "第6期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2014-11-24",
+      "perStage" : "第7期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2016-1-24",
+      "perStage" : "第8期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "perName" : "人民音乐",
+      "perDate" : "2015-3-24",
+      "perStage" : "第9期",
+      "perType" : "音乐",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    }
+  ],
+  "status": "200"
+}

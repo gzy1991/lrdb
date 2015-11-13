@@ -1,0 +1,283 @@
+<div id="periodicalEditPanel" style="display:">
+    <div class="tab-header">
+        <div class="title">
+            <i class="fa fa-bars"></i><span class="file-detail-span" class="file-detail-span">总期期刊信息</span>
+        </div>
+        <div class="tool">
+            <button id="btn_resSort_save" class="btn btn-default" ng-show="periodical.show"
+                    ng-click="periodical.saveEntity()"><i class="fa fa-floppy-o"></i>&nbsp;保存
+            </button>
+        </div>
+    </div>
+    <div class="single-panel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist" style="clear:both">
+            <li class="active"><a data-target="#detailInfo" role="tab" data-toggle="tab">基本信息</a></li>
+            <li><a data-target="#periodicalColumn" role="tab" data-toggle="tab">栏目目录模板</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="detailInfo" class="tab-pane active">
+                <form id="periodicalInfobaseFormId">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-md-2 form-horizontal">
+                            <div align="center" ng-click="periodical.uploadPic()">
+                                <img ng-src="{{periodical.entity.pictureUrl}}"
+                                     style="width: 112.5px; height: 140px; margin-bottom: 8px;margin-top: 10px;">
+                            </div>
+                        </div>
+                        <div class="col-md-9 form-horizontal">
+                            <div class="col-md-12 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalNameCn" class="col-md-2 control-label"><span
+                                            class="notNull">*</span>期刊名称:</label>
+
+                                    <div class="col-md-10">
+                                        <input id="periodicalNameCn" name="periodicalNameCn" type="text"
+                                               class="form-control" ng-model="periodical.entity.periodicalNameCn">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalNameEn" class="col-md-2 control-label">英文名字:</label>
+
+                                    <div class="col-md-10">
+                                        <input id="periodicalNameEn" name="periodicalNameEn" type="text"
+                                               class="form-control" ng-model="periodical.entity.periodicalNameEn">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalFormerName" class="col-md-2 control-label">曾用刊名:</label>
+
+                                    <div class="col-md-10">
+                                        <input id="periodicalFormerName" name="periodicalFormerName" type="text"
+                                               class="form-control" ng-model="periodical.entity.periodicalFormerName">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalKeyword"
+                                           class="col-md-2 control-label">关&nbsp;&nbsp;键&nbsp;&nbsp;字:</label>
+
+                                    <div class="col-md-10">
+                                        <input id="periodicalKeyword" name="periodicalKeyword" type="text"
+                                               class="form-control" ng-model="periodical.entity.periodicalKeyword">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <label class="col-md-2 "></label>
+
+                        <div class="col-md-10">
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="row">
+                            <div class="col-md-6 form-horizontal">
+                                <div class="form-group">
+                                    <label for="typeDict" class="col-md-4 control-label"><span
+                                            class="notNull">*</span>期刊类别:</label>
+
+                                    <div class="col-md-8">
+                                        <input id="typeDict" type="text" lar-select="periodical.list.perTypes"
+                                               lar-multi="ture"
+                                               class="form-control" lar-model="periodical.entity.typeDict">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalFirstTime" class="col-md-4 control-label"><span
+                                            class="notNull">*</span>创刊时间:</label>
+
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <input id="periodicalFirstTime" name="periodicalFirstTime" type="text"
+                                                   readonly="true"
+                                                   class="form-control"
+                                                   cs-Datetime="{startView:4,minView:4,format:'yyyy'}"
+                                                   ng-model="periodical.entity.periodicalFirstTime">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="supervisorUnit" class="col-md-2 control-label">主管单位:</label>
+
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <input id="supervisorUnit" name="supervisorUnit" type="text" class="form-control"
+                                           ng-model="periodical.entity.supervisorUnit">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"
+                                                                       ng-click="periodical.addsupUnit('supervisorUnit')"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="sponsor" class="col-md-2 control-label">主办单位:</label>
+
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <input id="sponsor" name="sponsor" type="text" class="form-control"
+                                           ng-model="periodical.entity.sponsor">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"></i></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="publisher" class="col-md-2 control-label">出版单位:</label>
+
+                            <div class="col-md-10">
+                                <div class="input-group">
+                                    <input id="publisher" name="publisher" type="text" class="form-control"
+                                           ng-model="periodical.entity.publisher">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="row">
+                            <div class="col-md-6 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalInterSeries" class="col-md-4 control-label">国际刊号:</label>
+
+                                    <div class="col-md-8">
+                                        <input id="periodicalInterSeries" name="periodicalInterSeries" type="text"
+                                               placeholder="格式：ISSN XXXX-XXXX"
+                                               class="form-control" ng-model="periodical.entity.periodicalInterSeries">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 form-horizontal">
+                                <div class="form-group">
+                                    <label for="periodicalDomSeries" class="col-md-4 control-label">国内刊号:</label>
+
+                                    <div class="col-md-8">
+                                        <input id="periodicalDomSeries" name="periodicalDomSeries" type="text"
+                                               placeholder="格式：CN XX(地区号)-XXXX(序号)/XX(分类号)" class="form-control"
+                                               ng-model="periodical.entity.periodicalDomSeries">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="periodicalEmailedCode" class="col-md-2 control-label">邮发代号:</label>
+
+                            <div class="col-md-4">
+                                <input id="periodicalEmailedCode" name="periodicalEmailedCode" type="text"
+                                       placeholder="格式：省代号-发行号码"
+                                       class="form-control" ng-model="periodical.entity.periodicalEmailedCode">
+                            </div>
+                            <label for="publishSiteDict" class="col-md-2 control-label">出版地点:</label>
+
+                            <div class="col-md-4">
+                                <input id="publishSiteDict" name="publishSiteDict" type="text" class="form-control"
+                                       lar-select="periodical.list.publishSites"
+                                       lar-model="periodical.entity.publishSiteDict">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="publishCycleDict" class="col-md-2 control-label">出版周期:</label>
+
+                            <div class="col-md-4">
+                                <input id="publishCycleDict" name="publishCycleDict" type="text" class="form-control"
+                                       lar-select="periodical.list.publishCycles"
+                                       lar-model="periodical.entity.publishCycleDict">
+                            </div>
+                            <label for="periodicalPublicationDate" class="col-md-2 control-label">出刊日期:</label>
+                            <div class="col-md-4">
+                                <input id="periodicalPublicationDate" name="periodicalPublicationDate" type="text" class="form-control"
+                                       ng-model="periodical.entity.periodicalPublicationDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="languageDict" class="col-md-2 control-label">语&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;种:</label>
+
+                            <div class="col-md-4">
+                                <input id="languageDict" name="languageDict" type="text" class="form-control"
+                                       lar-select="periodical.list.languages"
+                                       lar-model="periodical.entity.languageDict">
+                            </div>
+                            <label for="foliosDict" class="col-md-2 control-label">开&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本:</label>
+
+                            <div class="col-md-4">
+                                <input id="foliosDict" name="foliosDict" type="text" class="form-control"
+                                       lar-select="periodical.list.folios" lar-model="periodical.entity.foliosDict">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 form-horizontal">
+                        <div class="form-group">
+                            <label for="periodicalIntroduction" class="col-md-2 control-label"><span class="notNull">*</span>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介:</label>
+
+                            <div class="col-md-10">
+								<textarea id="periodicalIntroduction" name="periodicalIntroduction"
+                                          class="form-control" rows="5"
+                                          ng-model="periodical.entity.periodicalIntroduction"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="periodicalColumn" class="tab-pane">
+                <form id="periodicalInfoColumnFormId">
+                    <div class=" col-md-3 form-horizontal">
+                        <ul id="commonTree" class="ztree"></ul>
+                    </div>
+                    <div class="col-md-9 form-horizontal">
+                        <div id="periodicalColumnEdit">
+                            <div class="form-group">
+                                <br>
+
+                                <div class="col-md-2 form-horizontal">
+                                    <label class="control-label">中文栏目:</label>
+                                </div>
+                                <div class="col-md-10 form-horizontal">
+                                    <input id="languageCN" name="folio" type="text" class="form-control"
+                                           ng-change="periodical.changeTree(periodical.entity.languageCN,'CN')"
+                                           ng-model="periodical.entity.languageCN">
+                                </div>
+                                <div class="col-md-2 form-horizontal">
+                                    <label class="control-label"></label>
+                                </div>
+                                <div class="col-md-10 form-horizontal">
+                                    <label class="control-label"></label>
+                                </div>
+                                <div class="col-md-2 form-horizontal">
+                                    <label class="control-label">英文栏目:</label>
+                                </div>
+                                <div class="col-md-10 form-horizontal">
+                                    <input id="languageEN" name="languageEN" type="text" class="form-control"
+                                           ng-change="periodical.changeTree(periodical.entity.languageEN,'EN')"
+                                           ng-model="periodical.entity.languageEN">
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div id="periodicalColumnList"></div>-->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

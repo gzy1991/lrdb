@@ -1,0 +1,16 @@
+<div class="form-horizontal col-md-12" lar-search-block="">
+	<div class="form-group">
+		<label class="col-md-2 control-label">奖节名称:</label>
+		<div class="col-md-4">
+			<input id="queryRelAwardName" name="queryRelAwardName" class="form-control" ng-model="session.query.relAward.awardName">
+		</div>
+		<label class="col-md-2 control-label">艺术类别:</label>
+		<div class="col-md-4">
+			<input id="queryRelAwardArttype" name="queryRelAwardArttype" lar-select="session.arttypes" class="form-control" lar-model="session.query.relAward.arttype">
+		</div>
+	</div>
+</div>
+
+<div class="col-md-12">
+	<div id="relAwardGrid"></div>
+</div>

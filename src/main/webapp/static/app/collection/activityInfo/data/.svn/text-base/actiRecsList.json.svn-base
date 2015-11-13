@@ -1,0 +1,48 @@
+{
+    "allDataCount":4,
+    "curPageData": [             
+      {
+      		"activityName":"第26届中国戏剧梅花奖颁奖典礼",
+      		"artType":"戏剧",
+      		"activityType":"节会比赛",
+      		"startTime":"2015-07-05",
+      		"endTime":"2015-07-10 ",
+      		"collectPersion":"xxx",
+      		"operatePersion":"xxx",
+      		"operateTime":"2015-07-10 13:08:09"
+      },
+        {
+      		"activityName":"第25届中国戏剧梅花奖颁奖典礼",
+      		"artType":"戏剧",
+      		"activityType":"节会比赛",
+      		"startTime":"2013-07-05 ",
+      		"endTime":"2013-07-10 ",
+      		"collectPersion":"xxx",
+      		"operatePersion":"xxx",
+      		"operateTime":"2013-07-10 13:08:09"
+      },
+       {
+      		"activityName":"第23届中国戏剧梅花奖颁奖典礼",
+      		"artType":"戏剧",
+      		"activityType":"节会比赛",
+      		"startTime":"2010-07-05 ",
+      		"endTime":"2010-07-10 ",
+      		"collectPersion":"xxx",
+      		"operatePersion":"xxx",
+      		"operateTime":"2010-07-10 13:08:09"
+      },
+      
+       {
+      		"activityName":"第20届中国戏剧梅花奖颁奖典礼",
+      		"artType":"戏剧",
+      		"activityType":"节会比赛",
+      		"startTime":"2007-07-05 ",
+      		"endTime":"2007-07-10 ",
+      		"collectPersion":"xxx",
+      		"operatePersion":"xxx",
+      		"operateTime":"2007-07-10 13:08:09"
+      }
+      
+    ],
+    "status" : "200"
+}

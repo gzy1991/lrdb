@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/css/!svn/ver/1591/lrdb/src/main/java/cn/org/cflac/lardb/collection/encyclopedia/entity
+END
+TEncyclopediaAttachment.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/css/!svn/ver/1504/lrdb/src/main/java/cn/org/cflac/lardb/collection/encyclopedia/entity/TEncyclopediaAttachment.java
+END
+TEncyclopediaInfoEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/css/!svn/ver/1591/lrdb/src/main/java/cn/org/cflac/lardb/collection/encyclopedia/entity/TEncyclopediaInfoEntity.java
+END
+TEncyclopediaAttachmentPK.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/css/!svn/ver/1504/lrdb/src/main/java/cn/org/cflac/lardb/collection/encyclopedia/entity/TEncyclopediaAttachmentPK.java
+END

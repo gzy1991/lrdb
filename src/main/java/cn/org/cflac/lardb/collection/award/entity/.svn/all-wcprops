@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/css/!svn/ver/1492/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/entity
+END
+TAwardUnitEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/css/!svn/ver/1472/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/entity/TAwardUnitEntity.java
+END
+TAwardCourseEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/css/!svn/ver/1492/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/entity/TAwardCourseEntity.java
+END
+TAwardIntroductionEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/css/!svn/ver/1472/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/entity/TAwardIntroductionEntity.java
+END
+TAwardInfoEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/css/!svn/ver/1472/lrdb/src/main/java/cn/org/cflac/lardb/collection/award/entity/TAwardInfoEntity.java
+END

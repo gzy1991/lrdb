@@ -1,0 +1,35 @@
+
+{
+  "allDataCount": 7,
+  "curPageData":  [
+        	{
+                "id": "760004888",
+                "name": "doc"
+            },
+            {
+                "id": "760K004098",
+                "name": "docx"
+            },
+            {
+                "id": "76020",
+                "name": "ppt"
+            },
+            {
+                "id": "76035",
+                "name": "pptx"
+            },
+            {
+                "id": "76015",
+                "name": "xls"
+            },
+            {
+                "id": "76045",
+                "name": "xlsx"
+            },
+            {
+                "id": "760K000",
+                "name": "pdf"
+            }
+        ],
+  "status": "200"
+}

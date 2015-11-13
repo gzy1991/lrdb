@@ -1,0 +1,21 @@
+{
+    "allDataCount":4,
+    "curPageData": [   
+      {
+      		"opusName":"平凡的世界",
+      		"topic":"xxx",
+      		"prove":"中国文联",
+      		"creatTime":"2015-09-10",
+      		"publishTime":"2015-09-10"
+      },  
+      {
+      		"opusName":"黄雀记",
+      		"topic":"xxx",
+      		"prove":"地方文联",
+      		"creatTime":"2015-09-10",
+      		"publishTime":"2015-09-10"
+      }   
+     
+    ],
+    "status" : "200"
+}

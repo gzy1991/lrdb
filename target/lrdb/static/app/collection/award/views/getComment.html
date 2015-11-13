@@ -1,0 +1,35 @@
+<div class="form-horizontal col-md-12" lar-search-block="">
+	<div class="form-group">
+		<label class="col-md-2 control-label">评论标题:</label>
+		<div class="col-md-4">
+			<input id="queryCommentTitle" name="queryCommentTitle" class="form-control" ng-model="session.query.comment.title">
+		</div>
+		<label class="col-md-2 control-label">评论作品:</label>
+		<div class="col-md-4">
+			<input id="queryCommentOpus" name="queryCommentOpus" lar-select="session.arttypes" class="form-control" lar-model="session.query.comment.opus">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">发表时间:</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input id="queryCommentMinDate" name="queryCommentMinDate" cs-datetime="" readonly class="form-control" ng-model="session.query.comment.minDate">
+			</div>
+		</div>
+		<label class="col-md-2 control-label" style="text-align:center;">至:</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input id="queryCommentMaxDate" name="queryCommentMaxDate" cs-datetime="" readonly class="form-control" ng-model="session.query.comment.maxDate">
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">发表作者:</label>
+		<div class="col-md-4">
+			<input id="queryCommentAuthor" name="queryCommentAuthor" class="form-control" lar-model="session.query.comment.author">
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+	<div id="commentGrid"></div>
+</div>

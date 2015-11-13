@@ -1,0 +1,27 @@
+{
+	"status" : "200",
+	"allDataCount" : "5",
+	"curPageData" : [
+		{
+			"houseId" : "1111",
+			"houseName" : "北京邮电大学出版社"
+		},
+		{
+			"houseId" : "22222",
+			"houseName" : "高等教育出版社"
+		},
+		{
+			"houseId" : "33333",
+			"houseName" : "图灵出版社"
+		},
+		{
+			"houseId" : "44444",
+			"houseName" : "电子出版社"
+		},
+		{
+			"houseId" : "55555",
+			"houseName" : "人民大学出版社"
+		}
+		
+	]
+}

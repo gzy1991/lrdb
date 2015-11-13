@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/css/!svn/ver/1742/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service
+END
+NewsRelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/NewsRelService.java
+END
+JudgeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/JudgeService.java
+END
+ScheduleService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/ScheduleService.java
+END
+ActivityRelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/ActivityRelService.java
+END
+CommentRelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/CommentRelService.java
+END
+AwardRelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/AwardRelService.java
+END
+AwardService.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/AwardService.java
+END
+OpusService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/OpusService.java
+END
+SessionRelService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/SessionRelService.java
+END
+SessionInfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/css/!svn/ver/1742/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/SessionInfoService.java
+END
+UnitService.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/UnitService.java
+END
+WinnersService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/service/WinnersService.java
+END

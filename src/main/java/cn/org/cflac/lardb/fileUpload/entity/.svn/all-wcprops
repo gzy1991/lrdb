@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/css/!svn/ver/1717/lrdb/src/main/java/cn/org/cflac/lardb/fileUpload/entity
+END
+TAttachmentAudio.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/css/!svn/ver/1515/lrdb/src/main/java/cn/org/cflac/lardb/fileUpload/entity/TAttachmentAudio.java
+END
+TAttachmentPicture.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/css/!svn/ver/1515/lrdb/src/main/java/cn/org/cflac/lardb/fileUpload/entity/TAttachmentPicture.java
+END
+TAttachmentInfo.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/css/!svn/ver/1717/lrdb/src/main/java/cn/org/cflac/lardb/fileUpload/entity/TAttachmentInfo.java
+END
+TAttachmentVideo.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/css/!svn/ver/1515/lrdb/src/main/java/cn/org/cflac/lardb/fileUpload/entity/TAttachmentVideo.java
+END
+TAttachmentDocument.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/css/!svn/ver/1649/lrdb/src/main/java/cn/org/cflac/lardb/fileUpload/entity/TAttachmentDocument.java
+END

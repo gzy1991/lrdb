@@ -1,0 +1,42 @@
+{
+    "allDataCount":4,
+    "curPageData": [              
+      {
+      		"resourceTitle":"人民音乐（2015年第6期）",
+			"resourceType":"期刊资源信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-03-08 13:30:08",
+			"modifyType":"更新"
+	  },
+	  {
+      		"resourceTitle":"人民音乐（2015年第6期）",
+			"resourceType":"期刊资源信息",
+			"modifyMember":"张三",
+			"modifyDep":"XX省文联",
+			"modifyTime":"2015-03-08 13:30:08",
+			"modifyType":"新增"
+	  },
+	  {
+      		"resourceTitle":"人民音乐",
+			"resourceType":"期刊资源信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-02-06 18:30:09",
+			"modifyType":"更新"
+	  },	   
+	  {
+      		"resourceTitle":"人民音乐（2015年第6期）",
+			"resourceType":"期刊资源信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-02-06 18:30:09",
+			"modifyType":"新增"
+	  }
+	 
+	 
+       
+      
+    ],
+    "status" : "200"
+}

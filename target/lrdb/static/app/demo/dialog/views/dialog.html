@@ -1,0 +1,30 @@
+<div class="col-md-12 form-horizontal">
+	<button class="btn btn-default" ng-click="demo.show()">弹出框</button>
+</div>
+<div class="col-md-12 form-horizontal">
+	<pre>
+	result.showDialog = function($compile,$scope){
+            var dialog = Dialog({
+				id : 'resourcesDialog',
+				cache : false,
+				title : '弹窗示例',
+				width : '800px',
+				$compile : $compile,
+				$scope : $scope,
+				url : $scope.demo.template.dialog,
+				buttons:[{name:'确定',callback:function(){
+					dialog.hide();
+				}}
+                ]
+            });
+            dialog.show();
+	};
+	</pre>
+	<h4>弹出框说明(新修改的区别)：</h4>
+	<div class="row">
+		<div class="col-md-1"></div><div class="col-md-2">$compile</div><div class="col-md-9">支持angular的$compile对象</div>
+		<div class="col-md-1"></div><div class="col-md-2">$scope</div><div class="col-md-9">支持angular的$compile对象</div>
+		<div class="col-md-1"></div><div class="col-md-2">url</div><div class="col-md-9">支持url方式载入html页面</div>
+	</div>	
+	
+</div>

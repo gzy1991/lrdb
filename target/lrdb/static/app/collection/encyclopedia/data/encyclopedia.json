@@ -1,0 +1,22 @@
+{
+  "allDataCount": 2,
+  "curPageData": [
+    {
+      "encyclopediaTitle": "水墨画",
+      "artTypeDict": "美术",
+      "encyclopediaTypeDict": "知识",    
+      "encyclopediaSource": "XXXX",
+      "createUser": "XX,XX",
+      "createTime" : "2015-05-09 12:00"
+    },
+    {
+      "encyclopediaTitle": "水墨画",
+      "artTypeDict": "美术",
+      "encyclopediaTypeDict": "知识",    
+      "encyclopediaSource": "XXXX",
+      "createUser": "XX,XX",
+      "createTime" : "2015-05-09 12:00"
+    }
+  ],
+  "status": "200"
+}

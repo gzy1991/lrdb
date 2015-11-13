@@ -1,0 +1,18 @@
+
+	<div class="col-md-12">
+		<div id="multi"></div>
+	</div>
+	
+	<div class="col-md-12" style="margin-top:-25px;">
+		<button id="button1" class="btn btn-default">console.info($scope['multi-uploader']);</button>
+	</div>
+	<!--  
+	<div class="col-md-12">
+		<div id="multi2"></div>
+	</div>
+	
+	<div class="col-md-12" style="margin-top:-25px;margin-bottom:10px;">
+		<button id="button2" class="btn btn-default">console.info($scope['multi-uploader2']);</button>
+	</div>
+	-->
+</div>

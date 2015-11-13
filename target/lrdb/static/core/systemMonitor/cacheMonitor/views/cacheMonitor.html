@@ -1,0 +1,93 @@
+<div role="tabpanel" style="padding: 0">
+	<ul class=" nav nav-tabs" role="tablist" id="pdMonitorSwordCacheTabList">
+		<li role="presentation" class="active"><a href="#pdMonitorCacheInfo" role="tab" data-toggle="tab">缓存配置概况</a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content" id="pdMonitorCacheTabContent">
+		<div class="tab-pane active" role="tabpanel" id="pdMonitorCacheInfo">
+		</div>
+	</div>
+</div>
+<!-- 模板 -->
+
+<script id="T_cacheStatusTabInfo" type="text/html">
+			<%for(var i=0,manager;manager=managers[i];i++){%>
+			<li role="presentation"><a href="#pdMonitorSwordCacheStatus_<%=i %>"
+			role="tab" data-toggle="tab" id ="pdMonitorSwordCacheTab_<%=i %>" >aaa</a></li>
+			<%}%>
+</script>
+<script id="T_cacheConfigInfo" type="text/html">
+		<div class="container-fluid">
+			<div class="row">
+				<%for(var i=0,manager;manager=managers[i];i++){%>
+				<div class="col-md-12 form-horizontal">
+					<fieldset class="pd-fieldset" id="pdMonitorSwordCacheConfigListDiv_<%=i %>">
+						<legend style="margin-bottom: 0">
+							<span id="pdMonitorSwordCacheConfigSpan_<%=i %>"></span>
+						</legend>
+						<!-- 不使用grid了,使用ng-repeat 做列表 -->
+						<table class="table table-bordered table-hover org_table"
+							style="margin-top: 0" id="pdMonitorSwordCacheConfigList_<%=i %>">
+               				 <tbody>
+                    			<tr>
+                        			<td width="30%">属性</td>
+                        			<td width="30%">值</td>
+									<td width="40%">描述</td>
+                    			</tr>
+                    			<%for(var j=0,item;item=manager[j];j++){%>
+                    			<tr>
+                        			<td title="<%=item.property %>"><%=item.property %></td>
+                        			<td title="<%=item.value %>"><%=item.value %></td>
+                        			<td title="<%=item.description %>"><%=item.description %></td>
+                    			</tr>
+                    			<%}%>
+                			</tbody>
+						</table>
+					</fieldset>
+				</div>
+			<%}%>
+			</div>
+		</div>
+</script>
+
+
+<script id="T_cacheStatusContentInfo" type="text/html">
+<%for(var i=0,manager;manager=managers[i];i++){%>
+<div role="tabpanel" class="tab-pane" id="pdMonitorSwordCacheStatus_<%=i %>">
+	<div class="container-fluid">
+		<div class="row">
+			<%var k=-1;%>
+			<%for(var key in manager){%>
+			<%k++;%>
+			<%server=manager[key];%>
+			<div class="col-md-12 form-horizontal">
+				<fieldset class="pd-fieldset">
+					<legend style="margin-bottom: 0">
+						<span id="pdMonitorServer_<%=i%>_<%=k %>">aaa</span>
+					</legend>
+					<!-- 不使用grid了,使用ng-repeat 做列表 -->
+					<table class="table table-bordered table-hover org_table"
+						style="margin-top: 0">
+               				 <tbody>
+                    			<tr>
+                        			<td width="30%">属性</td>
+                        			<td width="30%">值</td>
+									<td width="40%">描述</td>
+                    			</tr>
+                    			<%for(var j=0,item;item=server[j];j++){%>
+                    			<tr>
+                        			<td title="<%=item.property %>"><%=item.property %></td>
+                        			<td title="<%=item.value %>"><%=item.value %></td>
+                        			<td title="<%=item.description %>"><%=item.description %></td>
+                    			</tr>
+                    			<%}%>
+                			</tbody>
+					</table>
+				</fieldset>
+			</div>
+			<%}%>
+		</div>
+	</div>
+</div>
+<%}%>
+</script>

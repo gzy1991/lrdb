@@ -1,0 +1,153 @@
+<div role="tabpanel" >
+	<ul class=" nav nav-tabs" role="tablist">
+		<li id="pdMonitorLogSearch" role="presentation" class="active"><a
+			href="#pdMonitorLogSearchPanel" role="tab" data-toggle="tab">日志查询</a></li>
+		<li id="pdMonitorLogDownload" role="presentation"><a
+			href="#pdMonitorLogDownloadPanel" role="tab" data-toggle="tab">日志下载</a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="pdMonitorLogSearchPanel">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 form-horizontal">
+						<div class="form-group">
+							<label for="" class="col-md-3 col-sm-2 control-label">查询最近:</label>
+							<div class="col-md-6 col-sm-7">
+								<label class="radio-inline"> <input type="radio"
+									name="recentTime" value="0.5" checked="checked">半小时
+								</label> <label class="radio-inline"> <input type="radio"
+									name="recentTime" value="8">8小时
+								</label> <label class="radio-inline"> <input type="radio"
+									name="recentTime" value="12">12小时
+								</label> <label class="radio-inline"> <input type="radio"
+									name="recentTime" value="24">24小时
+								</label>
+							</div>
+						</div>
+					</div>
+					<form id="pdMonitorSearchInfoEditor">
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="searchStartTime"
+									class="col-md-4 col-sm-2 control-label">起始时间:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="searchStartTime" type="text" name="searchStartTime"
+										class="form-control" tabindex="3" autofocus>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="searchEndTime"
+									class="col-md-4 col-sm-2 control-label">结束时间:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="searchEndTime" type="text" name="searchEndTime"
+										class="form-control" tabindex="3" autofocus>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="swordExCode" class="col-md-4 col-sm-2 control-label"><span
+									class="requird"></span>异常码:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="swordExCode" type="text" name="swordExCode"
+										class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="moduleName" class="col-md-4 col-sm-2 control-label"><span
+									class="requird"></span>模块:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="moduleName" type="text" name="moduleName"
+										class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="level" class="col-md-4 col-sm-2 control-label"><span
+									class="requird"></span>级别:</label>
+								<div class="col-md-8 col-sm-10">
+									<!-- <input id="level" type="text" name="level" class="form-control"> -->
+									<select id="level" name="level">
+										<option value="" selected="selected">ALL</option>
+										<option value="DEBUG">DEBUG</option>
+										<option value="INFO">INFO</option>
+										<option value="WARN">WARN</option>
+										<option value="ERROR">ERROR</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="msg" class="col-md-4 col-sm-2 control-label"><span
+									class="requird"></span>模糊查询:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="msg" type="text" name="msg" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-offset-6 col-md-5">
+							<button id="btnLogSearch" class="btn btn-default" type="button">查询</button>
+						</div>
+						<div id="logShowListContent" class="col-xs-12"
+							style="padding-right: 0; padding-top: 10px"></div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" role="tabpanel" id="pdMonitorLogDownloadPanel">
+		<div class="container-fluid">
+			<div class="row">
+				<form id="pdMonitorSearchFile">
+					<div class="col-md-12 form-horizontal">
+						<div class="form-group">
+							<label for="downloadStartDate"
+								class="col-md-3 col-sm-2 control-label">日志文件最后修改的时间，从:</label>
+							<div class="col-md-2 col-sm-10">
+								<input id="downloadStartDate" type="text"
+									name="downloadStartDate" class="form-control" tabindex="3"
+									autofocus>
+							</div>
+							<label for="downloadEndDate"
+								class="col-md-1 col-sm-2 control-label">至:</label>
+							<div class="col-md-2 col-sm-10">
+								<input id="downloadEndDate" type="text" name="downloadEndDate"
+									class="form-control" tabindex="3" autofocus>
+							</div>
+							<div class="col-md-2">
+								<button id="btnLogDownloadSearch" class="btn btn-default"
+								type="button">查询</button>
+							</div>
+						</div>
+
+						
+
+					</div>
+					<div id="logShowDownloadListContent" class="col-xs-12"
+						style="padding-right: 0; padding-top: 10px"></div>
+				</form>
+			</div>
+			<div class="row">
+				<form id="downloadLogFile"
+					action= "monitor/logMonitor/searchLogFile">
+					<div class="form-group">
+						<input id="downloadLogFileName" type="hidden"
+							name="downloadLogFileName" class="form-control" tabindex="3"
+							autofocus> <input id="DownloadLogFileController"
+							type="hidden" name="SwordControllerName"
+							value="DownloadLogFileController" class="form-control"
+							tabindex="3" autofocus>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+
+</div>

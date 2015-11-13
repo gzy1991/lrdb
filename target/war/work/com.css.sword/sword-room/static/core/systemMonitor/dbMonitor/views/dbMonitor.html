@@ -1,0 +1,163 @@
+
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司
+ -->
+
+
+
+<!--   监控系统下持久层监控页面
+  @author YaoGuanhong
+  @创建时间 2015年7月10日 下午1:13:56
+  @History 修订历史<br> -->
+
+
+
+<style>
+.toolbar {
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.menuTitle {
+	height: 35px;
+	line-height: 35px;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+}
+
+#monitor_tab_menuSet . tab-pane {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb5 {
+	margin-bottom: 5px;
+}
+
+.table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	border-left: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.tableBasic {
+	word-wrap:break-word;
+	width: 100%; 
+	margin-bottom: 20px;
+	/* border-spacing: 1px; */
+	border-collapse:collapse;
+	background-color: #F9F9F9;
+	table-layout：auto;
+}
+
+th, td {
+	padding: 10px;
+	line-height: 20px;
+	text-align: left;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+	font-size: 14px;
+	word-break: break-all;
+}
+th{
+	background-color: #F9F9F9;
+}
+td{
+	background-color: #FFF;
+	border:1px solid #ddd;
+}
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-top-color: #ddd;
+	border-right-color: #ddd;
+	border-bottom-color: #ddd;
+	border-left-color: #ddd;
+	
+}
+</style>
+<div style="padding: 10px;">
+	<div class="menu_nav">
+		<ul class="nav nav-tabs nav-justified" role="tablist">
+			<li role="presentation" class="active"><a
+				href="#monitor_tab_basic" role="tab" data-toggle="tab">基本信息 </a></li>
+			<li role="presentation"><a href="#monitor_tab_datasource"
+				role="tab" data-toggle="tab"> <i class="fa fa-tasks"></i>&nbsp;数据源
+			</a></li>
+			<li role="presentation"><a href="#monitor_tab_sql" role="tab"
+				data-toggle="tab"> <i class="fa fa-yelp"></i>&nbsp;SQL监控
+			</a></li>
+			<li role="presentation"><a href="#monitor_tab_web" role="tab"
+				data-toggle="tab"> <i class="fa fa-yelp"></i>&nbsp;Web应用
+			</a></li>
+			<li role="presentation"><a href="#monitor_tab_URI" role="tab"
+				data-toggle="tab"> <i class="fa fa-yelp"></i>&nbsp;SwordService监控
+			</a></li>
+			<!-- <li role="presentation"><a href="#monitor_tab_Session"
+				role="tab" data-toggle="tab"> <i class="fa fa-yelp"></i>&nbsp;Session监控
+			</a></li> -->
+		</ul>
+	</div>
+	<div class="menu_tab">
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<!-- 首页 -->
+			<div role="tabpanel" class="tab-pane active" id="monitor_tab_basic" height="100%">
+				<table id="monitor_tab_table" class="tableBasic table-bordered" height="100%">
+					<tbody>
+						<tr>
+							<th width="25%">指标</th>
+							<th width="75%">指标值</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!--  数据源 -->
+			<div role="tabpanel" class="tab-pane" id="monitor_tab_datasource">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-4" id="monitor_left_dataSource">
+							<div class="menuTitle mb5 bg-info">
+								<span>数据源信息</span>
+							</div>
+							<div id="monitor_tree_datasourceDir" class="ztree"></div>
+						</div>
+						<div class="col-md-8">
+							<div class="menuTitle mb5 bg-info" id="db_detail" >
+								<span></span>
+							</div>
+							<div id="monitor_grid_datasource">
+								<table id="monitor_tab_datasource_table" class="tableBasic table-bordered">
+									<tbody>
+										<tr >
+											<th width="30%">指标</th>
+											<th >指标值 (时间单位为毫秒)</th>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- SQL监控 -->
+			<div role="tabpanel" class="tab-pane" id="monitor_tab_sql"></div>
+			<!-- Web监控 -->
+			<div role="tabpanel" class="tab-pane" id="monitor_tab_web"></div>
+			<!-- SwordService(原URI)监控 -->
+			<div role="tabpanel" class="tab-pane" id="monitor_tab_URI"></div>
+			<!-- Session监控 -->
+			<!-- <div role="tabpanel" class="tab-pane" id="monitor_tab_Session">
+			</div> -->
+		</div>
+	</div>
+</div>

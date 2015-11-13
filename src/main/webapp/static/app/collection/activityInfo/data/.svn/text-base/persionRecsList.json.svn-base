@@ -1,0 +1,35 @@
+{
+    "allDataCount":4,
+    "curPageData": [   
+      {
+      		"persionName":"李雪健",
+      		"birthdayYear":"1967",
+      		"sexName":"男",
+      		"birthPlaceName":"北京",
+      		"artTypeNames":"影视演员"
+      },  
+      {
+      		"persionName":"刘东升",
+      		"birthdayYear":"1967",
+      		"sexName":"男",
+      		"birthPlaceName":"北京",
+      		"artTypeNames":"影视演员"
+      },   
+      {
+      		"persionName":"李湘",
+      		"birthdayYear":"1967",
+      		"sexName":"男",
+      		"birthPlaceName":"北京",
+      		"artTypeNames":"影视演员"
+      },
+      {
+      		"persionName":"王小丫",
+      		"birthdayYear":"1967",
+      		"sexName":"男",
+      		"birthPlaceName":"北京",
+      		"artTypeNames":"影视演员"
+      }                       
+      
+    ],
+    "status" : "200"
+}

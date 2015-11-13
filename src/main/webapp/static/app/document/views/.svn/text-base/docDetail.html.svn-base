@@ -1,0 +1,111 @@
+<div id="docDetailPanel" style="display:none;">
+	<div class="tab-header">
+    	<div class="title">
+        	<i class="fa fa-bars"></i><span class="file-detail-span" class="file-detail-span">文档详情</span>
+    	</div>
+    	<div class="tool">
+        	<button id="btn_resSort_save" class="btn btn-default"><i class="fa fa-thumb-tack"></i>启用</button>
+    	</div>
+	</div>
+	
+	<div class="single-panel">
+		<!-- Nav tabs -->
+    	<ul class="nav nav-tabs" role="tablist" style="clear:both">
+        	<li class="active"><a data-target="#detailInfo" role="tab" data-toggle="tab">详细信息</a></li>
+        	<li><a data-target="#externalLinks" role="tab" data-toggle="tab">使用记录</a></li>
+    	</ul>
+    	<!-- Tab panes -->
+    	<div  class="tab-content">    
+	    	<div id="detailInfo" class="tab-pane active">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="col-xs-2 control-label">文件名称:</label>
+						<div class="col-xs-10 file-detail-span">
+							<span ng-bind="document.entity.documentName"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">文件格式:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.documentTypeDict"></span>
+						</div>
+						<label class="col-xs-2 control-label">艺术类型:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.artTypeDict"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">文件来源:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.documentSource"></span>
+						</div>
+						<label class="col-xs-2 control-label">所属机构:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.orgCode"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">文件主题:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.themeStandardDict"></span>
+						</div>
+						<label class="col-xs-2 control-label">文件密级:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.documentLevelDict"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">入库时间:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.createTime"></span>
+						</div>
+						<label class="col-xs-2 control-label">文件状态:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.documentStateDict"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">文件大小:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.detaiInfo.attachmentSize"></span>
+						</div>
+						<label class="col-xs-2 control-label">文件语言:</label>
+						<div class="col-xs-4 file-detail-span">
+							<span ng-bind="document.entity.documentLanguage"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">文件简介:</label>
+						<div class="col-xs-10 file-detail-span">
+							<span ng-bind="document.entity.documentIntroduction"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-2 control-label">预&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;览:</label>
+						<div class="col-xs-10 file-detail-span">
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="externalLinks" class="tab-pane">
+				<div class="form-group">
+					<div class="file-detail-span">
+						<table class="table table-bordered table-hover" style="table-layout:fixed;">
+							<tr style="text-align:center;text-weight:bold;">
+	            				<td style="width:50px;">序号</td>
+	            				<td style="width:100px;">系统名称</td>
+	        					<td style="width:600px;">外部链接</td>
+	        				</tr>
+	        				<tr style="text-align:center;" ng-repeat="usage in document.usages">
+	        					<td ng-bind="$index+1"></td>
+	        					<td ng-bind="usage.useSysName"></td>
+	        					<td class="file-detail-external-links"><a ng-bind="usage.link"></a></td>
+	        				</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+{
+    "status": "200",
+    "allDataCount": "14",
+    "curPageData": [
+    {
+        "id": "1",
+        "name": "有"
+    },
+    {
+        "id": "2",
+        "name": "否"
+    }
+]
+}

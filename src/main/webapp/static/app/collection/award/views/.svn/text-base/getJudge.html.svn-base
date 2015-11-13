@@ -1,0 +1,11 @@
+<div class="form-horizontal col-md-12" lar-search-block="">
+	<div class="form-group">
+		<label class="col-md-2 control-label">评委名称:</label>
+		<div class="col-md-8">
+			<input id="queryJudgeName" name="queryJudgeName" class="form-control" ng-model="session.query.judge.queryJudgeName">
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+	<div id="judgeGrid"></div>
+</div>

@@ -1,0 +1,77 @@
+<div class="form-horizontal">
+	<div class="form-group" style="display:none">
+		<label class="col-md-2 control-label">奖项名称:</label>
+		<div class="col-md-10">
+			<input id="awardName" name="awardName" class="form-control" ng-model="session.winner.awardName">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>一级奖项名:</label>
+		<div class="col-md-10">
+			<input id="awardName1" name="awardName1" class="form-control" ng-model="session.winner.awardName1">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">二级奖项名:</label>
+		<div class="col-md-10">
+			<input id="awardName2" name="awardName2" class="form-control" ng-model="session.winner.awardName2">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>奖项排序:</label>
+		<div class="col-md-10">
+			<input id="awardNameOrder" name="awardNameOrder" class="form-control" ng-model="session.winner.order">
+		</div>
+	</div>
+	<div class="form-group" ng-repeat="member in session.winner.members">
+		<label class="col-md-2 control-label">人员名称:</label>
+		<div class="col-md-4" style="padding-right:0;">
+			<div class="input-group">
+				<input id="memberName{{$index}}" readonly name="memberName{{$index}}" class="form-control" ng-model="member.memberName">
+				<span class="input-group-addon" ng-click="session.getMember($index)" title="选择"><i class="fa fa-search"></i></span>
+			</div>
+		</div>
+		<label class="col-md-2 control-label">人员标签名:</label>
+		<div class="col-md-3" style="padding-right:0;">
+			<input id="memberShowName{{$index}}" name="memberShowName{{$index}}" class="form-control" ng-model="member.memberShowName">
+		</div>
+		<div class="col-md-1" style="padding-top:7px;">
+			<a ng-click="session.addMember($index)"><i class="fa fa-plus"></i></a>
+			<a ng-click="session.delMember($index)"><i class="fa fa-minus"></i></a>
+		</div>
+	</div>
+	<div class="form-group" ng-repeat="awardOpus in session.winner.opus">
+		<label class="col-md-2 control-label">获奖作品:</label>
+		<div class="col-md-4" style="padding-right:0;">
+			<div class="input-group">
+				<input id="opusName{{$index}}" name="opusName{{$index}}" readonly class="form-control" ng-model="awardOpus.opusName">
+				<span class="input-group-addon" ng-click="session.getAwardOpus($index)" title="选择"><i class="fa fa-search"></i></span>
+			</div>
+		</div>
+		<label class="col-md-2 control-label">作品标签名:</label>
+		<div class="col-md-3" style="padding-right:0;">
+			<input id="opusShowName{{$index}}" name="opusShowName{{$index}}" class="form-control" ng-model="awardOpus.opusShowName">
+		</div>
+		<div class="col-md-1" style="padding-top:7px;">
+			<a ng-click="session.addAwardOpus($index)"><i class="fa fa-plus"></i></a>
+			<a ng-click="session.delAwardOpus($index)"><i class="fa fa-minus"></i></a>
+		</div>
+	</div>
+	<div class="form-group" ng-repeat="awardGroup in session.winner.groups">
+		<label class="col-md-2 control-label">获奖团体:</label>
+		<div class="col-md-4" style="padding-right:0;">
+			<div class="input-group">
+				<input id="groupName{{$index}}" name="groupName{{$index}}" readonly class="form-control" ng-model="awardGroup.groupName">
+				<span class="input-group-addon" ng-click="session.getGroup($index)" title="选择"><i class="fa fa-search"></i></span>
+			</div>
+		</div>
+		<label class="col-md-2 control-label">团体标签名:</label>
+		<div class="col-md-3" style="padding-right:0;">
+			<input id="groupShowName{{$index}}" name="groupShowName{{$index}}" class="form-control" ng-model="awardGroup.groupShowName">
+		</div>
+		<div class="col-md-1" style="padding-top:7px;">
+			<a ng-click="session.addAwardGroup($index)"><i class="fa fa-plus"></i></a>
+			<a ng-click="session.delAwardGroup($index)"><i class="fa fa-minus"></i></a>
+		</div>
+	</div>
+</div>

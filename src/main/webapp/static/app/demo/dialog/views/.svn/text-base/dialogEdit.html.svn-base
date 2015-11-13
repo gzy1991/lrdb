@@ -1,0 +1,12 @@
+<div class="col-xs-12 form-horizontal" id="resSearchConditions" rms-search-block="">
+	<div class="form-group" style="padding-left:15px;">
+		<label class="col-xs-2 control-label"  for="queryResourceTitle">资源名称:</label>
+		<div class="col-xs-3">
+			<input type="text" id="queryResourceTitle" class="form-control" ng-model="demo.entity.keyword">
+		</div>
+		<label class="col-xs-2 control-label" for="queryResourceType">资源类型:</label>
+		<div class="col-xs-3">
+			<input type="text" id="queryResourceType" class="form-control" ng-model="demo.entity.resourceType">
+		</div>
+	</div>
+</div>

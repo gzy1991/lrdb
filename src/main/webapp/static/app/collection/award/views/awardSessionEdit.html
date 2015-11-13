@@ -1,0 +1,420 @@
+<div id="sessionEditPanel" class="slidebar_detail" style="display:none;">
+
+	<div class="tab-header">
+        <div class="title">
+        	<i class="menu-icon fa fa-book" ></i>届次信息
+        </div>
+        <div class="tool">
+			<button type="button" class="btn btn-default" ng-click="session.save()"><i class="menu-icon fa fa-save"></i>&nbsp;保存</button>
+			<button type="button" class="btn btn-default" ng-click=""><i class="menu-icon fa fa-caret-square-o-up"></i>&nbsp;保存并提交</button>
+		</div>
+    </div>
+    
+    <div class="single-panel">
+    	<ul class="nav nav-tabs" role="tablist" style="clear:both">
+        	<li class="active"><a data-target="#baseInfo" role="tab" data-toggle="tab">基本信息</a></li>
+        	<li><a data-target="#schedule" role="tab" data-toggle="tab">日程安排</a></li>
+        	<li><a data-target="#opus" role="tab" data-toggle="tab">作品情况</a></li>
+        	<li><a data-target="#award" role="tab" data-toggle="tab">获奖情况</a></li>
+        	<li><a data-target="#activity" role="tab" data-toggle="tab">活动情况</a></li>
+        	<li><a data-target="#news" role="tab" data-toggle="tab">新闻资讯</a></li>
+        	<li><a data-target="#comment" role="tab" data-toggle="tab">相关评论</a></li>
+        	<li><a data-target="#relAwardSession" role="tab" data-toggle="tab">关联奖节</a></li>
+    	</ul>
+    	
+    	<div class="tab-content">
+    		<div class="tab-pane active" id="baseInfo">
+    			<div class="form-horizontal">
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="sessionTitle"><span class="notNull">*</span>届次标题:</label> 
+    					<div class="col-md-10">
+    						<input id="sessionTitle" name="sessionTitle" class="form-control" ng-model="session.entity.yearThTitle">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="sessionInfo"><span class="notNull">*</span>奖节届次信息:</label>
+    					<div class="col-md-10">
+    						<div class="input-group">
+			     				<input id="sessionInfo" name="sessionInfo" readonly class="form-control" ng-model="session.entity.yearThInfo">
+    							<span ng-click="session.editSessionInfo()" title="编辑" class="input-group-addon"><i class="fa fa-pencil"></i></span>
+    						</div>
+			     		</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="template"><span class="notNull">*</span>展示模板:</label>
+    					<div class="col-md-4">
+    						<input id="template" name="template" class="form-control" lar-select="session.showTemplates" lar-model="session.entity.yearThTemplate">
+    					</div>
+    					<label class="col-md-2 control-label" for="keywords">关&nbsp;&nbsp;键&nbsp;&nbsp;字:</label>
+    					<div class="col-md-4">
+    						<input id="keywords" name="keywords" class="form-control" ng-model="session.entity.yearThKeyword">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="startDate"><span class="notNull">*</span>开始时间:</label>
+    					<div class="col-md-4">
+    						<div class="input-group">
+    							<input id="startDate" name="startDate" readonly class="form-control" cs-datetime="" ng-model="session.entity.startTime">
+    						</div>
+    					</div>
+    					<label class="col-md-2 control-label" for="endDate"><span class="notNull">*</span>结束时间:</label>
+    					<div class="col-md-4">
+    						<div class="input-group">
+    							<input id="endDate" name="endDate" readonly class="form-control" cs-datetime="" ng-model="session.entity.endTime"> 
+    						</div>
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="sessionAddr">地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点:</label>
+    					<div class="col-md-10">
+    						<input id="sessionAddr" name="sessionAddr" class="form-control" lar-select="" lar-model="session.entity.yearThPlace">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="sessionHost">主办单位:</label>
+    					<div class="col-md-10">
+    						<input id="sessionHost" name="sessionHost" class="form-control" ng-model="session.entity.sessionHost">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="sessionOrganizer">承办单位:</label>
+    					<div class="col-md-10">
+    						<input id="sessionOrganizer" name="sessionOrganizer" class="form-control" ng-model="session.entity.sessionOrganizer">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="sessionCoorganizer">协办单位:</label>
+    					<div class="col-md-10">
+    						<input id="sessionCoorganizer" name="sessionCoorganizer" class="form-control" ng-model="session.entity.sessionCoorganizer">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label">届次logo:</label>
+        				<div class="col-md-10">
+            				<div id="picker"><input class="form-control" ></div>
+        				</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="introduction"><span class="notNull">*</span>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介:</label>
+    					<div class="col-md-10">
+    						<textarea rows="5" id="introduction" name="introduction" class="form-control" ng-model="session.entity.yearThIntroduction"></textarea>
+    					</div>
+    				</div>
+    			</div>
+    		</div> 
+    	
+    		<div class="tab-pane" id="schedule">
+    			<div class="form-horizontal">
+    			<div class="col-md-12">
+    				<div class="form-group" style="padding-bottom:10px;padding-top:10px;">
+    					<a ng-click="session.addScheduleGroup()"><i class="fa fa-plus-circle"></i>添加分组</a>
+    				</div>
+    				<div class="form-group" ng-repeat="group in session.scheduleGroups">
+    					<div style="display:none;" ng-bind="pIndex = $index"></div>
+    					<div>
+    						<strong>{{group.scheduleGroupingName}}</strong>
+    						<a style="font-size:10px;" ng-click="session.editScheduleGroup(pIndex)"><i class="fa fa-pencil"></i>编辑</a>
+    						<a style="font-size:10px;" ng-click="session.delScheduleGroup(pIndex)"><i class="fa fa-trash"></i>删除</a>
+    						<div style="float:right;">
+    							<a style="font-size:10px;" ng-click="session.addSchedule(pIndex)"><i class="fa fa-plus-circle"></i>添加日程</a>
+    						</div>
+    					</div>
+    					<table id="scheduleGroup{{pIndex}}" class="table table-bordered table-hover" style="table-layout:fixed;">
+    						<tr style="text-align:center">
+	            				<td style="width:50px">序号</td>
+	            				<td style="width:200px;">日期</td>
+	        					<td style="width:80px;">时段</td>
+	        					<td>内容</td>
+	        					<td style="width:150px;">地点</td>
+	        					<td style="width:50px;">排序</td>
+	            				<td style="width:50px;">操作</td>
+	        				</tr>
+	        				<tr ng-repeat="schedule in group.schedules" style="text-align:center;">
+	        					<td>{{$index+1}}</td>
+								<td class="ellipsis" title="{{schedule.date}}">{{schedule.date}}</td>
+								<td>{{schedule.scheduleTime}}</td>
+								<td class="ellipsis" title="{{schedule.scheduleContent}}">{{schedule.scheduleContent}}</td>
+								<td class="ellipsis" title="{{schedule.schedulePlace}}">{{schedule.schedulePlace}}</td>
+								<td>{{schedule.scheduleSortNumber}}</td>
+								<td style="text-align:center;font-size:14px">
+									<a ng-click="session.editSchedule(pIndex,$index)"><i class="fa fa-pencil" style="cursor:pointer" title="编辑"></i></a>
+									<a ng-click="session.delSchedule(pIndex,$index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+								</td>
+	        				</tr>
+    					</table>
+    				</div>
+    			</div>
+    			</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="opus">
+    			<div class="form-horizontal">
+    				<p class="slidebar-title-secondary">作品概况</p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="form-group">
+    					<label class="col-md-2 control-label">展示标签名:</label>
+    					<div class="col-md-10">
+    						<input id="opusShowName" name="opusShowName" class="form-control" ng-model="session.entity.opusLabel">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label">简介:</label>
+    					<div class="col-md-10">
+    						<textarea rows="5" id="opusIntro" name="opusIntro" class="form-control" ng-model="session.entity.opusIntroduction"></textarea>
+    					</div>
+    				</div>
+    				<p class="slidebar-title-secondary">作品信息&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="session.addOpus()"><i class="fa fa-plus-circle"></i>添加</a></p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="col-md-12">
+    				<div class="form-group">
+    					<table id="opusInfo" class="table table-bordered table-hover" style="table-layout:fixed;">
+    						<tr style="text-align:center">
+	            				<td style="width:50px">序号</td>
+	            				<td>作品名称</td>
+	        					<td style="width:280px;">作品标签名</td>
+	        					<td style="width:100px;">作品分类</td>
+	        					<td style="width:50px">排序</td>
+	            				<td style="width:50px">操作</td>
+	        				</tr>
+	        				<tr ng-repeat="opus in session.opusArr" style="text-align:center;">
+	        					<td>{{$index+1}}</td>
+								<td class="ellipsis" title="{{opus.opusName}}">{{opus.opusName}}</td>
+								<td class="ellipsis" title="{{opus.opusLabel}}">{{opus.opusLabel}}</td>
+								<td class="ellipsis" title="{{opus.opusLabelName}}">{{opus.opusLabelName}}</td>
+								<td>{{opus.opusSortNumber}}</td>
+								<td style="text-align:center;font-size:14px">
+									<a ng-click="session.editOpus($index)"><i class="fa fa-pencil" style="cursor:pointer" title="编辑"></i></a>
+									<a ng-click="session.delOpus($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+								</td>
+	        				</tr>
+	        			</table>
+    				</div>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="award">
+    			<div class="form-horizontal">
+    				<p class="slidebar-title-secondary">评委会名单&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="session.addJudge()"><i class="fa fa-plus-circle"></i>添加</a></p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="col-md-12">
+    				<div class="form-group">
+    					<table id="judges" class="table table-bordered table-hover" style="table-layout:fixed;">
+    						<tr style="text-align:center">
+	            				<td style="width:50px">序号</td>
+	            				<td>评奖委员</td>
+	        					<td>评委会职务</td>
+	        					<td style="width:50px">排序</td>
+	            				<td style="width:50px">操作</td>
+	        				</tr>
+	        				<tr ng-repeat="judge in session.judges" style="text-align:center;">
+	        					<td>{{$index+1}}</td>
+								<td>{{judge.judgeAutograph}}</td>
+								<td>{{judge.judgePosition}}</td>
+								<td>{{judge.judgeSortNumber}}</td>
+								<td style="text-align:center;font-size:14px">
+									<a ng-click="session.editJudge($index)"><i class="fa fa-pencil" style="cursor:pointer" title="编辑"></i></a>
+									<a ng-click="session.delJudge($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+								</td>
+	        				</tr>
+	        			</table>
+    				</div>
+    				</div>
+    				<p class="slidebar-title-secondary">获奖名单</p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="col-md-12">
+    					<div class="form-group" style="padding-bottom:10px;padding-top:10px;">
+    						<a ng-click="session.addWinnerGroup()"><i class="fa fa-plus-circle"></i>添加分组</a>
+    					</div>
+    					<div class="form-group" ng-repeat="winnerGroup in session.winnerGroups">
+    						<div style="display:none;" ng-bind="winIndex = $index"></div>
+    						<div>
+    							<strong>{{winnerGroup.winnersGroupingName}}</strong>
+    							<a ng-click="session.editWinnerGroup(winIndex)" style="font-size:10px;"><i class="fa fa-pencil">编辑</i></a>
+    							<a ng-click="session.delWinnerGroup(winIndex)" style="font-size:10px;"><i class="fa fa-trash">删除</i></a>
+    							<div style="float:right;">
+    								<a ng-click="session.addWinner(winIndex)" style="font-size:10px;"><i class="fa fa-plus-circle">添加名单</i></a>
+    							</div>
+    						</div>
+    						<table id="winnerGroup{{pIndex}}" class="table table-bordered table-hover" style="table-layout:fixed;">
+    							<tr style="text-align:center">
+	            					<td style="width:50px">序号</td>
+	            					<td>奖项名称</td>
+	        						<td>人员名称</td>
+	        						<td>人员标签名</td>
+	        						<td>作品名称</td>
+	        						<td>作品标签名</td>
+	        						<td>团体名称</td>
+	        						<td>团体标签名</td>
+	        						<td style="width:50px">排序</td>
+	            					<td style="width:50px;">操作</td>
+	        					</tr>
+	        					<tr ng-repeat="winner in winnerGroup.winners" style="text-align:center;">
+	        						<td>{{$index+1}}</td>
+									<td class="ellipsis" title="{{winner.awardName}}">{{winner.awardName}}</td>
+									<td class="ellipsis" title="{{winner.memberNames}}">{{winner.memberNames}}</td>
+									<td class="ellipsis" title="{{winner.memberShowNames}}">{{winner.memberShowNames}}</td>
+									<td class="ellipsis" title="{{winner.opusNames}}">{{winner.opusNames}}</td>
+									<td class="ellipsis" title="{{winner.opusShowNames}}">{{winner.opusShowNames}}</td>
+									<td class="ellipsis" title="{{winner.groupNames}}">{{winner.groupNames}}</td>
+									<td class="ellipsis" title="{{winner.groupShowNames}}">{{winner.groupShowNames}}</td>
+									<td>{{winner.winnersSortNumber}}</td>
+									<td style="text-align:center;font-size:14px">
+										<a ng-click="session.editWinner(winIndex,$index)"><i class="fa fa-pencil" style="cursor:pointer" title="编辑"></i></a>
+										<a ng-click="session.delWinner(winIndex,$index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+									</td>
+	        					</tr>
+    						</table>
+    					</div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="activity">
+    			<div class="form-horizontal">
+    				<p class="slidebar-title-secondary">活动概况</p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="form-group">
+    					<label class="col-md-2 control-label">展示标签名:</label>
+    					<div class="col-md-10">
+    						<input id="activityShowName" name="activityShowName" class="form-control" ng-model="session.entity.activityLabel">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label">简介:</label>
+    					<div class="col-md-10">
+    						<textarea rows="5" id="activityIntro" name="activityIntro" class="form-control" ng-model="session.entity.activityIntroduction"></textarea>
+    					</div>
+    				</div>
+    				<p class="slidebar-title-secondary">活动信息&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="session.addActivity()"><i class="fa fa-plus-circle"></i>添加</a></p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="col-md-12">
+    				<div class="form-group">
+    					<table id="activityInfo" class="table table-bordered table-hover" style="table-layout:fixed;">
+    						<tr style="text-align:center">
+	            				<td style="width:50px">序号</td>
+	            				<td>活动名称</td>
+	        					<td style="width:150px;">开始时间</td>
+	        					<td style="width:150px;">结束时间</td>
+	        					<td style="width:50px">排序</td>
+	            				<td style="width:50px">操作</td>
+	        				</tr>
+	        				<tr ng-repeat="activity in session.activityArr" style="text-align:center;">
+	        					<td>{{$index+1}}</td>
+								<td class="ellipsis" title="{{activity.activityName}}">{{activity.activityName}}</td>
+								<td>{{activity.activityBeginDate}}</td>
+								<td>{{activity.activityEndDate}}</td>
+								<td>{{activity.yearThActivitySortNumber}}</td>
+								<td style="text-align:center;font-size:14px">
+									<a ng-click="session.delActivity($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+								</td>
+	        				</tr>
+	        			</table>
+    				</div>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="news">
+    			<div class="form-horizontal">
+    			<p><a ng-click="session.getNews()"><i class="fa fa-plus-circle"></i>添加</a></p>
+    				<div class="col-md-12">
+    					<div class="form-group">
+    						<table id="activityInfo" class="table table-bordered table-hover" style="table-layout:fixed;">
+    							<tr style="text-align:center">
+	            					<td style="width:50px">序号</td>
+	            					<td>新闻标题</td>
+	        						<td style="width:150px;">作者</td>
+	        						<td style="width:150px;">新闻来源</td>
+	        						<td style="width:150px;">新闻类型</td>
+	        						<td style="width:50px">排序</td>
+	            					<td style="width:50px">操作</td>
+	        					</tr>
+	        					<tr ng-repeat="news in session.newsArr" style="text-align:center;">
+	        						<td>{{$index+1}}</td>
+									<td class="ellipsis" title="{{news.newsTitle}}">{{news.newsTitle}}</td>
+									<td>{{news.newsAuthor}}</td>
+									<td>{{news.newsSource}}</td>
+									<td>{{news.newsTypeName}}</td>
+									<td>{{news.yearThNewsSortNumber}}</td>
+									<td style="text-align:center;font-size:14px">
+										<a ng-click="session.delNews($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+									</td>
+	        					</tr>
+	        				</table>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="comment">
+    			<div class="form-horizontal">
+    				<p><a ng-click="session.getComment()"><i class="fa fa-plus-circle"></i>添加</a></p>
+    				<div class="col-md-12">
+    					<div class="form-group">
+    						<table id="commentTable" class="table table-bordered table-hover" style="table-layout:fixed;">
+    							<tr style="text-align:center">
+	            					<td style="width:50px">序号</td>
+	            					<td>评论标题</td>
+	        						<td style="width:150px;">评论作品</td>
+	        						<td style="width:150px;">发表作者</td>
+	        						<td style="width:150px;">发表时间</td>
+	        						<td style="width:50px">排序</td>
+	            					<td style="width:50px">操作</td>
+	        					</tr>
+	        					<tr ng-repeat="comment in session.comments" style="text-align:center;">
+	        						<td>{{$index+1}}</td>
+									<td class="ellipsis" title="{{comment.commentTitle}}">{{comment.commentTitle}}</td>
+									<td>{{comment.commentOpusName}}</td>
+									<td>{{comment.commentAuthor}}</td>
+									<td>{{comment.commentDate}}</td>
+									<td>{{comment.yearThCommentSortNumber}}</td>
+									<td style="text-align:center;font-size:14px">
+										<a ng-click="session.delComment($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+									</td>
+	        					</tr>
+	        				</table>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="relAwardSession">
+    			<div class="form-horizontal">
+    				<p class="slidebar-title-secondary">关联奖节</p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="col-md-12">
+    					<div class="form-group">
+    						<input id="relAward" name="relAward" class="form-control" lar-select="session.awards" lar-multi="true" lar-model="session.relAwards">
+    					</div>
+    				</div>
+    				<p class="slidebar-title-secondary">关联届次&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="session.getRelSession()"><i class="fa fa-plus-circle"></i>添加</a></p>
+    				<hr style="margin-top:5px;margin-bottom:5px;">
+    				<div class="col-md-12">
+    					<div class="form-group">
+    						<table id="relSessionTable" class="table table-bordered table-hover" style="table-layout:fixed;">
+    							<tr style="text-align:center">
+	            					<td style="width:50px">序号</td>
+	            					<td>奖节标题</td>
+	        						<td style="width:350px;">届次信息</td>
+	            					<td style="width:50px">操作</td>
+	        					</tr>
+	        					<tr ng-repeat="relSession in session.relSessions" style="text-align:center;">
+	        						<td>{{$index+1}}</td>
+									<td class="ellipsis" title="{{relSession.yearThTitle}}">{{relSession.yearThTitle}}</td>
+									<td class="ellipsis" title="{{relSession.yearThInfo}}">{{relSession.yearThInfo}}</td>
+									<td style="text-align:center;font-size:14px">
+										<a ng-click="session.delRelSession($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+									</td>
+	        					</tr>
+	        				</table>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	
+    	</div>
+    </div>
+    
+</div>

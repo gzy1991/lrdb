@@ -1,0 +1,367 @@
+<h2 id="-">功能说明</h2>
+<p>Grid为数据列表组件，遵循AMD标准，依赖<code>boostrap</code>,<code>jquery</code>, 主要功能如下:</p>
+<ol>
+    <li>自定义工具栏</li>
+    <li>前/后端排序</li>
+    <li>表格数据分页</li>
+    <li>表格根据新参数重新加载，当页刷新</li>
+    <li>列可拖动, 动态调整列宽</li>
+    <li>表格行事件绑定</li>
+</ol>
+<h2 id="-">用法</h2>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace square js"><span>[</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>PDUtilDir/grid</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta brace square js"><span>]</span></span><span class="meta delimiter object comma js"><span>,&nbsp;</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>Grid</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;Grid</span><span class="meta brace round js"><span>(</span></span><span>config</span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span></span></div></pre>
+<blockquote>
+    <p>可通过<code>Grid.getGrid(id)</code>取得实例化的grid对象
+        所有带下划线的属性或方法建议都不要使用
+        详细请见Demo样例</p>
+</blockquote>
+<h2 id="-config-">表格config对象</h2>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">类型</th>
+        <th style="text-align:center">默认值</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">id</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">存放表格面板id，表格缓存id，通过getGrid获取表格时使用，需保证唯一</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">pageSize</td>
+        <td style="text-align:center">number</td>
+        <td style="text-align:center">10</td>
+        <td style="text-align:left">规定表格(每页,若设置分页)显示的数据条数</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">title</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">数据列表</td>
+        <td style="text-align:left">表格标题</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">index</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">false</td>
+        <td style="text-align:left">是否显示行数</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">hidden</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">false</td>
+        <td style="text-align:left">表格初始化时显示或隐藏状态；若不设置该字段, 则表格默认显示；若设置该字段为true/false, 则初始化时会增加控制显示/隐藏的按钮</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">multi</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">null</td>
+        <td style="text-align:left">true/多选，false/单选</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">draggable</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">false</td>
+        <td style="text-align:left">表格数据列是否可拖动</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">pagination</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">true</td>
+        <td style="text-align:left">设置表格是否分页</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">toolbar</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:center">null</td>
+        <td style="text-align:left">表格操作栏对象，详见后续说明</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">layout</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:center">null</td>
+        <td style="text-align:left">表格列定义对象，详见后续说明</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">data</td>
+        <td style="text-align:center">array/object</td>
+        <td style="text-align:center">null</td>
+        <td style="text-align:left">表格数据对象，详见后续说明</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">trEvent</td>
+        <td style="text-align:center">object</td>
+        <td style="text-align:center">null</td>
+        <td style="text-align:left">设置表格行事件，详见后续说明</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">queryParam</td>
+        <td style="text-align:center">object</td>
+        <td style="text-align:center">null</td>
+        <td style="text-align:left">json键值对，表格查询时需要传递到后端的查询参数</td>
+    </tr>
+    </tbody>
+</table>
+<h4 id="toolbar">toolbar</h4>
+<blockquote>
+    <p>数组，数组项为json对象</p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">类型</th>
+        <th style="text-align:center">默认值</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">id</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，按钮id</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">name</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">必选，按钮名称</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">icon</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，按钮图标，从图标库中选择即可</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">callback</td>
+        <td style="text-align:center">function</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">必选，点击按钮后的回调函数</td>
+    </tr>
+    </tbody>
+</table>
+<h4 id="layout">layout</h4>
+<blockquote>
+    <p>数组，数组项为json对象</p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">类型</th>
+        <th style="text-align:center">默认值</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">name</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">必选，列标题</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">field</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">必选，字段名</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">width</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，列宽度(ps:最小像素宽度30px)</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">align</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，列文字对齐方向（left/center/right）</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">sort</td>
+        <td style="text-align:center">boolean</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，列数据是否可排序（静态数据自动前端排序，动态数据需后端支持）</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">click</td>
+        <td style="text-align:center">function</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，列数据可点击，点击后的回调函数</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">format</td>
+        <td style="text-align:center">function</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">可选，列数据格式化函数, 传入行数据, 返回处理后的字符串</td>
+    </tr>
+    </tbody>
+</table>
+<h4 id="data">data</h4>
+<blockquote>
+    <ol>
+        <li>为数组时，数组元素为json对象，加载静态数据</li>
+        <li>为对象时，其格式为:<code>data:{type:"URL",value:"url"}</code>,加载动态数据</li>
+    </ol>
+</blockquote>
+<h4 id="trevent">trEvent</h4>
+<blockquote>
+    <p>数组，设置行事件</p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">类型</th>
+        <th style="text-align:center">默认值</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">type</td>
+        <td style="text-align:center">string</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">必选，标准事件类型</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">callback</td>
+        <td style="text-align:center">function</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">必选，触发事件的回调函数</td>
+    </tr>
+    </tbody>
+</table>
+<h4 id="queryparam">queryParam</h4>
+<blockquote>
+    <p>Json对象，表格查询时，可以设置该属性的值，自动会发送到后端，可从iReq中获取Key</p>
+</blockquote>
+<h2 id="-">方法</h2>
+<blockquote>
+    <p>通过实例化的Grid对象调用，即:<code>grid.getSelectedRow()</code></p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">参数</th>
+        <th style="text-align:center">返回值</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">getGridPanel</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:center">jquery DOM</td>
+        <td style="text-align:left">得到表格DOM对象</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">appendRow</td>
+        <td style="text-align:center">json行数据对象</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">向当前页增加一行</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">deleteRow</td>
+        <td style="text-align:center">index</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">删除指定index的行</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">updateRow</td>
+        <td style="text-align:center">json:<code>{index:2,row:{}}</code></td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">更新指定行</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">getChanges</td>
+        <td style="text-align:center">type</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:left">type参数表明修改的类型，可选值：inserted，deleted，updated,没有传递type参数时，返回所有被修改的行.</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">getSelectedRow</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:left">获取当前Grid所有选中数据</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">getSelectedRowIndex</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:left">获取当前Grid所有选中数据的index</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">getCurPageData</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:center">array</td>
+        <td style="text-align:left">得到当前页的数据</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">clearSelectedRow</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">清空选中的行</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">refresh</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">刷新表格当前页的数据</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">reload</td>
+        <td style="text-align:center">config对象</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">重新加载表格，如果config对象中有id属性不生效</td>
+    </tr>
+    </tbody>
+</table>
+<h2 id="-">事件</h2>
+<blockquote>
+    <p>在config对象中配置</p>
+</blockquote>
+<table>
+    <thead>
+    <tr>
+        <th style="text-align:center">名称</th>
+        <th style="text-align:center">参数</th>
+        <th style="text-align:left">说明</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td style="text-align:center">onSelectAll</td>
+        <td style="text-align:center">boolean,全选/全不选</td>
+        <td style="text-align:left">点击全选和选不选复选框时调用</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">onSeletedChanged</td>
+        <td style="text-align:center">rows，当前选中的数据</td>
+        <td style="text-align:left">选中数据变更时自动调用</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">onBeforeRenderRow</td>
+        <td style="text-align:center">row,行数据</td>
+        <td style="text-align:left">this为grid对象，可对row做处理再return row，若增加row["_checked"]=true，则选中单选或多选框</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">onAfterRenderRow</td>
+        <td style="text-align:center">rows，行数据</td>
+        <td style="text-align:left">this为$tr对象</td>
+    </tr>
+    <tr>
+        <td style="text-align:center">onAfterRenderTableBody</td>
+        <td style="text-align:center">无</td>
+        <td style="text-align:left">this为grid对象，只要重新渲染表格内容就会触发（翻页、切换每页显示条数、点击列排序）</td>
+    </tr>
+    </tbody>
+</table>

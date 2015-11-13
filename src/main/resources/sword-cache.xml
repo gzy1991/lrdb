@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<multi-level-cache>
+
+	<cache-component>
+		<!-- RDBMS型缓存配置中的dataSource 属性为持久层中配置的数据源名；Key/Value型缓存没有后续缓存时配置成空 -->
+
+		<!-- localCache的参数说明 -->
+		<!-- maxTime:pool的有效时间 目前无作用 默认65566 
+			 limitTime:超过limitTime的值放入下级缓存。若无设置 默认为1000 
+			 maxSize:本地LRU的大小。若无设置，默认为1000 
+			 poolSize:一个pool的大小默认为20 -->
+		<cache name="LocalCache" memoryType="HeapMemory" nextCache="MemcachedCache"
+			isDefault="true" limitTime="100" maxSize="10" maxTime="65566"
+			manager="com.css.sword.core.components.cache.manager.localcache.SwordLocalCacheManager"
+			memo="本地哈希缓存" />
+
+		<!-- Memcached的结点分布算法分为三种:Default(key的哈希值) Ketama(一致性散列)和Election(选举散列) -->
+
+		<!-- memcachedCache的参数说明 -->
+		<!-- maxTime:put入memcache时item的默认有效时间，若无设置，为65566 单位秒 
+		     timeout:get时响应时间的上限。若无设置，则为60妙 
+			 poolSize:memcache连接池大小。若无设置，为 200 
+			 limitTime:超过limitTime的值放入下级缓存。若无设置 默认为1000 -->
+		<cache name="MemcachedCache" nextCache=""
+			manager="com.css.sword.core.components.cache.manager.memcache.SwordMemcachedCacheManager"
+			user="" password="" limitTime="120" maxSize="1111" servers="10.1.100.165:11211"
+			poolSize="50" sessionLocatorMode="Ketama" mergeFactor="50"
+			optimizeMergeBuffer="false" autoFailover="true" healSession="true"
+			sessionIdleTimeout="60" maxQueuedNoReplyOperations="6553600"
+			maxTries="10" memo="Memcached集群缓存" />
+			
+ 		<!-- <cache name="MemcachedCache" nextCache=""
+			manager="com.css.sword.core.components.cache.manager.memcache.SwordMemcachedCacheManager"
+			user="" password="" limitTime="120" maxSize="1111" servers="127.0.0.1:11211"
+			poolSize="50" sessionLocatorMode="Ketama" mergeFactor="50"
+			optimizeMergeBuffer="false" autoFailover="true" healSession="true"
+			sessionIdleTimeout="60" maxQueuedNoReplyOperations="6553600"
+			maxTries="10" memo="Memcached集群缓存" /> -->
+
+	</cache-component>
+
+</multi-level-cache>

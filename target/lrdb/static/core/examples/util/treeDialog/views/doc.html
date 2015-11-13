@@ -1,0 +1,47 @@
+<h2 id="-">功能说明</h2>
+<p>在弹出窗口中, 对多类型数据进行组合筛选, 主要功能如下</p>
+<ol>
+    <li>多类型数据同时筛选</li>
+    <li>可配置单选/多选</li>
+    <li>提供某一范围内的数据筛选和查询</li>
+    <li>动态配置选中数据</li>
+</ol>
+<h2 id="api">API</h2>
+<h3 id="-">公共函数</h3>
+<p><strong>DataSelect( config )</strong><br>组件内部为单例实现, 该函数作用为覆盖配置并显示数据选择窗口</p>
+<p><strong>DataSelect.getData( id [, type, dataId ])</strong><br>获取指定id的选中数据, 参数具体含义:</p>
+<ul>
+    <li>id - 组件锚点ID</li>
+    <li>type - 指定数据类型</li>
+    <li>dataId - 指定数据ID</li>
+</ul>
+<h2 id="-">参数列表</h2>
+<ul>
+    <li><strong>id(必填)</strong> - String<br>页面锚点id, 组件唯一标识</li>
+    <li><strong>multi</strong> - Boolean, 默认值:false<br>设置单选/多选</li>
+    <li><strong>title</strong> - String, 默认值:&quot;数据选择&quot;<br>设置标题内容</li>
+    <li><strong>height</strong> - String, 默认值:&quot;320px&quot;<br>设置弹出框高度</li>
+    <li><strong>width</strong> - String, 默认值:&quot;800px&quot;<br>设置弹出框宽度</li>
+    <li><strong>tagData</strong> - Array, 默认值:[&quot;user&quot;]<br>设置数据类型, 类型名称数组</li>
+    <li><strong>hideTag</strong> - Boolean, 默认值:false<br>是否隐藏标签页, 当只显示一种类型数据时有效</li>
+    <li><strong>realTimeData</strong> - Boolean, 默认值:false<br>每次加载左侧层级树时, 是否强制刷新数据/有缓存则使用缓存</li>
+    <li><strong>dataRefill</strong> - Boolean, 默认值:false<br>是否显示上次选中数据</li>
+    <li><strong>initData</strong> - Array<br>初始化时所需显示数据的id数组</li>
+    <li><strong>dataFilter</strong> - Object<br>控制左侧层级树的范围和指定数据的显示/隐藏(默认显示);<br>需设置realTimeData为true, 需对每种类型数据分别配置, 具体参数如下:  <ul>
+        <li>type - 数据类型<ul>
+            <li>root - String, 根节点id/范围</li>
+            <li>hide - Array, 隐藏节点id数组</li>
+            <li>show - Array, 显示节点id数组</li>
+        </ul>
+        </li>
+    </ul>
+    </li>
+    <li><strong>simpleReturnData</strong> - Boolean, 默认值:false<br>是否返回简单数据数组和数据映射集对象(数据id与数据对象的映射集);<br>简单数据数组属性如下:  <ul>
+        <li>id - 数据ID</li>
+        <li>code - 数据代码</li>
+        <li>name - 数据显示文本</li>
+        <li>type - 数据类型</li>
+    </ul>
+    </li>
+    <li><strong>callback</strong> - Function, 参数:( data, dataMap )<br>数据选择完成后, 处理选中数据的函数;<br>不设置simpleReturnData或其值为false时, 接收以数据类型为属性的对象, 属性值为当前类型选中数据;<br>simpleReturnData为true时, 接收<strong>简单数据数组</strong>和<strong>数据映射对象</strong></li>
+</ul>

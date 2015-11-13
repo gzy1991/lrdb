@@ -1,0 +1,14 @@
+{
+    "docTitle" : "This is the title of Document CFLAC",
+	"docFormat" : "doc",
+	"artType" : "民间文艺",
+	"originSys" : "system",
+	"originOrg" : "organization",
+	"themes" : "theme1 theme2 theme3",
+	"docSecret" : "秘密",
+	"timestamp" : "2015-1-10 11:50:10",
+	"docStatus" : "可用",
+	"docSize" : "25KB",
+	"docLanguages" : "中文 English",
+	"docIntro" : "这是文档介绍介绍介绍介绍 This is the introduction introduction introduction~~~"
+}

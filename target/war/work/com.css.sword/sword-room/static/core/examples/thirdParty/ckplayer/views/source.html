@@ -1,0 +1,39 @@
+<h2>网页播放器</h2>
+<hr/>
+<div id="player" class="testPlayer well col-md-12" >
+</div>   
+    <script>
+        require(["CkPlayer"],function(CkPlayer){
+        	function loadedHandler(){
+	        alert('加载已完成')
+	    }
+	    var playswf=getStaticPath()+"/modules/ckplayer6.7/ckplayer/ckplayer.swf";
+	    var flashvars={
+	        f:'http://movie.ks.js.cn/flv/other/1_0.flv',
+	        c:0,
+	        e:0,
+	        h:4,
+	        my_url:encodeURIComponent(window.location.href),
+	        my_title:encodeURIComponent(document.title),
+	        loaded:'loadedHandler',
+	        b:0
+	    };
+	    var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+	    var video=['http://movie.ks.js.cn/flv/other/1_0.mp4->video/mp4'];
+	    CKobject.embed(playswf,'player','ckplayer_a1','100%','100%',true,flashvars,video,params);
+        	
+        });
+        //@ sourceURL=ckplayer_Source.html
+    </script>
+	
+<blockquote>
+    <p>
+        说明：
+    </p>
+    <div class="alert alert-warning">
+        <p>
+            内部示例，项目组可根据需要自行判断。
+        </p>
+    </div>
+</blockquote>
+

@@ -1,0 +1,151 @@
+<div class="sidebar_detail" id="bookEditPanel" style="display:none">
+     <div class="tab-header">
+        <div class="title">
+        	<i class="menu-icon fa fa-book" ></i>图书信息
+        </div>
+        <div class="tool">
+			<button type="button" class="btn btn-default" ng-click=""><i class="menu-icon fa fa-save"></i>&nbsp;保存</button>
+			<button type="button" class="btn btn-default" ng-click=""><i class="menu-icon fa fa-caret-square-o-up"></i>&nbsp;保存并提交</button>
+		</div>
+    </div>
+
+    <div class="single-panel">
+    	<!-- Nav tabs -->
+    	<ul class="nav nav-tabs" role="tablist" style="clear:both">
+        	<!-- tab使用: -->
+        	<li class="active"><a data-target="#baseInfo" role="tab" data-toggle="tab">基本信息</a></li>
+        	<li><a data-target="#bookResource" role="tab" data-toggle="tab">图书资源</a></li>
+    	</ul>
+
+    	<!-- Tab panels -->
+    	<div class="tab-content"> 
+    	  
+        	<div class="tab-pane active" id="baseInfo">        
+			     <div class="form-horizontal">
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>图书名称:</label>
+			     		<div class="col-md-4">
+			     			<input id="BookName" name="BookName" class="form-control" ng-model="book.entity.bookName">
+			     		</div>
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>图书类别:</label>
+			     		<div class="col-md-4">
+			     			<input id="BookType" name="BookType" class="form-control" lar-select="book.bookTypes" lar-search-able="true" lar-multi="true" lar-model="book.entity.bookType">
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label">丛书集:</label>
+			     		<div class="col-md-4">
+			     			<input id="collection" name="collection" class="form-control" lar-select="book.collections" lar-model="book.entity.collection">
+			     		</div>
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>语种:</label>
+			     		<div class="col-md-4">
+			     			<input id="language" name="language" class="form-control" lar-select="book.languages" lar-model="book.entity.language">
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label">关键字:</label>
+			     		<div class="col-md-10">
+			     			<input id="keywords" name="keywords" class="form-control" ng-model="book.entity.keywords">
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>作者:</label>
+			     		<div class="col-md-9">
+			     			<input id="author" name="author" readonly class="form-control" ng-model="book.entity.showAuthorName">
+			     		</div>
+			     		<div class="col-md-1" style="padding-left:5px;">
+			     			<button class="btn btn-default" id="editAuthor" ng-click="book.editAuthor()">编辑</button>
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>出版单位:</label>
+			     		<div class="col-md-9">
+			     			<input id="PublishHouse" name="PublishHouse" readonly class="form-control" ng-model="book.entity.showHouseName">
+			     		</div>
+			     		<div class="col-md-1" style="padding-left:5px;">
+			     			<button class="btn btn-default" id="editPublishHouse" ng-click="book.editPublishHouse()">编辑</button>
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>出版时间:</label>
+			     		<div class="col-md-4">
+			     			<div class="input-group">
+			     				<input id="publishTime" name="publishTime" cs-datetime="" readonly class="form-control" ng-model="book.entity.publishTime">
+			     			</div>
+			     		</div>
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>版次:</label>
+			     		<div class="col-md-4">
+			     			第&nbsp;&nbsp;<input style="width:220px;display:inline;" id="edition" name="edition" class="form-control" ng-model="book.entity.edition">&nbsp;&nbsp;版
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label"><span class="notNull">*</span>ISBN:</label>
+			     		<div class="col-md-4">
+			     			<input id="ISBN" name="ISBN" class="form-control" ng-model="book.entity.isbn">
+			     		</div>
+			     		<label class="col-md-2 control-label">开本:</label>
+			     		<div class="col-md-4">
+			     			<input id="folio" name="folio" class="form-control" lar-select="book.filios" lar-model="book.entity.folio">
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+			     		<label class="col-md-2 control-label">字数:</label>
+			     		<div class="col-md-4">
+			     			<input style="width:230px;display:inline;" id="wordCount" name="wordCount" class="form-control" ng-model="book.entity.wordCount">&nbsp;&nbsp;万字
+			     		</div>
+			     		<label class="col-md-2 control-label">页数:</label>
+			     		<div class="col-md-4">
+			     			<input style="width:240px;display:inline;" id="page" name="page" class="form-control" ng-model="book.entity.page">&nbsp;&nbsp;页
+			     		</div>
+			     	</div>
+			     	<div class="form-group">
+        				<label class="col-md-2 control-label"><span class="notNull">*</span>内容简介:</label>
+        				<div class="col-md-10">
+        					<textarea rows="3" id="introduction" name="introduction"  class="form-control" ng-model="book.entity.introduction"></textarea>
+        				</div>
+        			</div>
+        			<div class="form-group">
+        				<label class="col-md-2 control-label"><span class="notNull">*</span>图书目录:</label>
+        				<div class="col-md-10">
+        					<textarea rows="8" id="catalog" name="catalog"  class="form-control" ng-model="book.entity.catalog"></textarea>
+        				</div>
+        			</div>
+			     </div>
+    		</div>
+    	
+			<div class="tab-pane" id="bookResource">
+				<div class="form-horizontal">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="col-md-2 control-label">封皮:</label>
+							<div class="col-md-10">
+								<div id="bookCover"><input class="form-control"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-2 control-label"></label>
+							<div class="col-md-10">
+								<ul>
+									<li id="preview" class="upload-info-li"></li>
+								</ul>
+							</div>
+						</div>
+						<div class="form-group">
+        					<label class="col-md-2 control-label">精彩插图:</label>
+        					<div class="col-md-10">
+        						<div id="illustration"></div>
+        					</div>
+        				</div>
+						<div class="form-group">
+							<label class="col-md-2 control-label">电子资源:</label>
+							<div class="col-md-10">
+								<div id="eResource"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+   		
+		</div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/css/!svn/ver/1511/lrdb/src/main/webapp/static/app/common/uploader
+END
+settings-uploader.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/css/!svn/ver/1511/lrdb/src/main/webapp/static/app/common/uploader/settings-uploader.js
+END
+single-uploader.js
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/css/!svn/ver/1309/lrdb/src/main/webapp/static/app/common/uploader/single-uploader.js
+END
+multi-uploader.js
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/uploader/multi-uploader.js
+END

@@ -1,0 +1,136 @@
+<style>
+.efficiency-chart {
+	height: 400px;
+	border: 1px solid #e3e3e3;
+}
+
+@media ( max-width : 992px) {
+	.efficiency-chart {
+		height: 350px
+	}
+}
+
+@media ( max-width : 768px) {
+	.efficiency-chart {
+		height: 300px
+	}
+}
+</style>
+<div>
+	<form id="form_processType" class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-1 control-label"
+				for="eficiencyAnalizedProcessType">流程分类：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control"
+					id="eficiencyAnalizedProcessType"
+					name="eficiencyAnalizedProcessType" />
+			</div>
+			<label class="col-sm-1 control-label" for="eficiencyAnalizedYear">统计年度：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="eficiencyAnalizedYear"
+					name="eficiencyAnalizedYear" />
+			</div>
+		</div>
+	</form>
+</div>
+<div role="tabpanel" style="padding: 0">
+
+	<ul class=" nav nav-tabs" role="tablist" id="processEfficiencyTab">
+		<li role="presentation" class="active"><a href="#processMonitor"
+			role="tab" data-toggle="tab">流程整体监控</a></li>
+		<li role="presentation"><a href="#activeMonitor" role="tab"
+			data-toggle="tab">流程环节监控</a></li>
+		<li role="presentation"><a href="#userMonitor" role="tab"
+			data-toggle="tab">处理人效率监控</a></li>
+		<li role="presentation"><a href="#efficiencyConfig" role="tab"
+			data-toggle="tab">基本信息</a></li>
+	</ul>
+	<!-- Tab panes -->
+	<div class="tab-content" id="processEfficiencyTabContent">
+		<div class="tab-pane active" role="tabpanel" id="processMonitor">
+			<div class="row">
+
+				<div class="col-md-6 efficiency-chart" id="processCountContrast">
+					流程发起结束次数对比折线图</div>
+				<div class="col-md-6 efficiency-chart" id="processStatusRatio">
+					流程完结状态比例饼图</div>
+				<div class="col-md-6 efficiency-chart" id="processCosumeTimeTrend">流程耗时趋势折线图</div>
+				<div class="col-md-6" id="processDataGrid">流程总体统计数据表格</div>
+			</div>
+		</div>
+		<div class="tab-pane" role="tabpanel" id="activeMonitor">
+			<div class="row">
+				<div class="col-md-3" id="processDefTreeContainerDiv">
+					<div class="bg-info">
+						<span>流程定义树</span>
+					</div>
+					<div id="processDefTreeDiv" class="ztree"></div>
+				</div>
+				<div class="col-md-9">
+					<div role="tabpanel" style="padding: 0">
+
+						<ul class=" nav nav-tabs" role="tablist" id="activityTabHeaders">
+							<li role="presentation" class="active"><a
+								href="#actConsumeChartTabPanel" role="tab" data-toggle="tab">各环节耗时情况</a></li>
+							<li role="presentation"><a href="#actDetailGridTabPanel"
+								role="tab" data-toggle="tab">各环节办理详细数据</a></li>
+
+						</ul>
+						<!-- Tab panes -->
+						<div class="tab-content" id="activityTabContents">
+							<div class="tab-pane active" role="tabpanel"
+								id="actConsumeChartTabPanel">
+								<div class="col-md-12 efficiency-chart" id="activityConsumeTime">各环节耗时</div>
+								<div class="col-md-4 efficiency-chart" id="oneActivityTimeRatio">单个环节耗时占比</div>
+								<div class="col-md-8 efficiency-chart"  id="oneActivityTrend">单个环节时间趋势</div>
+							</div>
+							<div class="tab-pane" role="tabpanel"
+								id="actDetailGridTabPanel">
+								<div class="col-md-12" id="userActivityDataGrid" >单个流程所有环节所有人处理次数和时间</div>
+								<div class="col-md-12 efficiency-chart" id="oneUserActivityTrend">左键单击上面表格最后一列，可以显示一个人员办理一个环节的时间趋势图</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="tab-pane" role="tabpanel" id="userMonitor">
+			<div class="input-group col-md-6">
+
+				<span class="input-group-btn">
+					<button id="btn_userSearch" class="btn btn-default" type="button"
+						title="点击选择人员">
+						<i class="fa fa-search"></i>
+					</button>
+				</span> <input id="input_userSelect" type="text"
+					class="form-control bg-success" placeholder="请选择用户..." readonly>
+			</div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="userMonitor" class="container-fluid">
+
+							<div class="row">
+								<div class="col-md-12" id="userProcessDataGrid">单击用户选择按钮，选中一个用户，显示此用户全年办理的流程次数和平均时间，单击最后一列，在下方显示这个用户办理流程的时间趋势图</div>
+								<div class="col-md-12 efficiency-chart"" id="oneUserProcessTrend"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" role="tabpanel" id="efficiencyConfig">
+			<div>
+				<button id="initAllDataButton" class="btn btn-default" type="button">重新初始化数据</button>
+				<button id="loadNewDataButton" class="btn btn-default" type="button">处理最新数据</button>
+				<button id="refreshETLStatus" class="btn btn-default" type="button">刷新状态</button>
+			</div>
+			<div class="col-md-12" id="processEfficientyStatusGrid">流程效益分析状态信息</div>
+		</div>
+	</div>
+</div>
+<!-- 模板 -->

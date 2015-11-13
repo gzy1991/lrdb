@@ -1,0 +1,276 @@
+<div style="padding: 10px">
+	<h2>字典管理后台Service示例</h2>
+	<hr/>
+	<div class="well">
+		<div class="row">
+			<h3><span >queryFromRootByCode</span></h3>
+			<blockquote class="col-md-12 bg-danger">
+				<p>
+					url：/sword/sys/dict/queryFromRootByCode
+				</p>
+				<p>
+					resumes：该方法只针对ParentID为ROOT的根节点，根据code查询节点及其一级子节点（或者整棵树）的列表
+				</p>
+				<p>
+					parameters：String code  传入的code，根据code查询指定节点和其下子节点，为空则返回查询失败 <br/>
+							   boolean queryAllTree	可不传，内置默认为false，查询一级子节点，若为true，则查询整棵树
+				</p>
+				<p>
+					remarks: 该方法只针对simple字典，即只有一层叶子节点的树状字典。
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryDictTreeByRootCode</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryDictTreeByRootCode
+				</p>
+				<p>
+					resumes：根据rootCode查询一棵树，无论纵深。
+				</p>
+				<p>
+					parameters：String rootCode  标记一颗树的专用字段，值为一棵树根节点的id的值。如果为空，则查询字典表全部数据
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>querySubDictList</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/querySubDictList
+				</p>
+				<p>
+					resumes：根据parentId查询下一级子节点。
+				</p>
+				<p>
+					parameters：String parentId  父节点的id，为空时查询所有根节点
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryCurAndSubDictList</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryCurAndSubDictList
+				</p>
+				<p>
+					resumes：根据传入uuid，查询id或parentId等于uuid的所有字典项列表，即返回当前节点及其一级子节点。
+				</p>
+				<p>
+					parameters：String uuid  传入的id或parentId，为空时返回查询失败 <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryDictItemById</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryDictItemById
+				</p>
+				<p>
+					resumes：根据传入id，查询对应的节点。
+				</p>
+				<p>
+					parameters：String id  传入的id，为空时返回查询失败
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>saveOrUpdateDictItem</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/saveOrUpdateDictItem
+				</p>
+				<p>
+					resumes：保存或更新字典项。
+				</p>
+				<p>
+					parameters：PdWebDictionary dictItem  传入的对象判断保存或更新
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>deleteDictItems</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/deleteDictItems
+				</p>
+				<p>
+					resumes：删除指定父节点下选中的字典项。
+				</p>
+				<p>
+					parameters：String parentId  待删除节点的父节点id <br/>
+					String ids	需要删除的字典项的id序列，以逗号分隔 <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>validateDictItem</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/validateDictItem
+				</p>
+				<p>
+					resumes：验证指定节点的code或name在同一父节点下是否重复。验证通过则返回true
+				</p>
+				<p>
+					parameters：String parentId  待验证节点的父节点id <br/>
+					String id	待验证节点的id <br/>
+					String dictName/dictCode	待验证节点的name或code <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	
+	<div class="well">
+		<div class="row">
+			<h3>validateDictClassification</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/validateDictClassification
+				</p>
+				<p>
+					resumes：验证根节点的classification在同级节点中是否重复。验证通过则返回true
+				</p>
+				<p>
+					parameters：String dictClassification  待验证节点的业务分类编码 <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+
+	<div class="well">
+		<div class="row">
+			<h3>queryByClassifications</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryByClassifications
+				</p>
+				<p>
+					resumes：根据多个树的分类名称查询多棵树，以map的形式返回
+				</p>
+				<p>
+					parameters：String classifications  多棵树的业务分类编码，以英文逗号分隔 <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryByCode<span>*</span></h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryByCode
+				</p>
+				<p>
+					resumes：根据某个树的分类名称查询指定code的字典项
+				</p>
+				<p>
+					parameters： <br/>
+					String dictClassification  指定树的业务分类编码 <br/>
+					String selfCode  指定节点的code <br/>
+					boolean queryChildren  是否查询子节点，不传则默认false <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryByCodes</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryByCodes
+				</p>
+				<p>
+					resumes：根据某个树的分类名称查询指定一组code对应的多个字典项，以Map返回
+				</p>
+				<p>
+					parameters： <br/>
+					String dictClassification  指定树的业务分类编码 <br/>
+					String codeArray  指定的多个节点的code，以英文逗号分隔 <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryByCodeAndParent<span>*</span></h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryByCodeAndParent
+				</p>
+				<p>
+					resumes：根据某个树的分类名称查询指定父code下的指定code对应的字典项
+				</p>
+				<p>
+					parameters： <br/>
+					String dictClassification  指定树的业务分类编码 <br/>
+					String parentCode  指定节点的父节点code <br/>
+					String selfCode  指定节点的code <br/>
+					boolean queryChildren  是否查询子节点，不传则默认false <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryByCodeAndRemarks<span>*</span></h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryByCodeAndRemarks
+				</p>
+				<p>
+					resumes：根据某个树的分类名称查询指定remarks的指定code对应的字典项
+				</p>
+				<p>
+					parameters： <br/>
+					String dictClassification  指定树的业务分类编码 <br/>
+					String remarks  指定的remarks值 <br/>
+					String selfCode  指定节点的code <br/>
+					boolean queryChildren  是否查询子节点，不传则默认false <br/>
+				</p>
+			</blockquote>
+		</div>
+	</div>
+
+
+	<div class="well">
+		<div class="row">
+			<h3>注意：</h3>
+			<blockquote class="col-md-12 bg-danger">
+				<p>
+					标识<span>*</span>的Service所查询的指定classification内的code的唯一性由业务保证，
+					若这些service查询返回结果不唯一，则默认取第一个匹配的code返回。
+				</p>
+			</blockquote>
+		</div>
+	</div>
+
+	<script>
+		// require(function(){
+		// });
+		// @ sourceURL=floatTouch_Source.html
+	</script>
+
+	<script id="_wau35z">var _wau = _wau || []; _wau.push(["small", "wcol13vtzezf", "35z"]);
+	(function() {var s=document.createElement("script"); s.async=true;
+		s.src="http://widgets.amung.us/small.js";
+		document.getElementsByTagName("head")[0].appendChild(s);
+	})();</script>
+
+</div>

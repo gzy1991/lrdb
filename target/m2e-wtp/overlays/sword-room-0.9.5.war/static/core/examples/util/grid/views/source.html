@@ -1,0 +1,40 @@
+<h2>Grid样例</h2>
+<div id="DemoGirdDivId"></div>
+<!-- javascript -->
+<script type="text/javascript">
+    //数据
+    require(["PDUtilDir/grid"], function(Grid){
+        //初始化
+        Grid({
+            id:"DemoGirdDivId",
+            pageSize:5,
+            title:'人员信息列表',
+            index:true,
+            multi:true,
+            pagination : true,
+            cache:false,
+            layout:[
+                {name:"姓名",field:"Name",sort:true,click:function(e){
+                    data = e.data;console.log(data);
+                }},
+                {name:"性别",field:"Sex",sort:true},
+                {name:"电话",field:"Phone",width:"10%"},
+                {name:"邮件",field:"Email"},
+                {name:"地址",field:"Address",format:function(obj){console.log(obj);return "BJ"}}
+            ],
+            toolbar:[
+                {name:"添加",icon:"fa fa-plus-circle",callback:function(event){console.log('添加')}},
+                {name:"删除",icon:"fa fa-trash-o",callback:function(event){console.log('删除')}},
+                {name:"导出",icon:"fa fa-download",callback:function(event){console.log('导出')}}
+            ],
+            data:[
+                {Name:"aslx",Sex:"男",Phone:"123456",Email:"",Address:"BJ"},
+                {Name:"bsekj",Sex:"女",Phone:"123456",Email:"",Address:"BJ"},
+                {Name:"dsfs",Sex:"男",Phone:"123456",Email:"",Address:"BJ"},
+                {Name:"cdsefs",Sex:"女",Phone:"123456",Email:"",Address:"BJ"},
+                {Name:"akje",Sex:"男",Phone:"123456",Email:"",Address:"BJ"},
+                {Name:"aadd",Sex:"男",Phone:"123456",Email:"",Address:"BJ"}
+            ]
+        });
+    })
+</script>

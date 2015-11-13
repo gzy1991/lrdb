@@ -1,0 +1,155 @@
+<div style="padding: 10px">
+	<h2>字典管理后台Service示例</h2>
+	<hr/>
+	<div class="well">
+		<div class="row">
+			<h3><span >queryFromRootByCode</span></h3>
+			<blockquote class="col-md-12 bg-danger">
+				<p>
+					url：/sword/sys/dict/queryFromRootByCode
+				</p>
+				<p>
+					resumes：该方法只针对ParentID为ROOT的根节点，根据code查询节点及其一级子节点（或者整棵树）的列表
+				</p>
+				<p>
+					parameters：String code  传入的code，根据code查询指定节点和其下子节点，为空则返回查询失败 <br/>
+							   boolean queryAllTree	可不传，内置默认为false，查询一级子节点，若为true，则查询整棵树
+				</p>
+				<p>
+					remarks: 该方法只针对simple字典，即只有一层叶子节点的树状字典。
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryDictTreeByRootCode</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryDictTreeByRootCode
+				</p>
+				<p>
+					resumes：根据rootCode查询一棵树，无论纵深。
+				</p>
+				<p>
+					parameters：String rootCode  标记一颗树的专用字段，值为一棵树根节点的id的值。如果为空，则查询字典表全部数据
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>querySubDictList</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/querySubDictList
+				</p>
+				<p>
+					resumes：根据parentId查询下一级子节点。
+				</p>
+				<p>
+					parameters：String parentId  父节点的id，为空时查询所有根节点
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryCurAndSubDictList</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryCurAndSubDictList
+				</p>
+				<p>
+					resumes：根据传入uuid，查询id或parentId等于uuid的所有字典项列表，即返回当前节点及其一级子节点。
+				</p>
+				<p>
+					parameters：String uuid  传入的id或parentId，为空时返回查询失败
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>queryDictItemById</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/queryDictItemById
+				</p>
+				<p>
+					resumes：根据传入id，查询对应的节点。
+				</p>
+				<p>
+					parameters：String id  传入的id，为空时返回查询失败
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>saveOrUpdateDictItem</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/saveOrUpdateDictItem
+				</p>
+				<p>
+					resumes：保存或更新字典项。
+				</p>
+				<p>
+					parameters：PdWebDictionary dictItem  传入的对象判断保存或更新
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>deleteDictItems</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/deleteDictItems
+				</p>
+				<p>
+					resumes：删除指定父节点下选中的字典项。
+				</p>
+				<p>
+					parameters：String parentId  待删除节点的父节点id
+					String ids	需要删除的字典项的id序列，以逗号分隔
+				</p>
+			</blockquote>
+		</div>
+	</div>
+	<div class="well">
+		<div class="row">
+			<h3>validateDictItem</h3>
+			<blockquote class="col-md-12">
+				<p>
+					url：/sword/sys/dict/validateDictItem
+				</p>
+				<p>
+					resumes：验证指定节点的code或name在同一父节点下是否重复。验证通过则返回true
+				</p>
+				<p>
+					parameters：String parentId  待验证节点的父节点id
+					String id	待验证节点的id
+					String dictName/dictCode	待验证节点的name或code
+				</p>
+			</blockquote>
+		</div>
+	</div>
+
+
+
+
+	<script>
+		// require(function(){
+		// });
+		// @ sourceURL=floatTouch_Source.html
+	</script>
+
+	<script id="_wau35z">var _wau = _wau || []; _wau.push(["small", "wcol13vtzezf", "35z"]);
+	(function() {var s=document.createElement("script"); s.async=true;
+		s.src="http://widgets.amung.us/small.js";
+		document.getElementsByTagName("head")[0].appendChild(s);
+	})();</script>
+
+</div>

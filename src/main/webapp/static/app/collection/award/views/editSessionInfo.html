@@ -1,0 +1,22 @@
+<div class="form-horizontal">
+	<div class="form-group"  ng-repeat="obj in session.sessionInfo">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>奖节名称:</label>
+		<div class="col-md-4">
+			<input id="sessionName{{$index}}" name="sessionName{{$index}}" class="form-control" lar-select="session.awards" lar-search-able="true" lar-model="obj.awardCode"> 
+		</div>
+		<label class="col-md-1 control-label"><span class="notNull">*</span>年度:</label>
+		<div class="col-md-2">
+			<div class="input-group">
+				<input id="sessionYear{{$index}}" name="sessionYear{{$index}}" cs-datetime="{startView:4,format:'yyyy',minView:4}" class="form-control" ng-model="obj.awardYear">
+			</div>
+		</div>
+		<label class="col-md-1 control-label"><span class="notNull">*</span>届次:</label>
+		<div class="col-md-1" style="padding-right:0;">
+			<input id="period{{$index}}" name="period{{$index}}" class="form-control" ng-model="obj.awardYearTh" style="padding-left:5px;padding-right:3px;">
+		</div>
+		<div class="col-md-1" style="padding-top:7px;">
+			<a ng-click="session.addSession($index)"><i class="fa fa-plus"></i></a>
+			<a ng-click="session.delSession($index)"><i class="fa fa-minus"></i></a>
+		</div>
+	</div>
+</div>

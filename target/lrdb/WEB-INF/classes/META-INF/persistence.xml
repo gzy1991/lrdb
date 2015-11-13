@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="lrdb">
+
+		<class>cn.org.cflac.lardb.collection.award.entity.TAwardCourseEntity</class>
+		<class>cn.org.cflac.lardb.collection.award.entity.TAwardInfoEntity</class>
+		<class>cn.org.cflac.lardb.collection.award.entity.TAwardIntroductionEntity</class>
+		<class>cn.org.cflac.lardb.collection.award.entity.TAwardUnitEntity</class>
+
+		<class>cn.org.cflac.lardb.collection.classics.periodical.entity.TPeriodicalInfoEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.periodical.entity.TPeriodicaUnitEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.periodical.entity.TPeriodicalColumntreeEntity</class>
+		
+		<class>cn.org.cflac.lardb.collection.classics.stagePeriodical.entity.TStageArtistlUnitEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.stagePeriodical.entity.TStagePeriodicalArticleInfoEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.stagePeriodical.entity.TStagePeriodicalColumntreeEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.stagePeriodical.entity.TStagePeriodicalInfoEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.stagePeriodical.entity.TStageperiodicalPhotocollectionEntity</class>
+		<class>cn.org.cflac.lardb.collection.classics.stagePeriodical.entity.TStagePeriodicalResourceEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TWinnersOpusRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TWinnersOrgRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TWinnersStaffRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThActivityRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThAwardRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThCommentRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThInfoEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThJudgeEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThNewsRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThOpusEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThOpusGroupingEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThOthersRelEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThScheduleEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThScheduleGroupingEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThUnitEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThWinnersEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThWinnersGroupingEntity</class>
+		<class>cn.org.cflac.lardb.collection.session.entity.TYearThAwardEntity</class>
+
+	</persistence-unit>
+</persistence>

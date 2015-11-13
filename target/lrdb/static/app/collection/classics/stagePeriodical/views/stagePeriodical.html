@@ -1,0 +1,32 @@
+<div id="searchConditions" class="col-md-12 form-horizontal "  lar-search-block="" >
+	<div class="form-group">
+		<label class="col-md-1 control-label" for="queryStaPerName">期刊名称:</label>
+		<div class="col-md-5">
+			<input type="text" class="form-control" id="queryStaPerName" ng-model = "stagePeriodical.query.conditions.queryStaPerName">
+		</div>
+		<label class="col-md-1 control-label" for="queryStaPerStage">期&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数:</label>
+		<div class="col-md-5">
+			<!--<input type="text" class="form-control" id="queryStaPerStage" ng-model = "stagePeriodical.query.conditions.queryStaPerStage" />-->
+			<input type="text" class="form-control" id="queryStaPerStage" ng-model="stagePeriodical.query.conditions.queryStaPerStage"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-1 control-label" for="queryPerType">期刊类别:</label>
+		<div class="col-md-5">
+			<input type="text" class="form-control" id="queryPerType" lar-select="stagePeriodical.query.list.queryPerTypes" lar-option="--请选择--" lar-model = "stagePeriodical.query.conditions.queryPerType" />
+		</div>
+		<label class="col-md-1 control-label" for="queryStaPerPeryear">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份:</label>
+		<div class="col-md-5">
+			<div class="input-group">
+				<input type="text" class="form-control" id="queryStaPerPerYear" readonly="true" cs-Datetime="{startView:4,minView:4,format:'yyyy'}" ng-model="stagePeriodical.query.conditions.queryStaPerPerYear">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+	<div id="stagePeriodicalList"></div>
+</div>
+<!-- 侧边弹出栏面板 -->
+<!--<div>
+	&lt;!&ndash;<div ng-include src="stagePeriodical.template.periodicalStageEdit"></div>&ndash;&gt;
+</div>-->

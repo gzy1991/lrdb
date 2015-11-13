@@ -1,0 +1,7 @@
+@charset "utf-8";
+
+/* 头部 */
+#navbar{
+	background:url(../../image/gray_bg.jpg) repeat-x;
+	background-color: #90a4b4;	
+}

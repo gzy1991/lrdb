@@ -1,0 +1,35 @@
+<h2>侧边栏样例</h2>
+<hr/>
+<!--------------------------以下是调用代码-------------------------->
+<!-- html -->
+<div class="alert alert-info" role="alert">
+    <button id="btnUrl" class="btn btn-success">By Url</button>
+    <button id="btnId" class="btn btn-success">By Id</button>
+</div>
+<div id="slidebarId" style="display:none;">
+	示例-id
+</div>
+<!-- javascript -->
+<script type="text/javascript">
+    //加载远程url事例
+    $("#btnUrl").on("click", function(){
+	    require(["PDUtilDir/slidebar"], function(Slidebar){
+        	var slidebar = Slidebar({
+        		url : getServer() + "/static/core/examples/util/slidebar/views/template.html",
+        		close:true,
+        		afterLoad : function($Panel) {
+        			console.log("模板加载完成，可以使用了");
+        		}
+        	})
+    	})
+    });
+    //加载页面中存在的id
+    $("#btnId").on("click", function(){
+	    require(["PDUtilDir/slidebar"], function(Slidebar){
+        	var slidebar = Slidebar({
+        		id : "slidebarId",
+        		close:true
+        	})
+    	})
+    });
+</script>

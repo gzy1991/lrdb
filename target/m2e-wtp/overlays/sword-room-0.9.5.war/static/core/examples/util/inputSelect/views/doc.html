@@ -1,0 +1,49 @@
+<h2 id="-">功能说明</h2>
+<p>通过下拉框形式选择数据, 具体功能如下:</p>
+<ol>
+    <li>支持单选/多选功能</li>
+    <li>多选时, 支持直接在input框上删除单个选项</li>
+    <li>支持已选数据初始化</li>
+    <li>支持对待选数据的文本检索功能</li>
+</ol>
+<h2 id="api">API</h2>
+<h3 id="-">公共函数</h3>
+<p><strong>InputSelect.getInput( id )</strong>  </p>
+<blockquote>
+    <p>获取指定id的inputSelect实例</p>
+</blockquote>
+<h3 id="-">对象函数</h3>
+<p><strong>inputObj.refreshPanel( objArray )</strong>  </p>
+<blockquote>
+    <p>接收数据对象数组, 动态刷新Panel面板数据</p>
+</blockquote>
+<p><strong>inputObj.dataInit( idArray )</strong> </p>
+<blockquote>
+    <p>接收数据ID数组, 动态设置当前选中数据</p>
+</blockquote>
+<p><strong>inputObj.getCurrentData()</strong>   </p>
+<blockquote>
+    <p>获取当前组件选中数据</p>
+</blockquote>
+<h2 id="-">参数列表</h2>
+<ul>
+    <li><strong>id</strong> - String<br>必填, 定位页面元素锚点, 组件实例的唯一标示</li>
+    <li><strong>multi</strong> - Boolean, 默认值:false<br>设置选择模式, 单选/多选</li>
+    <li><strong>searchAble</strong> - Boolean, 默认值:false<br>是否启用文本搜索功能</li>
+    <li><strong>simpleData</strong> - Boolean<br>是否启用简单数据结构, 启用时应在key中配置pid&amp;rootId</li>
+    <li><strong>key</strong> - Object<br>前后端数据字段转换, 属性对应字段含义如下:<ul>
+        <li>id - 数据ID</li>
+        <li>pid - 数据父节点ID (simpleData为true时生效, 且必填)</li>
+        <li>rootId - 数据根节点ID (simpleData为true时生效, 默认为root)</li>
+        <li>name - 数据显示文本</li>
+        <li>data - 数据子节点对象数组 (simpleData未设置或值为false时生效, 表示树形数据结构的层级关系)</li>
+    </ul>
+    </li>
+    <li><strong>data</strong> - String|Array<br>设置组件数据源, 有两种类型:  <ul>
+        <li>String : 远程数据源地址(URL)</li>
+        <li>Array : 前端数据对象数组</li>
+    </ul>
+    </li>
+    <li><strong>initData</strong> - Array (不推荐使用, 已由对象函数dataInit替代)<br>设置初始化时选中数据的id数组</li>
+    <li><strong>callback</strong> - Function, 参数:(idArray,objArray)<br>选中数据改变时, 执行的回调函数, 接收参数为选中数据的<strong>ID数组</strong>和<strong>数据对象数组</strong></li>
+</ul>

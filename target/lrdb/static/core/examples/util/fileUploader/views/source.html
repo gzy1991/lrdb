@@ -1,0 +1,65 @@
+<h2>附件上传</h2>
+<hr/>
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="col-md-2 col-sm-2 control-label">单附件</label>
+                <div class="col-md-10 col-sm-10" id="singleFileUpload">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label class="col-md-2 col-sm-2 control-label">多附件</label>
+                <div class="col-md-10 col-sm-10" id="multiFileUpload">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        require(['PDUtilDir/fileupload/singleFileUpload'],function(SFU){
+            var settings = {
+                placeAt:"singleFileUpload",
+                //只允许上传图片
+                accept: {
+                    title: 'Images',
+                    extensions: 'gif,jpg,jpeg,bmp,png',
+                    mimeTypes: 'image/*'
+                },
+                /*//只允许上传excel
+                accept: {
+                    title: 'excel',
+                    extensions: 'xls,xlsx'
+                },*/
+                //data:"fe2499ad9be69f048c16da19108e2ec4",
+                onDeletedFile:function(file){
+                    //console.log(file)
+                },
+                onUploadedFile:function(file){
+                    //console.log(file);
+                }
+            };
+            SFU.init(settings);
+        });
+        require(['PDUtilDir/fileupload/multiFileUpload'],function(MFU){
+            var settings = {
+                placeAt:"multiFileUpload",
+                //data:["5a50d697c0af806aa01e06120d04f977","6c01e4492f264befab4c0532811f8dff"],
+                onDeletedFile:function(file,savedFilesId){
+                    //console.log(file)
+                },
+                onUploadedFile:function(file,savedFilesId){
+                    //console.log(file)
+                }
+            };
+            MFU.init(settings);
+        });
+    </script>
+</div>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="DevelopTemp">
+		<class>com.css.sword.common.org.entity.OrgDept</class>
+		<class>com.css.sword.common.org.entity.OrgDeptGw</class>
+		<class>com.css.sword.common.org.entity.OrgDeptGwUser</class>
+		<class>com.css.sword.common.org.entity.OrgDeptUser</class>
+		<class>com.css.sword.common.org.entity.OrgGw</class>
+		<class>com.css.sword.common.org.entity.OrgRole</class>
+		<class>com.css.sword.common.org.entity.OrgRoleDir</class>
+		<class>com.css.sword.common.org.entity.OrgRoleUser</class>
+		<class>com.css.sword.common.org.entity.OrgUser</class>
+		<class>com.css.sword.common.org.entity.OrgZw</class>
+		<class>com.css.sword.common.org.entity.OrgCertification</class>
+		<class>com.css.sword.common.org.entity.OrgConfig</class>
+		<class>com.css.sword.common.org.entity.OrgLog</class>
+		<class>com.css.sword.common.shortcut.entity.PdWebShortcut</class>
+		<class>com.css.sword.common.worktime.entity.PdWkWeekend</class>
+		<class>com.css.sword.common.worktime.entity.PdWkWorkhour</class>
+		<class>com.css.sword.common.worktime.entity.PdWkHoliday</class>
+		<class>com.css.sword.common.worktime.entity.PdWkHolidayDay</class>
+		<class>com.css.sword.common.worktime.entity.PdWkAssign</class>
+		<class>com.css.sword.common.worktime.entity.PdWkAssignDay</class>
+		<class>com.css.sword.common.fileupload.entity.PdWebFileupload</class>
+		<class>com.css.sword.common.fileupload.entity.PdWebFileuploadChunk</class>
+		<class>com.css.sword.common.fileupload.entity.PdWebFileuploadConfig</class>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* CSS Document */
+/* CSS 全局样式 */
+body{ margin:0; padding:0; font-size:13px; color:#333333; font-family:"Microsoft yahei";}
+h1,h2,h3,h4,h5,p,ul,ol,li{ margin:0; padding:0;}
+ul,ol{
+	list-style:none;
+}
+img{ border:none; vertical-align:top;}
+.clear{ clear:both;}
+a{ font-size:13px;text-decoration:none;}
+a:hover{text-decoration:none;}
+
+/* 布局 */
+.sidebar,.main,.tools{
+	position: fixed;
+	z-index: 5;
+}
+.header{
+	position:fixed;
+	z-index: 10;
+}
+
+/* icon 样式 */
+.icon{background:url(../images/icons.png) no-repeat;}
+.icon span{}
+.icon.icon-task{background-position:0 -50px;}
+.icon.icon-message{background-position:-50px -100px;}
+.icon.icon-mail{background-position:-100px -100px;}
+.icon.icon-logout{background-position: -150px -44px;}
+
+/* 头部 */
+.header{
+	top: 0;
+	left: 0;
+	right: 0;
+	height:50px;
+	/* background:url(../images/bg_header.png) repeat-x; */
+	background-color: #46c3ea;	
+	zoom:1;
+	overflow:hidden;
+}
+.header .logo{
+	float: left;
+	height: 50px;
+	width: 300px;
+	background: url(../images/logo.png) no-repeat;
+	background-position: 0 center;
+	margin-left: 10px;
+}
+.header .shop,.header .user{
+	float: right;
+}
+.header .shop{
+    margin-top:10px;
+    margin-right:10px;
+    margin-left: 25px;
+}
+.header .shop a{
+	position:relative;
+}
+.header .shop a span{
+	width:21px;
+	height:14px;
+	text-align:center;
+	line-height:14px;
+	position:absolute;
+	right:0;
+}
+.header .shop .icon{
+	width:36px;
+	height:27px;
+	float:left;
+	margin-left:15px;
+	color:#ffffff;
+	font-size:10px;
+}
+.header .user{
+	color: #fff;
+    margin-top: 12px;
+    position: relative;
+    padding: 4px;
+    /* border:1px solid #999; */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+.user .user-select span{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 5px;
+}
+.user .user-select .user-select-name{
+    font-size: 12px;
+}
+.user .user-select .user-select-trigger{
+    width: 15px;
+    height: 15px;
+    /* border-left: 1px solid #333; */
+    cursor: pointer;
+    background: url(../images/icons.png) no-repeat;
+    background-position: -100px 5px;
+}
+
+/* ------------------------左侧样式 */
+.sidebar{
+	width:200px;
+	position: fixed;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	background-color:#f6f6f6;
+	border-right: 1px solid #eaeaea;
+}
+.sidebar-wrap {
+	position: absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right: 0;
+	overflow-x: hidden;
+	overflow-y: auto; 
+}
+
+/* ------------------------右侧样式 */
+.main{
+	top: 50px;
+	left: 200px;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+
+/* fold 样式 */
+.sidebar.menu-min + .main{
+	left: 43px;
+}
+
+/* 状态栏 */	
+.main .status{
+	position: absolute;
+	z-index: 5;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 0 5px;
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #d7d7d7;
+    border-top: 1px solid #d7d7d7;
+	background-color: #f8f8f8;
+	color:#7a7a7a;
+}
+.main .page{
+	position: absolute;
+	top: 40px;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+}
+.ace-icon-arrow{
+	background-color: #46c3ea !important;
+	border:0 none !important;
+	color: #fff !important;
+}
+/* 工具栏 */
+/*
+.tools{
+	position: fixed;
+	z-index: 10;
+	right: 0px;
+	top: 50px;
+	bottom: 0px;
+	background-color:#f8f8f8;
+	border-left:1px solid #d7d7d7;
+    border-top:1px solid #d7d7d7;
+}
+.tool{
+	display:block;
+	padding:10px;
+}
+.ico_tools{
+	width:18px;
+	height:18px;
+	background:url(../images/icons.png) no-repeat;
+	background-position:-100px -200px;
+	margin:0 auto;
+	display:block;
+}
+*/

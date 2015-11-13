@@ -1,0 +1,99 @@
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司-->
+
+<!--   
+     告警设置的设置
+  @author YaoGuanhong
+  @创建时间 2015年8月19日 上午9:43
+  @History 修订历史<br> -->
+<div class="tab-header">
+	<div class="title">
+		<i class="fa fa-info-circle"> </i>
+	</div>
+	<div class="tool">
+		<button type="button" class="btn btn-default" id="saveAlarmSetting">
+			<i class="fa fa-save">保存设置</i>
+		</button>
+	</div>
+</div>
+<style>
+#form_menu .mb15 {
+	margin-bottom: 15px;
+}
+
+#form_menu .mt15 {
+	margin-top: 15px;
+}
+
+#form_menu .fs18 {
+	font-size: 18px;
+}
+</style>
+<div class="single-panel">
+	<form id="monitor_alarm_setting" class="form-horizontal">
+		<fieldset>
+			<legend class="mb15 mt15 fs18 text-primary">告警信息设置</legend>
+			<div class=" form-group ">
+				<label class="col-md-3 control-label" id="conditionName"
+					for="alarm_operator"></label>
+				<div class="col-md-5">
+					<select class=" form-control" id="alarm_operator"
+						name="alarm_operator" readonly="readonly" >
+						<option value="BIG" selected="selected">大于</option>
+						<option value="EQUAL">等于</option>
+						<option value="LESS">小于</option>
+					</select>
+				</div>
+				<label type="hidden" id="thresholdLable"
+					for="threshold"></label>
+				<div class="col-md-3">
+					<input class=" form-control" placeholder="请输入报警临界值" type="text"
+						id="threshold">
+				</div>
+				<label class="col-md-1 control-label" >%</label>
+			</div>
+			<!-- 是否开启报警 -->
+			<div class="form-group">
+				<label class="col-md-3 control-label" for="alarm_enable">是否开启告警</label>
+				<div class="col-md-9">
+					<label class="radio-inline"> <input type="radio"
+						name="alarmEnable" id="alarm_enable" value="Y">开启
+					</label> <label class="radio-inline"> <input type="radio"
+						name="alarmEnable" id="alarm_enable" value="N">关闭
+					</label>
+				</div>
+			</div>
+			<!--告警消息设置  -->
+			<div class=" form-group">
+				<label class="  col-md-3 control-label" for="alarm_message">告警消息</label>
+				<div class="col-md-9">
+					<textarea id="alarm_message" readonly="readonly" style="heigth:200px" class=" form-control"  placeholder="请输入报警消息（正在开发...）"></textarea>
+				</div>
+			</div>
+
+
+		</fieldset>
+		<fieldset>
+			<legend class="mb15 mt15 fs18 text-primary">告警方式列表</legend>
+			<!--告警方式设置  -->
+			<div class=" form-group">
+				<label class="col-md-3 control-label" for="way">告警方式</label>
+				<div class="col-md-6">
+					<select class=" form-control" id="currentWay" name="way">
+						<option value="SMS">通过短信</option>
+						<option value="MAIL">发送邮件</option>
+					</select>
+				</div>
+				<div class="col-md-3">
+					<button type="button" class=" btn btn-default" id="setWay">
+						<i class="fa fa-plus-square">添加</i>
+					</button>
+				</div>
+			</div>
+			<!-- 告警方式表格 -->
+			<div id="haveWays" class="col-xs-12"
+				style="padding-right: 0; padding-top: 10px"></div>
+
+		</fieldset>
+	</form>
+</div>

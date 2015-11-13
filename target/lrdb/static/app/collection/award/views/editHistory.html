@@ -1,0 +1,28 @@
+<div class="form-horizontal">
+	<div class="col-md-12">
+		<div class="form-group">
+			<label class="col-md-2 control-label"><span class="notNull">*</span>年:</label>
+			<div class="col-md-4">
+				<div class="input-group">
+					<input id="dateTimeYear" name="dateTimeYear" readonly class="form-control" cs-datetime="{startView:'4',format:'yyyy',minView:'4'}" ng-model="award.history.timeYear">
+				</div>
+			</div>
+			<label class="col-md-2 control-label">月:</label>
+			<div class="col-md-4">
+				<input id="dateTimeMonth" name="dateTimeMonth" class="form-control" lar-select="award.months" lar-model="award.history.timeMonth">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-2 control-label"><span class="notNull">*</span>标题:</label>
+			<div class="col-md-10">
+				<input id="historyTitle" name="historyTitle" class="form-control" ng-model="award.history.courseTitle">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-2 control-label"><span class="notNull">*</span>备注:</label>
+			<div class="col-md-10">
+				<textarea id="historyMark" name="historyMark" rows="5" class="form-control" ng-model="award.history.courseRemark"></textarea>
+			</div>
+		</div>
+	</div>
+</div>

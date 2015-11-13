@@ -1,0 +1,174 @@
+<div id="articleEditPanel">
+	<div class="tab-header">
+		<div class="title">
+			<i class="fa fa-bars"></i><span class="file-detail-span" class="file-detail-span">添加文章</span>
+		</div>
+		<div class="tool">
+			<button id="btn_resSort_get" class="btn btn-default" ng-show="periodical.show"
+					ng-click="periodical.toggleShow()"><i class="menu-icon fa fa-save"></i>保存
+			</button>
+		</div>
+	</div>
+	<div class="single-panel">
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist" style="clear:both">
+			<li class="active"><a data-target="#articeDetailInfo" role="tab" data-toggle="tab">基本信息</a></li>
+			<li ><a data-target="#articleCom" role="tab" data-toggle="tab">文章内容</a></li>
+			<li ><a data-target="#picCol" role="tab" data-toggle="tab">图片集</a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div id="articeDetailInfo" class="tab-pane active">
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="articleTitle" class="col-md-2 control-label"> <span class="notNull">*</span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</label>
+						<div class="col-md-10">
+							<input id="articleTitle" type="text"
+								   class="form-control" ng-model="article.entity.articleTitle">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="articleDeputyTitle" class="col-md-2 control-label">副&nbsp;标&nbsp;题：</label>
+						<div class="col-md-10">
+							<input id="articleDeputyTitle" type="text"
+								   class="form-control" ng-model="article.entity.articleDeputyTitle">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="author" class="col-md-2 control-label"> 作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：</label>
+						<div class="col-md-2">
+							<input id="author" type="text"
+								   class="form-control" ng-model="article.entity.author">
+						</div>
+						<label for="authorUnits" class="col-md-2 control-label"> 作者单位：</label>
+						<div class="col-md-4">
+							<input id="authorUnits" type="text"
+								   class="form-control" ng-model="article.entity.authorUnits">
+						</div>
+						<div class="col-md-2" style="position:absolute;right:40px;top:4px;">
+							<a id="" class="table-add">
+								<i class="fa fa-plus-circle" ng-click="article.addArtAuthor()">添加</i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="artAuthorDiv" ng-repeat="artAuthor in article.artAuthors">
+					<div class="col-md-12 form-horizontal">
+						<div class="form-group">
+							<label for="author" class="col-md-2 control-label"></label>
+							<div class="col-md-2">
+								<input type="text"
+									   class="form-control" ng-model="article.artAuthors[$index].author">
+							</div>
+							<label for="authorUnits" class="col-md-2 control-label"></label>
+							<div class="col-md-4">
+								<input id="" type="text"
+									   class="form-control" ng-model="article.artAuthors[$index].authorUnits">
+							</div>
+							<div class="col-md-2" style="position:absolute;right:40px;top:4px;">
+								<a id="" class="table-add">
+									<i class="fa fa-minus-circle" ng-click="article.delArtAuthor(artAuthor,$index)">删除</i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="translator" class="col-md-2 control-label"> 译&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：</label>
+						<div class="col-md-2">
+							<input id="translator" type="text"
+								   class="form-control" ng-model="article.entity.translator">
+						</div>
+						<label for="translatorUnits" class="col-md-2 control-label"> 译者单位：</label>
+						<div class="col-md-4">
+							<input id="translatorUnits" type="text"
+								   class="form-control" ng-model="article.entity.translatorUnits">
+						</div>
+						<div class="col-md-2" style="position:absolute;right:40px;top:4px;">
+							<a id="" class="table-add">
+								<i class="fa fa-plus-circle" ng-click="article.addArtTranslator()">添加</i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div id="artTranslatorDiv" ng-repeat="artTranslator in article.artTranslators">
+					<div class="col-md-12 form-horizontal">
+						<div class="form-group">
+							<label for="translator" class="col-md-2 control-label"></label>
+							<div class="col-md-2">
+								<input type="text"
+									   class="form-control" ng-model="article.artTranslators[$index].translator">
+							</div>
+							<label for="translatorUnits" class="col-md-2 control-label"></label>
+							<div class="col-md-4">
+								<input  type="text"
+									   class="form-control" ng-model="article.artTranslators[$index].translatorUnits">
+							</div>
+							<div class="col-md-2" style="position:absolute;right:40px;top:4px;">
+								<a id="" class="table-add">
+									<i class="fa fa-minus-circle" ng-click="article.delArtTranslator(artTranslator,$index)">删除</i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="articleKeyword" class="col-md-2 control-label">关&nbsp;键&nbsp;字：</label>
+						<div class="col-md-10">
+							<input id="articleKeyword" type="text"
+								   class="form-control" ng-model="article.entity.articleKeyword">
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="articlePageNumStart" class="col-md-2 control-label"> 页&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+						<div class="col-md-10">
+							<div class="form-group">
+								<div class="col-md-2">
+									<input id="articlePageNumStart" type="text"
+										   class="form-control" ng-model="article.entity.articlePageNumStart">
+								</div>
+								<div class="col-md-1">
+									<label class="control-label">至</label>
+								</div>
+								<div class="col-md-2">
+									<input id="articlePageNumEnd" type="text"
+										   class="form-control" ng-model="article.entity.articlePageNumEnd">
+								</div>
+								<div class="col-md-1">
+									<label class="control-label"> 共</label>
+								</div>
+								<div class="col-md-2">
+									<label class="control-label" ng-bind="article.entity.pageTotal"></label>
+								</div>
+								<div class="col-md-1">
+									<label class="control-label">页</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div id="picCol" class="tab-pane">
+				<div id="picResouceList"></div>
+			</div>
+			<div id="articleCom" class="tab-pane">
+				<div class="col-md-12 form-horizontal">
+					<textarea class="ckeditor" cols="180" id="content" name="content" rows="100" placeholder="">
+      				......(此处的内容会在编辑器中显示)......
+      				</textarea>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>

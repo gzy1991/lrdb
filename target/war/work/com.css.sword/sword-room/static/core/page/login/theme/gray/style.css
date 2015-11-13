@@ -1,0 +1,21 @@
+.login_wrap_left{
+    background: #90a4b4;
+}
+/*
+.login_wrap_right_bg{
+	opacity: .2;
+	filter: alpha(opacity=30);
+}
+*/
+.motto {
+	color: #f18169;
+}
+.submit {
+	background: #f18169;
+}
+.submit:hover, .submit:focus{
+	background: #da7560;
+}
+.submit.disabled:hover{
+	background: #f18169;
+}

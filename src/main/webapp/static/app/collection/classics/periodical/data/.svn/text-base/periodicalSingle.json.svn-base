@@ -1,0 +1,26 @@
+{
+  "allDataCount": 2,
+  "curPageData": 
+    {
+      "perNameCn" : "人民音乐",
+      "perNameEn" : "People's Music",
+      "formerTitle" : "曾 用名",
+      "keywords" : "关键字",
+      "perType" : "76015",
+      "firstTime" : "1950",
+      "supervisorUnit" : "中国文学艺术界联合会",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "InterSeries" : "ISSN  0447-6573",
+      "DomSeries" : "CN 11-1655/J",
+      "emailedCode" : "2-6",
+      "publishSite" : "2",
+      "publishCycle" : "76015",
+      "publicationDate" : "每月1日",
+      "language" : "0",
+      "folio" : "76020",
+      "introduction" : "人民音乐创刊于1950年，是中国音乐家协会主办的评论性、理论性音乐刊物。",
+      "pictureUrl" : "/lrdb/static/app/collection/classics/periodical/data/u79.png"
+    },
+  "status": "200"
+}

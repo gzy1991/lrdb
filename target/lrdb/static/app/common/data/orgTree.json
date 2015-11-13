@@ -1,0 +1,182 @@
+{
+    "status": "200",
+    "allDataCount": "12",
+    "curPageData": [
+    {
+        "data": [
+            {
+                "data": [
+                    {
+                        "data": null,
+                        "id": "XXJ",
+                        "name": "戏剧协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XDY",
+                        "name": "电影协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XYY",
+                        "name": "音乐协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XMS",
+                        "name": "美术协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XQY",
+                        "name": "曲艺协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XWD",
+                        "name": "舞蹈协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XMJ",
+                        "name": "民间文艺家协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XSY",
+                        "name": "摄影协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XSF",
+                        "name": "书法家协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XZJ",
+                        "name": "杂技协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XDS",
+                        "name": "电视艺术家协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "XWX",
+                        "name": "作家协会"
+                    }
+                ],
+                "id": "X",
+                "name": "协会"
+            },
+            {
+                "data": [
+                    {
+                        "data": null,
+                        "id": "LZG",
+                        "name": "全国文联"
+                    },
+                    {
+                        "data": null,
+                        "id": "LDF",
+                        "name": "地方性文联"
+                    },
+                    {
+                        "data": null,
+                        "id": "LCY",
+                        "name": "产行业文联"
+                    }
+                ],
+                "id": "L",
+                "name": "联合会"
+            },
+            {
+                "data": [
+                    {
+                        "data": null,
+                        "id": "VZG",
+                        "name": "全国文联"
+                    },
+                    {
+                        "data": null,
+                        "id": "VDF",
+                        "name": "地方性文联"
+                    },
+                    {
+                        "data": null,
+                        "id": "VCY",
+                        "name": "产行业文联"
+                    },
+                    {
+                        "data": null,
+                        "id": "VXJ",
+                        "name": "戏剧协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VDY",
+                        "name": "电影协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VYY",
+                        "name": "音乐协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VMS",
+                        "name": "美术协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VQY",
+                        "name": "曲艺协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VWD",
+                        "name": "舞蹈协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VMJ",
+                        "name": "民间文艺家协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VSY",
+                        "name": "摄影协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VSF",
+                        "name": "书法家协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VZJ",
+                        "name": "杂技协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VDS",
+                        "name": "电视艺术家协会"
+                    },
+                    {
+                        "data": null,
+                        "id": "VWX",
+                        "name": "作家协会"
+                    }
+                ],
+                "id": "V",
+                "name": "虚拟组织"
+            }
+        ],
+        "id": "D_ORG_TYPE",
+        "name": "组织类型"
+    },
+    {"data":"","id":"null","name":"--不限--"},
+    {"data":"","id":"chool","name":"--请选择--"}
+]
+}

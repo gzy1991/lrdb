@@ -1,0 +1,22 @@
+<div class="form-horizontal">
+	<div class="col-md-12">
+		<div class="form-group" ng-repeat="house in book.publishHouses">
+			<div id="author.id">
+				<label class="col-md-1 control-label">作者:</label>
+				<div class="col-md-4">
+					<input name="house" readonly class="form-control dialog-edit-input" ng-model="house.houseName">
+					<button class="btn btn-default dialog-edit-button" ng-click="book.chooseHouse($index)">选择</button>
+				</div>
+					
+				<label class="col-md-1 control-label">标签:</label>
+				<div class="col-md-5">
+					<input name="showName" class="form-control" ng-model="house.showName">
+				</div>
+				<div class="col-md-1 dialog-edit-handle">
+					<a class="dialog-edit-i" ng-click="book.addHouse($index)"><i class="fa fa-plus"></i></a>
+					<a class="dialog-edit-i" ng-click="book.delHouse($index)"><i class="fa fa-minus"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

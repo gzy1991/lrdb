@@ -1,0 +1,58 @@
+<h2>菜单样例</h2>
+<hr/>
+<!--------------------------以下是调用代码-------------------------->
+<!-- html -->
+<div class="alert alert-info" role="alert">
+    <button id="btnMenuId" class="btn btn-success">click me!</button>
+</div>
+<!-- javascript -->
+<script type="text/javascript">
+    //加载远程url事例
+    var menu;
+    $("#btnMenuId").on("click", function(evt){
+    	if (!menu) {
+		    require(["PDUtilDir/menu"], function(Menu){
+	        	menu = Menu({
+	        		items : [{
+	        			id : "refresh",
+	        			name : "刷新",
+	        			icon : "fa fa-refresh",
+	        			callback : function() {
+	        				alert("刷新");
+	        			}
+	        		}, {
+	        			id : "plus",
+	        			name : "添加",
+	        			icon : "fa fa-plus",
+	        			callback : function() {
+	        				alert("添加");
+	        			}
+	        		}, {
+	        			id : "minus",
+	        			name : "删除",
+	        			icon : "fa fa-minus",
+	        			callback : function() {
+	        				alert("删除");
+	        			}
+	        		}, {
+	        			id : "edit",
+	        			name : "编辑",
+	        			icon : "fa fa-pencil",
+	        			callback : function() {
+	        				alert("编辑");
+	        			}
+	        		}]
+	        	})
+	        	menu.show({
+	        		left : evt.pageX,
+	        		top : evt.pageY
+	        	});
+	    	})
+    	} else {
+    		menu.show({
+        		left : evt.pageX,
+        		top : evt.pageY
+        	});
+    	}
+    });
+</script>

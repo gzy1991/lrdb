@@ -1,0 +1,18 @@
+{
+  "name": "sword-web-project-base",
+  "version": "1.0.0",
+  "description": "开发模板",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "模板"
+  ],
+  "author": "web",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "requirejs": "^2.1.17"
+  }
+}

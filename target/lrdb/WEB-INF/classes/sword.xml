@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sword-configuration>
+	<server-info>
+		<server-name name="myserver" type="server" nodeName=""
+			memo="系统的服务器名获取顺序：1.weblogic的config.xml配置的服务器名，2.sword.server.name环境变化的值，3.此参数值" />
+		<rack-id id="myrack" memo="机架ID，用于支持机架感知" />
+		<running-model model="develop" memo="开发模式，在此模式下会进行最严格的校验，以保证其它模式的正确运行" />
+		<log showSessionID="false" showServiceCallInfo="true" />
+	</server-info>
+
+	<biz-exception-filter package="gov.gt3"
+		defaultPlatformMessageCode="1019900000001" defaultDomainMessageCode=""
+		maxExceptionCount="1" memo="业务异常过滤配置，用于过滤业务异常堆栈信息" excludes="" />
+
+	<service generate-type="startup" asyncServiceParallel="5"
+		maxAsyncServiceParallel="5" maxServiceCallLevel="150"
+		checkSerializable="true" checkNotThrowException="true"
+		forcedCacheResult="false" valueCacheSize="10" useDistributedCache="false"
+		valueCacheTimeout="0" singleMode="true" useIoC="true" simulation="false"
+		memo="服务组件配置信息:generate-type属性用于控制服务代理类的生成时机，startup表示服务器启动时生成，其它值表示首次调用时生成，
+				maxServiceCallLevel表示允许的最大服务嵌套调用深度">
+	</service>
+
+	<platform-event memo="平台事件配置">
+		<class-scanner extensionsLibs="" applicationLibs=""
+			inclusionJars="(sword.+\.jar)" inclusionClasses=".+" memo="类扫描框架配置">
+			<scanner annotation="BeanScanner"
+				scanner="com.css.sword.core.components.ioc.guice.BeanScanner" memo="Google Guice IoC扫描器" />
+			<scanner annotation="CtrlClassScanner"
+				scanner="com.css.sword.web.controller.SwordCtrlScanner" memo="Web框架Ctrl类扫描器" />
+		</class-scanner>
+		<started memo="平台启动完成事件处理器"/>
+	</platform-event>
+
+	<components memo="组件加载顺序：数据元组件、服务管理组件、事务处理监控组件、NoSQL组件、动态脚本引擎管理组件、性能监控组件、多级缓存组件、
+				集群通信组件、持久层组件、服务中介管理组件、缓存数据管理组件、工作流组件、定时任务组件、单元测试数据收集器、
+				系统管理组件(最后加载)">
+			<component name="SwordMultiLevelCacheComponent"
+			component="com.css.sword.core.components.cache.SwordCacheComponentManager" 
+			memo="多级数据缓存组件：用于提供多级数所缓存功能，支持透明同类型缓存产品切换"/>
+				<component name="SwordPersistenceManager" component="com.css.sword.core.components.persistence.component.SwordPersistenceComponentManager" 
+			memo="Sword持久化组件"/> 
+			<component name="SwordNoSQLComponentManaer" component="com.css.sword.core.components.nosql.SwordNosqlComponentManager" 
+			memo="NoSQL组件"/>	
+			<component name="SwordSchedulerComponentManager" component="com.css.sword.core.components.scheduler.SwordSchedulerComponentManager" 
+			memo="Sword定时器组件" isConcurrentInit="true"/> 
+	</components>
+
+</sword-configuration>

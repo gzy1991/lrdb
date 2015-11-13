@@ -1,0 +1,118 @@
+<!-- 组织结构相关CSS -->
+<style>
+.attention_content li{
+    list-style: inherit;
+}
+#org_toolbar button{
+    display:none;
+    margin-bottom:3px
+}
+.org_excelImport{
+    margin-left:20px;
+    margin-top:5px;
+    width:100px
+}
+
+.org_table{
+    table-layout: fixed
+}
+.org_table td{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;     /*禁止换行*/
+}
+#orgMainContent .tab-pane{
+    padding-top: 0;
+}
+.pd-org-search-no-border{
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
+    border-bottom-color: #A9A9A9;
+    height: 100%;
+}
+.pd-org-search-no-border:focus{
+    box-shadow: none;
+    border: 0;
+}
+#orgSearchBtn:hover{
+    cursor:pointer;
+    color: #66AFE9;
+}
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3" style="padding: 0">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs nav-justified" role="tablist" style="text-align:center">
+                <li id="li_orgTab" class="active"><a href="#orgTreePanel" role="tab" data-toggle="tab">组织</a></li>
+                <li id="li_roleTab"><a href="#orgRolePanel" role="tab" data-toggle="tab">角色</a></li>
+                <li id="li_configTab"><a href="#orgConfig" role="tab" data-toggle="tab">高级</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9" style="border-bottom: 1px solid #ddd;height:33px">
+            <!--<form class="form-horizontal" style="width: 50%;float: right;padding-top: 2px">
+                <div class="row" style="margin-right: 0">
+                    <div class="col-sm-3" style="padding-right: 0">
+                        <div class="input-group" style="float: right;">
+                            <select class="form-control pd-org-search-no-border" id="orgSearchTypeSelect">
+                                <option selected value="user">人员</option>
+                                <option value="dept">部门</option>
+                                <option value="role">角色</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="input-group">
+                            <input type="text" class="form-control pd-org-search-no-border" placeholder="姓名|编号|部门名称" id="orgSearchText">
+                        &lt;!&ndash;<span class="input-group-btn">
+                            <button class="btn btn-default" type="button" id="orgSearchBtn">查询</button>
+                        </span>&ndash;&gt;
+                        </div>
+                        <span class="glyphicon glyphicon-search" id="orgSearchBtn"></span>
+                    </div>
+                </div>
+            </form>-->
+            <div style="height:100%;float: right">
+                <select class="pd-org-search-no-border" id="orgSearchTypeSelect">
+                    <option selected value="user">人员</option>
+                    <option value="dept">部门</option>
+                    <option value="role">角色</option>
+                </select>
+                <input type="text" class="pd-org-search-no-border" style="padding-left: 20px;" placeholder="姓名|编号|部门名称" id="orgSearchText">
+                <span class="glyphicon glyphicon-search" id="orgSearchBtn"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="orgMainContent" style="padding-right: 10px;padding-top: 10px">
+        <div class="col-md-3" style="padding: 0">
+            <!-- Tab panes -->
+            <div class="tab-content" >
+                <div class="tab-pane active" id="orgTreePanel">
+                    <ul class="ztree" id="orgtree"></ul>
+                </div>
+                <div class="tab-pane" id="orgRolePanel">
+                    <ul class="ztree" id="roletree"></ul>
+                </div>
+                <div class="tab-pane" id="orgConfig">
+                    <ul  class="ztree" id="orgConfigTree"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9" style="padding: 0">
+            <div id="orgShowListPanel">
+                <!-- 表格title暂未使用 -->
+                <div class="bg-info" style="padding: 10px;display:none">
+                    <span id="orgShowListTitle">组织-财务一组</span>
+                </div>
+                <div id="orgShowListContent"></div>
+            </div>
+        </div>
+    </div>
+    <div id="orgSearchContent" class="row" style="padding: 10px">
+
+    </div>
+</div>

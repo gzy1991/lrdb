@@ -1,0 +1,38 @@
+<div class="form-horizontal">
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>开始日期:</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input id="scheduleStartDate" name="scheduleStartDate" readonly class="form-control" cs-datetime="" ng-model="session.schedule.startTime">
+			</div>
+		</div>
+		<label class="col-md-2 control-label">结束日期:</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input id="scheduleEndDate" name="scheduleEndDate" readonly class="form-control" cs-datetime="" ng-model="session.schedule.endTime">
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">时段:</label>
+		<div class="col-md-4">
+			<input id="scheduleTime" name="scheduleTime" class="form-control" ng-model="session.schedule.scheduleTime">
+		</div>
+		<label class="col-md-2 control-label"><span class="notNull">*</span>排序:</label>
+		<div class="col-md-4">
+			<input id="scheduleOrder" name="scheduleOrder" class="form-control" ng-model="session.schedule.scheduleSortNumber">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>地点:</label>
+		<div class="col-md-10">
+			<input id="scheduleAddr" name="scheduleAddr" class="form-control" ng-model="session.schedule.schedulePlace">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>内容:</label>
+		<div class="col-md-10">
+			<textarea rows="5" id="scheduleContent" name="scheduleContent" class="form-control" ng-model="session.schedule.scheduleContent"></textarea>
+		</div>
+	</div>
+</div>

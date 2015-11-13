@@ -1,0 +1,28 @@
+.searchPanel{
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    padding:10px 5px;
+}
+.searchPanel .searchItem{
+    margin-bottom: 10px;
+    padding: 0 10px;
+    font-size: 12px;
+}
+.searchPanel .searchItem label.input-group-addon{
+    padding:0 4px;
+    margin-bottom: 0;
+    width: 20%;
+    min-width: 50px;
+}
+.searchPanel .searchItem input{
+    height: 30px;
+    line-height: 30px;
+    padding: 2px 6px;
+}
+.searchToolbar{
+    text-align: center;
+}
+.searchToolbar .btn{
+    margin-left: 10px;
+    padding: 4px 10px;
+}

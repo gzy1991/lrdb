@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nosqlmanager>
+	<nosql-component>
+		<nosql name="mongodb"
+			manager="com.css.sword.core.components.nosql.manager.SwordNosqlMongoDbManager"
+			host="10.12.10.146:27017" dbname="sword-room" readPreference="nearest" />
+	</nosql-component>
+	<!-- <nosql-component>
+		<nosql name="mongodb"
+			manager="com.css.sword.core.components.nosql.manager.SwordNosqlMongoDbManager"
+			host="127.0.0.1:27017" dbname="sword-room" readPreference="nearest" />
+	</nosql-component> -->
+</nosqlmanager>

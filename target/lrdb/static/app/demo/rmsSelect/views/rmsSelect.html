@@ -1,0 +1,52 @@
+<div class="col-md-12 form-horizontal" id="demoSearchConditions"  lar-search-block="">
+	<div class="form-group">
+		<label class="col-md-1 control-label" for="resourceType">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选:</label>
+		<div class="col-md-3">
+			<input type="text" id="resourceType" class="form-control" lar-select="demo.resourceTypes" lar-option="--不限--" lar-model="demo.entity.resourceType">
+		</div>
+		<label class="col-md-1 control-label" for="keyword">多&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;选:</label>
+		<div class="col-md-3">
+			<input type="text" id="keyword" class="form-control" lar-select="demo.keywords" lar-option="--不限--" lar-multi="true" lar-model="demo.entity.keyword">
+		</div>
+	</div>
+</div>
+<div class="col-md-12 form-horizontal">
+	<pre>
+	  &lt;input type="text" id="keyword"  lar-select="" lar-option="--不限--"  lar-model=""&gt;
+	  &lt;input type="text" id="keyword"  lar-select="" lar-option="--不限--" lar-multi="ture"  lar-model=""&gt;
+	</pre>
+	<h4>下拉框指令说明：</h4>
+	<div class="row">
+		<div class="col-md-1"></div><div class="col-md-2">lar-select</div>
+		<div>下拉框数据,默认数据格式：
+		<code>
+				[
+				    {
+				        "id": "document",
+				        "name": "文档资源",
+				        "data":""
+				    },
+				    {
+				        "id": "picture",
+				        "name": "图片资源",
+				        "data":""
+				    }
+				]
+		
+		</code>
+		</div>
+		<div class="col-md-1"></div><div class="col-md-2">lar-option</div><div>提供额外选择项(如：全部、请选择、不限等)</div>
+		<div class="col-md-1"></div><div class="col-md-2">lar-multi</div><div>是否多选，默认单选</div>
+		<div class="col-md-1"></div><div class="col-md-2">lar-search-able</div><div>是否显示搜索框，默认不显示</div>
+		<div class="col-md-1"></div><div class="col-md-2">lar-model</div><div>要绑定的数据(字符串，数组)都支持 ,说明：字符串以默认以逗号隔开，如('1003,1002,1001')</div>
+	</div>
+	<br/>
+	<pre>
+	  &lt;div id="demoSearchConditions" lar-search-block=""&gt;&lt;/div&gt;
+	</pre>	
+	<h4>查询条件块指令说明：</h4>
+	<div class="row">
+		<div class="col-md-1"></div><div class="col-md-2">lar-search-block</div><div class="col-md-9">默认为空</div>
+		<div class="col-md-1"></div><div class="col-md-2">要求</div><div class="col-md-9">必须指定id属性</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "allDataCount":2,
+    "curPageData": [
+       
+        
+        {
+            "festivalAwardTitle":"2013年第26届北京戏剧奖颁奖典礼",
+            "festivalAwardName":"戏剧奖-梅花奖",
+            "festivalAwardYear":"2013",
+            "festivalAwardTimeNum":"26"
+        },
+        {
+            "festivalAwardTitle":"2007年第21届北京戏剧奖颁奖典礼",
+            "festivalAwardName":"戏剧奖-梅花奖",
+            "festivalAwardYear":"2007",
+            "festivalAwardTimeNum":"21"
+        }
+       
+      
+    ],
+    "status" : "200"
+}

@@ -1,0 +1,69 @@
+
+{
+  "allDataCount": 2,
+  "curPageData": [
+    {
+      "periodicalNameCn" : "人民音乐",
+      "perType" : "音乐",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "firstTime" : "1950",
+      "publishCycle" : "月刊",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },
+    {
+      "periodicalNameCn" : "人民音乐",
+      "perType" : "音乐",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "firstTime" : "1950",
+      "publishCycle" : "月刊",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "periodicalNameCn" : "人民音乐",
+      "perType" : "音乐",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "firstTime" : "1950",
+      "publishCycle" : "月刊",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "periodicalNameCn" : "人民音乐",
+      "perType" : "音乐",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "firstTime" : "1950",
+      "publishCycle" : "月刊",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "periodicalNameCn" : "人民音乐",
+      "perType" : "音乐",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "firstTime" : "1950",
+      "publishCycle" : "月刊",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    },{
+      "periodicalNameCn" : "人民音乐",
+      "perType" : "音乐",
+      "sponsor" : "中国音乐家协会",
+      "publisher" : "中国音乐家协会杂志社",
+      "firstTime" : "1950",
+      "publishCycle" : "月刊",
+      "collector" : "XXX",
+      "operator" : "XX",
+      "operatorDate" : "2015-03-18 13:00"
+    }
+  ],
+  "status": "200"
+}

@@ -1,0 +1,15 @@
+
+<div class="form-horizontal">
+	<div class="form-group">
+	<div class="col-md-12">
+		<label class="col-md-2 control-label" for="queryAuthorName">艺术家姓名:</label>
+		<div class="col-md-6">
+			<input id="queryAuthorName" name="queryAuthorName" class="form-control dialog-edit-input" ng-model="book.author.query.cons.queryAuthorName">
+			<button class="btn btn-default dialog-edit-button" ng-click="book.author.query.query()">查询</button>
+		</div>
+	</div>
+	</div>
+	<div class="col-md-12">
+		<div id="authorGrid"></div>
+	</div>
+</div>

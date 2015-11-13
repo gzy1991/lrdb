@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/css/!svn/ver/1599/lrdb/src/main/resources
+END
+fileUpload.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/css/!svn/ver/1513/lrdb/src/main/resources/fileUpload.properties
+END
+sword-nosql.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/css/!svn/ver/1188/lrdb/src/main/resources/sword-nosql.xml
+END
+sword.xml
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/css/!svn/ver/1084/lrdb/src/main/resources/sword.xml
+END
+sword-persistence.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/css/!svn/ver/1523/lrdb/src/main/resources/sword-persistence.xml
+END
+sword-cache.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/css/!svn/ver/1188/lrdb/src/main/resources/sword-cache.xml
+END

@@ -1,0 +1,133 @@
+<div id="awardEditPanel" class="slidebar_detail" style="display:none;">
+
+	<div class="tab-header">
+        <div class="title">
+        	<i class="menu-icon fa fa-book" ></i>奖节信息
+        </div>
+        <div class="tool">
+			<button type="button" class="btn btn-default" ng-click="award.save()"><i class="menu-icon fa fa-save"></i>&nbsp;保存</button>
+			<button type="button" class="btn btn-default" ng-click=""><i class="menu-icon fa fa-caret-square-o-up"></i>&nbsp;保存并提交</button>
+		</div>
+    </div>
+    
+    <div class="single-panel">
+    	<ul class="nav nav-tabs" role="tablist" style="clear:both">
+        	<li class="active"><a data-target="#baseInfo" role="tab" data-toggle="tab">基本信息</a></li>
+        	<li><a data-target="#awardIntroduction"  role="tab" data-toggle="tab">奖节简介</a></li>
+        	<li><a data-target="#awardHistory" role="tab" data-toggle="tab">发展历程</a></li>
+    	</ul>
+    	
+    	<div class="tab-content">
+    	
+    		<div class="tab-pane active" id="baseInfo">
+    			<div class="form-horizontal">
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardName"><span class="notNull">*</span>奖节名称:</label>
+    					<div class="col-md-4">
+    						<input id="awardName" name="awardName" class="form-control" type="text" lar-select="award.awards" lar-search-able="true" lar-model="award.entity.awardCode">
+    					</div>
+    					<label class="col-md-2 control-label" for="awardArttype"><span class="notNull">*</span>艺术类别:</label>
+    					<div class="col-md-4">
+    						<input id="awardArttype" name="awardArttype" class="form-control" type="text" lar-select="award.arttypes" lar-model="award.entity.artTypeDict">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardLevel"><span class="notNull">*</span>奖节级别:</label>
+    					<div class="col-md-4">
+    						<input id="awardLevel" name="awardLevel" class="form-control" type="text" lar-select="award.levels" lar-model="award.entity.awardLevelDict">
+    					</div>
+    					<label class="col-md-2 control-label" for="awardNature"><span class="notNull">*</span>奖节性质:</label>
+    					<div class="col-md-4">
+    						<input id="awardNature" name="awardNature" class="form-control" type="text" lar-select="award.natures" lar-model="award.entity.awardNatureDict">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardStartTime"><span class="notNull">*</span>创办时间:</label>
+    					<div class="col-md-4">
+    						<div class="input-group">
+    							<input id="awardStartTime" name="awardStartTime" readonly class="form-control" type="text" cs-datetime="{startView:4,format:'yyyy',minView:4}" ng-model="award.entity.startupTime">
+    						</div>
+    					</div>
+    					<label class="col-md-2 control-label" for="awardInterval"><span class="notNull">*</span>举办周期:</label>
+    					<div class="col-md-4">
+    						<input id="awardInterval" name="awardInterval" class="form-control" type="text" ng-model="award.entity.awardPeriod">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="keywords">关&nbsp;&nbsp;键&nbsp;&nbsp;字:</label>
+    					<div class="col-md-10">
+    						<input id="keywords" name="keywords" class="form-control" type="text" ng-model="award.entity.awardKeyword">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardHost">主办单位:</label>
+    					<div class="col-md-10">
+    						<input id="awardHost" name="awardHost" class="form-control" type="text" ng-model="award.entity.awardHost">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardOrganizer">承办单位:</label>
+    					<div class="col-md-10">
+    						<input id="awardOrganizer" name="awardOrganizer" class="form-control" type="text" ng-model="award.entity.awardOrganizer">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardCoorganizer">协办单位:</label>
+    					<div class="col-md-10">
+    						<input id="awardCoorganizer" name="awardCoorganizer" class="form-control" type="text" ng-model="award.entity.awardCoorganizer">
+    					</div>
+    				</div>
+    				<div class="form-group">
+    					<label class="col-md-2 control-label" for="awardLogo">奖节logo:</label>
+    					<div class="col-md-10">
+    						<div id="logoUpload">
+    							<input id="awardLogo" name="awardLogo" class="form-control" type="text">
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div> 
+    	
+    		<div class="tab-pane" id="awardIntroduction">
+    			<div class="form-horizontal">
+    				<div class="form-group">
+    					<div class="col-md-12">
+    						<textarea rows="100" cols="180" id="awardContent" name="awardContent" class="ckeditor"></textarea>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	
+    		<div class="tab-pane" id="awardHistory">
+    			<div class="form-horizontal">
+    			<div class="col-md-12">
+    				<div class="form-group">
+    					<a ng-click="award.addHistory()"><i class="fa fa-plus-circle">添加</i></a>
+    				</div>
+    				<div class="form-group">
+    					<table id="awardHistoryTable" class="table table-bordered table-hover" style="table-layout:fixed;">
+    						<tr style="text-align:center">
+	            				<td style="width:50px">序号</td>
+	            				<td style="width:180px;">时间</td>
+	        					<td>标题</td>
+	            				<td style="width:50px">操作</td>
+	        				</tr>
+	        				<tr ng-repeat="obj in award.historys" style="text-align:center;">
+	        					<td>{{$index+1}}</td>
+								<td>{{obj.dateTime}}</td>
+								<td class="ellipsis" title="{{obj.courseTitle}}">{{obj.courseTitle}}</td>
+								<td style="text-align:center;font-size:14px">
+									<a ng-click="award.addHistory($index)"><i class="fa fa-pencil" style="cursor:pointer" title="编辑"></i></a>
+									<a ng-click="award.delHistory($index)"><i class="glyphicon glyphicon-trash" style="cursor:pointer" title="删除"></i></a>
+								</td>
+	        				</tr>
+    					</table>
+    				</div>
+    			</div>
+    			</div>
+    		</div>
+    	
+    	</div>
+    </div>
+    
+</div>

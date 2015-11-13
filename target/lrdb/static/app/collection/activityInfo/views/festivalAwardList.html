@@ -1,0 +1,29 @@
+<div class=" col-md-12 form-horizontal"  id="festivalAwardSelectId" lar-search-block="">	
+   <div class="form-horizontal"> 
+        <div class="form-group">
+            <label for="actFestivalAwardTitle" class="col-xs-2 control-label">奖项名称:</label>
+            <div class="col-xs-3">
+               <input  id="actFestivalAwardTitle" name="actFestivalAwardTitle" type="text" class="form-control" ng-model="activityInfo.festivalAwardChoose.query.actFestivalAwardTitle">
+            </div>           
+        
+            <label for="actFestivalAwardYear" class="col-xs-2 control-label">年度:</label>
+            <div class="col-xs-3">
+               <input  id="actFestivalAwardYear" name="actFestivalAwardYear" type="text" class="form-control" ng-model="activityInfo.festivalAwardChoose.query.actFestivalAwardYear" >
+            </div>                
+            <div class="col-xs-1" style="text-align:center;font-size:14px;line-height:34px;padding-right:0;padding-left:0;">
+			    <a style="padding-right:10px;"><i class="fa fa-search" style="cursor:pointer" title="查询" ng-click="activityInfo.festivalAwardChoose.search()"></i></a>
+			    <a><i class="fa fa-repeat" style="cursor:pointer" title="重置" ng-click="activityInfo.festivalAwardChoose.reset()"></i></a>
+		    </div>           
+        </div>              
+        <div class="form-group">
+            <label for="actFestivalAwardTimeNum" class="col-xs-2 control-label">届次:</label>
+            <div class="col-xs-3">
+                  <input id="actFestivalAwardTimeNum" name="actFestivalAwardTimeNum" type="text" class="form-control" ng-model="activityInfo.festivalAwardChoose.query.actFestivalAwardTimeNum" >
+            </div>                              
+       </div>  
+  </div>
+</div>
+<div class=" col-md-12" >
+    <div id="FestivalAwardListId">
+    </div>
+</div>

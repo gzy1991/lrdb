@@ -1,0 +1,114 @@
+/** 上传组件图片预览提示 */
+.upload-info-li {
+	list-style-type:none;
+}
+.notNull{color: red;}
+.form-horizontal .control-label.middle-label {
+	padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+/** 左栏树形控件 */
+/* .ztree{
+    border: 1px solid #617775;
+    background: #f0f6e4;
+    width: 250px;
+    height: 280px;
+    overflow-y: scroll;
+    overflow-x: auto;
+} */
+/** 表格悬停显示详情样式 */
+.grid-detail-panel { 
+	height:auto; 
+	min-height:180px;
+	z-index : 10000;
+	position : absolute;
+	background-color : white;
+	opacity : 0.9;
+	color : #337ab7;
+	border : 1px solid #d1e2f1;
+}
+.grid-detail-panel .file-detail-span {
+	padding-left : 0;
+	padding-right : 0;
+	padding-top : 10px;
+	padding-bottom : 10px;
+}
+/** API的样式 */
+span.code-note {
+	color: #999988;
+    font-style: italic;
+    font-size : 13px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    word-wrap: break-word;
+}
+hr.cs-example-hr-upload {
+	width : 100%;
+	margin-top : 40px;
+	margin-bottom : 0px;
+}
+.api-hint-title {
+	margin-top : 10px;
+	margin-bottom : 10px;
+}
+.api-title {
+	margin-top : 10px;
+	padding-bottom : 5px;
+	border-bottom : 1px solid #bce8f1;
+}
+.alert-info ul,.alert-info li{
+	list-style-type : disc;
+}
+.alert-info li li {
+	list-style-type : circle;
+}
+.alert-info li {
+	padding-top : 3px;
+	padding-bottom : 3px;
+}
+.alert-info ul,li {
+	padding-left : 2em;
+}
+li pre {
+	background-color : transparent;
+	color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    border : none;
+    margin-bottom : 0;
+    padding-bottom : 0;
+}
+span.api-emphasize {
+	color : #c7254e;
+	
+}
+
+/** 作者编辑弹出框样式  */
+.dialog-edit-input {
+	display : inline;
+	width : 168px;
+}
+.dialog-edit-button {
+	margin-top : -3px;
+}
+.dialog-edit-i {
+	padding-left : 1px;
+	padding-right : 3px;
+}
+.dialog-edit-handle {
+	margin-top : 5px;
+}
+
+/** 表格中不折行若超出有省略号的样式 */
+td.ellipsis {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+/** 侧边栏的二级标题样式 */
+.slidebar-title-secondary {
+	margin-top : 10px;
+	color : #337ab7;
+	font-size : 18px;
+}

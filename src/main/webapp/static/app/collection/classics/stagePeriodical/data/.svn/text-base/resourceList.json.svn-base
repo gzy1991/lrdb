@@ -1,0 +1,15 @@
+{
+  "allDataCount": 2,
+  "curPageData": [
+    {
+      "attachTitle" : "2015年第6期人民音乐封面",
+      "attachName":"2015年第6期人民音乐封面",
+      "perRecType":"期刊封皮"
+    },{
+      "attachTitle" : "2015年第6期人民音乐电子书",
+      "attachName":"2015年第6期人民音乐电子书",
+      "perRecType":"电子期刊"
+    }
+  ],
+  "status": "200"
+}

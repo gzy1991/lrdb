@@ -1,0 +1,410 @@
+
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司
+ -->
+
+
+
+<!--   监控系统下持久层监控页面
+  @author YaoGuanhong
+  @创建时间 2015年7月22日 上午10:18:22
+  @History 修订历史<br> -->
+<style>
+.ServerMonitorMenuTitle {
+	height: 35px;
+	line-height: 35px;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	text-align: center;
+	marginal-bottom: 10px;
+}
+
+.monitor_selfheight_box {
+	min-height: 50px;
+	_height: 120px;
+	padding: 3px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	background-color: #eee;
+	margin-top: 7px;
+	word-wrap: break-word;
+	word-break: break-all;
+	overflow: hidden;
+}
+
+.mb10 {
+	margin-bottom: 10px;
+}
+
+.mb5 {
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+
+.menuTitleTool {
+	padding-right: 5px;
+}
+</style>
+<div class = "container-fluid">
+<div style="padding: 10px;" >
+	<form id="monitor_form_server" class="form-horizontal">
+
+		<!-- sword平台信息  -->
+		<div class="row ServerMonitorMenuTitle mb5 bg-info">
+			<span>Sword平台信息</span>
+		</div>
+		
+		
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_serverName">服务实例名</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_serverName"
+					name="server_serverName" />
+			</div>
+
+			<label class="col-md-2 control-label" for="server_hostName">服务器主机名</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_hostName"
+					name="server_hostName" />
+			</div>
+		</div>
+		
+		
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_userName">服务器用户名</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_userName"
+					name="server_userName" />
+			</div>
+			<label class="col-md-2 control-label" for="server_serverIP">服务器IP</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_serverIP"
+					name="server_serverIP" />
+			</div>
+
+		</div>
+		
+		
+		
+		
+		<div class="row form-group ">
+		<label class="col-md-2 control-label" for="server_frameWorkID">机架ID</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_frameWorkID"
+					name="server_frameWorkID" />
+		</div>
+		<label class="col-md-2 control-label" for="server_developMode">服务器运行模式</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_developMode"
+					name="server_developMode" />
+		</div>
+		</div>
+		
+		<div class="row form-group ">
+		<label class="col-md-2 control-label" for="server_mainConfigureFile">主配置文件</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box rounded"
+					id="server_mainConfigureFile" name="server_mainConfigureFile"></div>
+			</div>
+		</div>
+
+		<!-- 中间件信息  -->
+		<div class="ServerMonitorMenuTitle mb5 bg-info">
+			<span>WEB中间件信息</span>
+		</div>
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_serverVersion">服务器版本号</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_serverVersion"
+					name="server_serverVersion" />
+			</div>
+			<label class="col-md-2 control-label" for="server_threadLimits">最大线程数</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_threadLimits"
+					name="server_threadLimits" />
+			</div>
+
+		</div>
+
+
+		<div class="row form-group ">
+
+			<label class="col-md-2 control-label" for="server_currentThread">当前线程数</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_currentThread"
+					name="server_currentThread" />
+			</div>
+
+			<label class="col-md-2 control-label" for="server_currentBusyThread">当前运行线程数</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control"
+					id="server_currentBusyThread" name="server_currentBusyThread" />
+			</div>
+
+		</div>
+
+
+		<div class="row form-group ">
+
+			<label class="col-md-2 control-label" for="server_longestProcessTime">最长处理时长</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control"
+					id="server_longestProcessTime" name="server_longestProcessTime" />
+			</div>
+
+			<label class="col-md-2 control-label" for="server_processTime">处理总时长</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_processTime"
+					name="server_processTime" />
+			</div>
+		</div>
+
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_requestCount">请求数</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_requestCount"
+					name="server_requestCount" />
+			</div>
+
+			<label class="col-md-2 control-label" for="server_errorCount">错误数</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_errorCount"
+					name="server_errorCount" />
+			</div>
+
+
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_receviedBytes">已收到字节</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_receviedBytes"
+					name="server_receviedBytes" />
+			</div>
+			<label class="col-md-2 control-label" for="server_sentBytes">已发送字节</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_sentBytes"
+					name="server_sentBytes" />
+			</div>
+		</div>
+
+
+
+
+		
+
+
+		<!-- JVM信息  -->
+		<div class="ServerMonitorMenuTitle mb5 bg-info">
+			<span>JVM信息</span>
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_jvmVersion">JVM版本号</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_jvmVersion"
+					name="server_jvmVersion" />
+			</div>
+			<label class="col-md-2 control-label" for="server_source">所属</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_source"
+					name="server_source" />
+			</div>
+		</div>
+
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_totalMemory">总内存(MB)</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_totalMemory"
+					name="server_totalMemory" />
+			</div>
+			<label class="col-md-2 control-label" for="server_maxAvailable">最大可用内存(MB)</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_maxAvailable"
+					name="server_maxAvailable" />
+			</div>
+
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_freeMemory">空闲内存(MB)</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_freeMemory"
+					name="server_freeMemory" />
+			</div>
+
+			<label class="col-md-2 control-label"
+				for="server_defaultCharacterEncode">默认字符集</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control"
+					id="server_defaultCharacterEncode"
+					name="server_defaultCharacterEncode" />
+			</div>
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_defaultLanguage">默认显示语言</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_defaultLanguage"
+					name="server_defaultLanguage" />
+			</div>
+			<label class="col-md-2 control-label" for="server_defaultTimeZone">默认时区</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_defaultTimeZone"
+					name="server_defaultTimeZone" />
+			</div>
+		</div>
+
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_defaultDistrict">默认地区</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_defaultDistrict"
+					name="server_defaultDistrict" />
+			</div>
+			<label class="col-md-2 control-label" for="server_zipAltEncoding">Zip
+				Alt Encoding</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_zipAltEncoding"
+					name="server_zipAltEncoding" />
+			</div>
+
+		</div>
+
+
+		<div class="row form-group">
+			<label class="col-md-2 control-label" for="server_codeOfJvmProcess">JVM进程编号</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_codeOfJvmProcess"
+					name="server_codeOfJvmProcess" />
+			</div>
+			<label class="col-md-2 control-label" for="server_whetherEpoll">是否使用EPoll模式</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_whetherEpoll"
+					name="server_whetherEpoll" />
+			</div>
+
+		</div>
+
+
+
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_jvmPlacement">JVM位置</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box" id="server_jvmPlacement"
+					name="server_jvmPlacement"></div>
+			</div>
+
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_vmStartParameter">VM启动参数</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box" id="server_vmStartParameter"
+					name="server_vmStartParameter"></div>
+			</div>
+
+		</div>
+
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_classPath">ClassPath</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box" id="server_classPath"
+					name="server_classPath"></div>
+			</div>
+		</div>
+
+
+
+
+
+		<!-- OS信息  -->
+		<div class="ServerMonitorMenuTitle mb5 bg-info">
+			<span>OS信息</span>
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_osVersion">版本</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_osVersion"
+					name="server_osVersion" />
+			</div>
+
+			<label class="col-md-2 control-label" for="server_avaProcessNumber">处理器核心数目</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_avaProcessNumber"
+					name="server_avaProcessNumber" />
+			</div>
+
+		</div>
+
+		
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_systemType">系统</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_systemType"
+					name="server_systemType" />
+			</div>
+			<label class="col-md-2 control-label" for="server_osArchitecture">架构型号</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_osArchitecture"
+					name="server_osArchitecture" />
+			</div>
+		</div>
+
+
+
+
+		
+
+
+		<div class="row form-group ">
+			
+			<label class="col-md-2 control-label" for="server_jvmCPUPercent">JVMCPU占比</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_jvmCPUPercent"
+					name="server_jvmCPUPercent" />
+			</div>		
+
+			<label class="col-md-2 control-label" for="server_serverPercentage">系统CPU占比</label>
+			<div class="col-md-4">
+				<input type="text" class="form-control" id="server_serverPercentage"
+					name="server_serverPercentage" />
+			</div>
+
+		</div>
+
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_userCurrentDir">用户当前目录</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box" id="server_userCurrentDir"
+					name="server_userCurrentDir"></div>
+			</div>
+		</div>
+		<div class="row form-group ">
+			<label class="col-md-2 control-label"
+				for="server_dynamicLibrarySerachPath">动态链接库搜索路径</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box"
+					id="server_dynamicLibrarySerachPath"
+					name="server_dynamicLibrarySerachPath"></div>
+
+			</div>
+		</div>
+		<div class="row form-group ">
+			<label class="col-md-2 control-label" for="server_defaultTempFile">默认临时文件</label>
+			<div class="col-md-10">
+				<div class="monitor_selfheight_box" id="server_defaultTempFile"
+					name="server_defaultTempFile"></div>
+			</div>
+		</div>
+		</form>
+	</div>
+	
+</div>
+

@@ -1,0 +1,197 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/css/!svn/ver/1735/lrdb/src/main/webapp/static/app/common/data
+END
+cityName.json
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/css/!svn/ver/900/lrdb/src/main/webapp/static/app/common/data/cityName.json
+END
+publishCycleType.json
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/css/!svn/ver/992/lrdb/src/main/webapp/static/app/common/data/publishCycleType.json
+END
+proviceName.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/css/!svn/ver/900/lrdb/src/main/webapp/static/app/common/data/proviceName.json
+END
+newsType.json
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/css/!svn/ver/881/lrdb/src/main/webapp/static/app/common/data/newsType.json
+END
+bookLanguage.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/css/!svn/ver/1022/lrdb/src/main/webapp/static/app/common/data/bookLanguage.json
+END
+subtitles.json
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/subtitles.json
+END
+encyclopediaTypeList.json
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/css/!svn/ver/888/lrdb/src/main/webapp/static/app/common/data/encyclopediaTypeList.json
+END
+awards.json
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/css/!svn/ver/1212/lrdb/src/main/webapp/static/app/common/data/awards.json
+END
+videoType.json
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/videoType.json
+END
+secretLevel.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/secretLevel.json
+END
+resStatus.json
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/resStatus.json
+END
+languageType.json
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/css/!svn/ver/459/lrdb/src/main/webapp/static/app/common/data/languageType.json
+END
+audioType.json
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/audioType.json
+END
+docFormat.json
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/docFormat.json
+END
+awardNatures.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/css/!svn/ver/1212/lrdb/src/main/webapp/static/app/common/data/awardNatures.json
+END
+actNatrueType.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/css/!svn/ver/900/lrdb/src/main/webapp/static/app/common/data/actNatrueType.json
+END
+awardLevels.json
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/css/!svn/ver/1212/lrdb/src/main/webapp/static/app/common/data/awardLevels.json
+END
+actLevelType.json
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/css/!svn/ver/900/lrdb/src/main/webapp/static/app/common/data/actLevelType.json
+END
+activityTypes.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/css/!svn/ver/750/lrdb/src/main/webapp/static/app/common/data/activityTypes.json
+END
+site.json
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/css/!svn/ver/1735/lrdb/src/main/webapp/static/app/common/data/site.json
+END
+folioType.json
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/css/!svn/ver/1002/lrdb/src/main/webapp/static/app/common/data/folioType.json
+END
+orgTree.json
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/orgTree.json
+END
+periodicalType.json
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/css/!svn/ver/992/lrdb/src/main/webapp/static/app/common/data/periodicalType.json
+END
+bookArttypes.json
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/css/!svn/ver/1091/lrdb/src/main/webapp/static/app/common/data/bookArttypes.json
+END
+collection.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/css/!svn/ver/1022/lrdb/src/main/webapp/static/app/common/data/collection.json
+END
+artType.json
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/css/!svn/ver/749/lrdb/src/main/webapp/static/app/common/data/artType.json
+END
+coutryName.json
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/css/!svn/ver/900/lrdb/src/main/webapp/static/app/common/data/coutryName.json
+END
+standardLabels.json
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/css/!svn/ver/997/lrdb/src/main/webapp/static/app/common/data/standardLabels.json
+END
+artTypeList.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/css/!svn/ver/750/lrdb/src/main/webapp/static/app/common/data/artTypeList.json
+END
+imgFormat.json
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/css/!svn/ver/1075/lrdb/src/main/webapp/static/app/common/data/imgFormat.json
+END
+templates.json
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/css/!svn/ver/1357/lrdb/src/main/webapp/static/app/common/data/templates.json
+END
+exist.json
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/css/!svn/ver/1091/lrdb/src/main/webapp/static/app/common/data/exist.json
+END

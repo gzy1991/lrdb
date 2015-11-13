@@ -1,0 +1,37 @@
+<div id="groupSelectId" >
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist" style="clear:both">
+            <li class="active"><a data-target="#groupSelectBase" role="tab" data-toggle="tab">团体选择</a></li>
+            <li><a data-target="#noGroupSelect" role="tab" data-toggle="tab">添加非团体</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div id="groupSelectBase" class="tab-pane active">
+                <div id="" class="col-md-12 form-horizontal "  lar-search-block="">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="queryGroupName">团体名称:</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="queryGroupName" ng-model = "groupSelect.entity.queryGroupName">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="groupSelectGrid"></div>
+                </div>
+            </div>
+
+            <div id="noGroupSelect" class="tab-pane">
+                <div class="col-md-12 form-horizontal">
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="addGroupName">名称:</label>
+                        <div class="col-md-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="addGroupName" ng-model = "groupSelect.entity.addGroupName">
+                                <span class="input-group-addon" ng-click="groupSelect.addGroupName()"><i class="glyphicon glyphicon-plus-sign"></i>添加</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="form-horizontal">
+	<div class="col-md-12" id="awardSearchBlock" lar-search-block="">
+		<div class="form-group">
+			<label class="col-md-1 control-label" for="querySessionName">届次标题:</label>
+			<div class="col-md-3">
+				<input id="querySessionName" name="querySessionName" type="text" class="form-control" ng-model="session.query.cons.name">
+			</div>
+<!-- 			<label class="col-md-1 control-label" for="queryArttype">艺术类别:</label> -->
+<!-- 			<div class="col-md-3"> -->
+<!-- 				<input id="queryArttype" name="queryArttype" type="text" class="form-control" lar-select="session.arttypes" lar-option="--全部--" lar-model="session.query.cons.arttype"> -->
+<!-- 			</div> -->
+			<label class="col-md-1 control-label" for="queryAward">关联奖节:</label>
+			<div class="col-md-3">
+				<input id="queryAward" name="queryAward" type="text" class="form-control" lar-select="session.awards" lar-option="--全部--" lar-model="session.query.cons.queryAward">
+			</div>
+			<label class="col-md-1 control-label" for="querySession">届&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次:</label>
+			<div class="col-md-3">
+				<div class="input-group">
+					<input id="queryMinSession" name="queryMinSession" class="form-control" ng-model="session.query.cons.minSession">
+					<span class="input-group-addon">至</span>
+					<input id="queryMaxSession" name="queryMaxSession" class="form-control" ng-model="session.query.cons.maxSession">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-1 control-label" for="queryYear">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度:</label>
+			<div class="col-md-3">
+				<div class="input-group">
+					<input id="queryMinYear" name="queryMinYear" readonly type="text" class="form-control" cs-datetime="{startView:4,format:'yyyy',minView:4}" ng-model="session.query.cons.minYear">
+				</div>
+			</div>
+			<label class="col-md-1 control-label" style="text-align:center;">至</label>
+			<div class="col-md-3">
+				<div class="input-group">
+					<input id="queryMaxYear" name="queryMaxYear" readonly type="text" class="form-control" cs-datetime="{startView:4,format:'yyyy',minView:4}" ng-model="session.query.cons.maxYear">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="col-md-12">
+		<div id="sessionGrid"></div>
+	</div>
+	
+	<div class="col-md-12">
+		<div ng-include src="session.template.sessionEdit"></div>
+	</div>
+</div>
+

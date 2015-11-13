@@ -1,0 +1,69 @@
+[
+    {
+        "menu" : {
+	        "menuName":"开发样例",
+	        "menuIcon":"fa fa-bars"
+	    },    
+        "subMenu":[{
+       		"menu" : {
+       			"menuName":"Util"
+       		},
+         	"subMenu":[
+                 {"menu":{"menuName":"Util","menuUrl":"#util"}},
+                 {"menu":{"menuName":"typeahead","menuUrl":"#typeahead"}},
+                 {"menu":{"menuName":"inputSelect","menuUrl":"#inputSelect"}},
+                 {"menu":{"menuName":"弹出框","menuUrl":"#dialog"}},
+                 {"menu":{"menuName":"表格","menuUrl":"#grid"}},
+                 {"menu":{"menuName":"附件上传","menuUrl":"#fileUploader"}},
+                 {"menu":{"menuName":"图片裁剪","menuUrl":"#crop"}},
+                 {"menu":{"menuName":"人员选择","menuUrl":"#psnSelect"}},
+                 {"menu":{"menuName":"部门选择","menuUrl":"#deptSelect"}}
+ 			]
+        },{
+	        "menu" : {
+	        	"menuName":"第三方组件"
+	    	},
+ 			"subMenu":[
+			     {"menu":{"menuName":"树","menuUrl":"#zTree"}},
+			     {"menu":{"menuName":"日期","menuUrl":"#dateTimePicker"}},
+			     {"menu":{"menuName":"表单验证","menuUrl":"#validate"}}, 
+			     {"menu":{"menuName":"图表","menuUrl":"#ECharts"}},
+			     {"menu":{"menuName":"图标","menuUrl":"#fontawesome"}},
+			     {"menu":{"menuName":"Div折叠","menuUrl":"#divfold"}},
+			     {"menu":{"menuName":"滚动条美化","menuUrl":"#mcScrollbar"}},
+			     {"menu":{"menuName":"DOM元素托管","menuUrl":"#floatTouch"}}
+			]
+        },{
+            "menu": {
+            	"menuName":"组件组合"
+        	},
+            "subMenu":[
+ 				{"menu":{"menuName":"treeDialog","menuUrl":"#treeDialog"}},
+ 				{"menu":{"menuName":"treeAndGridDialog","menuUrl":"#treeAndGridDialog"}},
+				{"menu":{"menuName":"uploaderAndGrid","menuUrl":"#uploaderAndGrid"}} 
+            ] 
+        },{
+        	"menu":{
+        		"menuName":"模板"
+    		},
+            "subMenu":[
+                 {"menu":{"menuName":"表单模板"}},
+                 {"menu":{"menuName":"侧边栏模板"}}
+             ]
+            }
+        ]
+    },{   
+    	"menu" : {
+    		"menuName":"系统管理",
+        	"menuIcon":"fa-cog"
+    	},
+        "subMenu":[
+            {"menu":{"menuName":"流程管理","menuUrl":"#flow"}},
+            {"menu":{"menuName":"组织管理","menuUrl":"#org"}},
+            {"menu":{"menuName":"菜单管理","menuUrl":"#menu"}},
+            {"menu":{"menuName":"消息中心","menuUrl":"#msg"}},
+            {"menu":{"menuName":"权限管理","menuUrl":"#acl"}},
+            {"menu":{"menuName":"字典管理","menuUrl":"#dict"}}
+        ]
+    }
+]

@@ -1,0 +1,193 @@
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司
+ -->
+
+
+
+<!--   监控系统下持久层监控页面service监控的侧边栏
+  @author YaoGuanhong
+  @创建时间 2015年7月10日 下午1:13:56
+  @History 修订历史<br> -->
+<style type="text/css">
+.monitor_selfheight_box {
+    min-height: 50px; 
+    _height: 120px; 
+    padding: 3px; 
+    border: 1px solid #ccc; 
+    word-wrap: break-word;
+    border-radius:5px;
+    background-color:#eee;
+}
+
+</style>
+<div class = "container-fluid">
+<div class="single-panel">
+	<form id="monitor_form_uri" class="form-horizontal">
+		<div class="menuTitle mb5 bg-info">
+			<span>Service详细信息</span>
+		</div>
+		<div class="row form-group ">
+			<label class="col-md-3 control-label" for="service_Name">Service名称</label>
+			<div class="col-md-9">
+				<div class="monitor_selfheight_box" id="service_Name"
+					name="service_Name"></div>
+				<!-- <textarea  rows="8" type="text" class="form-control" id="service_Name" name="service_Name" /> -->
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="col-md-3 control-label" for="service_requestCount">请求总次数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_requestCount"
+					name="service_requestCount" />
+			</div>
+			<label class="col-md-3 control-label" for="service_AveRequestTimeMillis">平均请求时间(毫秒)</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id ="service_AveRequestTimeMillis"
+					name="service_AveRequestTimeMillis" />
+			</div>
+		</div>
+
+
+
+		<div class="row form-group">
+			
+			<label class="col-md-3 control-label" for="service_inExe">执行中</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_inExe"
+					name="service_inExe" />
+			</div>
+			<label class="col-md-3 control-label" for="service_jdbcUpdatePeak">jdbc更新峰值</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_jdbcUpdatePeak"
+					name="service_jdbcUpdatePeak" />
+			</div>
+			
+		</div>
+
+
+		<div class="row form-group">
+
+			<label class="col-md-3 control-label" for="service_maxConcurrent">最大并发</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_maxConcurrent"
+					name="service_maxConcurrent" />
+			</div>
+
+			<label class="col-md-3 control-label" for="service_jdbcPeak">Jdbc执行峰值</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_jdbcPeak"
+					name="service_jdbcPeak" />
+			</div>
+		</div>
+
+		<div class="row form-group">
+			<label class="col-md-3 control-label" for="service_jdbcCount">Jdbc执行数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_jdbcCount"
+					name="service_jdbcCount" />
+			</div>
+			<label class="col-md-3 control-label" for="service_jdbcErrorCount">Jdbc出错数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_jdbcErrorCount"
+					name="service_jdbcErrorCount" />
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="col-md-3 control-label" for="service_commitCount">事务提交数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control"
+					id="service_commitCount" name="service_commitCount" />
+			</div>
+			<label class="col-md-3 control-label" for="service_AvejdbcTime">Jdbc平均执行时间(毫秒)</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_AvejdbcTime"
+					name="service_AvejdbcTime" />
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="col-md-3 control-label"
+				for="service_rollTransactionCount">事务回滚数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control"
+					id="service_rollTransactionCount"
+					name="service_rollTransactionCount" />
+			</div>
+			<label class="col-md-3 control-label" for="service_readLines">读取行数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_readLines"
+					name="service_readLines" />
+			</div>
+		</div>
+		<div class="row form-group">
+			<label class="col-md-3 control-label" for="service_jdbcSelectPeak">Jdbc查询取回行数峰值</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_jdbcSelectPeak"
+					name="service_jdbcSelectPeak" />
+			</div>
+
+			<label class="col-md-3 control-label" for="service_updateLines">更新行数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control" id="service_updateLines"
+					name="service_updateLines" />
+			</div>
+
+		</div>
+
+
+
+		<div class="row form-group">
+			
+			<!--  -->
+			<label class="col-md-3 control-label"
+				for="service_jdbcPoolConnectionOpenCount">连接池获取连接次数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control"
+					id="service_jdbcPoolConnectionOpenCount"
+					name="service_jdbcPoolConnectionOpenCount" />
+			</div>
+			
+			<label class="col-md-3 control-label"
+				for="service_jdbcResultSetCloseCount">ResultSet关闭次数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control"
+					id="service_jdbcResultSetCloseCount"
+					name="service_jdbcResultSetCloseCount" />
+			</div>
+			
+
+		</div>
+		<div class="row form-group">
+			<label class="col-md-3 control-label"
+				for="service_jdbcPoolConnectionCloseCount">连接池关闭连接次数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control"
+					id="service_jdbcPoolConnectionCloseCount"
+					name="service_jdbcPoolConnectionCloseCount" />
+			</div>
+
+			<label class="col-md-3 control-label"
+				for="service_jdbcResultSetOpenCount">ResultSet打开次数</label>
+			<div class="col-md-3">
+				<input type="text" class="form-control"
+					id="service_jdbcResultSetOpenCount"
+					name="service_JdbcResultSetOpenCount" />
+			</div>
+
+		</div>
+
+		<div class="row form-group">
+		
+		
+		<label class="col-md-3 control-label" for="service_lastAccessTime">最后访问时间</label>
+			<div class="col-md-9">
+				<input type="text" class="form-control" id="service_lastAccessTime"
+					name="service_lastAccessTime" />
+			</div>
+			
+
+		</div>
+
+
+	</form>
+</div>
+</div>

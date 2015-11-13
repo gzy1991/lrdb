@@ -1,0 +1,33 @@
+<h2 id="-">功能简介</h2>
+<p>根据输入内容自动匹配搜索结果,依赖<code>jQuery</code>,<code>bootstrap</code>等</p>
+<h2 id="api">API</h2>
+<h3 id="-">公共函数</h3>
+<p><strong>Typeahead(config)</strong><br>初始化函数,config请参考下方参数列表</p>
+<h3 id="-">参数列表</h3>
+<ul>
+    <li><strong>id(必填)</strong> - 类型:String<br>定位页面元素锚点, 初始化组件的唯一标示</li>
+    <li><strong>btn</strong> - 类型:String<br>不设置该属性, 则不启用按钮<br>设置该属性, 则启用按钮, 属性值为按钮名称</li>
+    <li><strong>data</strong> - 类型:String|Array<br>设置组件数据源,有两种类型:  <ul>
+        <li>String - 远程数据源地址</li>
+        <li>Object - 前端数据源数组</li>
+    </ul>
+    </li>
+    <li><strong>lazyMatch</strong> - 类型:Boolean, 默认值:true<br>是否启用延迟匹配</li>
+    <li><strong>key</strong> - 类型:Object (历史遗留问题,适当时候调整api)<br>设置字段转换map对象, 属性如下  <ul>
+        <li>id - 数据ID字段</li>
+        <li>data - 数据文本字段</li>
+    </ul>
+    </li>
+    <li><strong>dataFormat</strong> - 类型:Array (历史遗留问题,适当时候调整api)<br>数据字段对象数组, 设置每个字段的输出格式, 属性如下  <ul>
+        <li>name - 标题名</li>
+        <li>field - 字段名</li>
+        <li>width - 内容宽度</li>
+    </ul>
+    </li>
+    <li><strong>callback</strong> - 类型:Function<br>选中数据后的处理函数</li>
+    <li><strong>panelCss</strong> - 类型:Object (不推荐使用)<br>一种怪异的对于内容显示不全的解决方案, 属性如下<ul>
+        <li>width - 类型:Number, 数据面板宽度, 相对于输入框宽度的倍数</li>
+        <li>align - 类型:String, 数据面板对齐方向, left|right</li>
+    </ul>
+    </li>
+</ul>

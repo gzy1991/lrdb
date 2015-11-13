@@ -1,0 +1,21 @@
+{
+    "allDataCount":4,
+    "curPageData": [   
+      {
+      		"organizationName":"北京话剧团",
+      		"chargePersion":"xxx",
+      		"organphone":"1101111",
+      		"creatTime":"2015-09-10",
+      		"siteName":"北京"
+      },  
+      {
+      		"organizationName":"中国电影集团",
+      		"chargePersion":"xxx",
+      		"organphone":"1101111",
+      		"creatTime":"2015-09-10",
+      		"siteName":"北京"
+      }   
+     
+    ],
+    "status" : "200"
+}

@@ -1,0 +1,36 @@
+<style>
+#form_menu .mb15 {
+	margin-bottom: 15px;
+}
+
+#form_menu .mt15 {
+	margin-top: 15px;
+}
+
+#form_menu .fs18 {
+	font-size: 18px;
+}
+</style>
+<!-- 告警方式的设置-->
+<div style="padding-left: 0px;" class="container-fluid">
+	<form id="monitor_alarm_way_setting" class="form-horizontal">
+		<fieldset>
+			<legend class="mb15 mt15 fs18 text-primary">发送对象列表</legend>
+			<div class=" form-group ">
+				<div class="col-md-9">
+					<input class=" form-control" placeholder="请输入新增加的告警对象"
+						type="text" id="inputTarget">
+				</div>
+				<div class="col-md-3">
+					<button type="button" class="btn btn-default" id="addTarget">
+						<i class="fa fa-plus-square">添加</i>
+					</button>
+				</div>
+			</div>
+			<div style="margin-left: 0px; margin-right: 0px;"
+				class="row form-group ">
+				<div id="wayGrid"></div>
+			</div>
+		</fieldset>
+	</form>
+</div>

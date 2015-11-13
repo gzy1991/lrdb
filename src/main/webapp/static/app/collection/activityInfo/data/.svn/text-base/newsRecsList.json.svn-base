@@ -1,0 +1,31 @@
+{
+    "allDataCount":4,
+    "curPageData": [   
+      {
+      		"newsTitle":"李雪健参加演出开国大典",     
+      		"newsAuthor":"李小白",     
+      		"newsTypes":"活动新闻",
+      		"newsSource":"中国文联"
+      },  
+      {
+      		"newsTitle":"李雪健参加演出开国大典",     
+      		"newsAuthor":"汪峰",     
+      		"newsTypes":"图片新闻",
+      		"newsSource":"中国文联"
+      },   
+      {
+      		"newsTitle":"李雪健参加演出开国大典",     
+      		"newsAuthor":"李青",     
+      		"newsTypes":"活动新闻",
+      		"newsSource":"中国文联"
+      },
+      {
+      		"newsTitle":"李雪健参加演出开国大典",     
+      		"newsAuthor":"沈晓博",     
+      		"newsTypes":"活动新闻",
+      		"newsSource":"中国文联"
+      }                       
+      
+    ],
+    "status" : "200"
+}

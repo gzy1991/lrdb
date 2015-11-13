@@ -1,0 +1,81 @@
+<div role="tabpanel">
+	<ul class=" nav nav-tabs" role="tablist">
+		<li id="pdMonitorAlarmLogSearch" role="presentation" class="active"><a
+			href="#pdMonitorAlarmLogSearchPanel" role="tab" data-toggle="tab">告警日志查询</a></li>
+	</ul>
+
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active"
+			id="pdMonitorAlarmLogSearchPanel">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-8 form-horizontal">
+						<div class="form-group">
+							<label for="" class="col-md-3 col-sm-2 control-label">查询最近:</label>
+							<div class="col-md-6 col-sm-7">
+								<label class="radio-inline"> <input type="radio"
+									name="recentTime" value="0.5" checked="checked">半小时
+								</label> <label class="radio-inline"> <input type="radio"
+									name="recentTime" value="8">8小时
+								</label> <label class="radio-inline"> <input type="radio"
+									name="recentTime" value="12">12小时
+								</label> <label class="radio-inline"> <input type="radio"
+									name="recentTime" value="24">24小时
+								</label>
+							</div>
+						</div>
+					</div>
+					<form id="pdMonitorSearchInfoEditor">
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="searchStartTime"
+									class="col-md-4 col-sm-2 control-label">起始时间:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="searchStartTime" type="text" name="searchStartTime"
+										class="form-control" tabindex="3" autofocus>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="searchEndTime"
+									class="col-md-4 col-sm-2 control-label">结束时间:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="searchEndTime" type="text" name="searchEndTime"
+										class="form-control" tabindex="3" autofocus>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="server" class="col-md-4 col-sm-2 control-label"><span
+									class="requird"></span>应用服务器:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="server" type="text" name="server"
+										class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 form-horizontal">
+							<div class="form-group">
+								<label for="targetServer"
+									class="col-md-4 col-sm-2 control-label"><span
+									class="requird"></span>目标服务器:</label>
+								<div class="col-md-8 col-sm-10">
+									<input id="targetServer" type="text" name="targetServer"
+										class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-offset-6 col-md-5">
+							<button id="btnAlarmLogSearch" class="btn btn-default"
+								type="button">查询</button>
+						</div>
+						<div id="alarmLogShowListContent" class="col-xs-12"
+							style="padding-right: 0; padding-top: 10px"></div>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>

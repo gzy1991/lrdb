@@ -1,0 +1,32 @@
+<form class="col-xs-12"  id="activityJudgesRelFormId">
+
+     <div class="col-xs-12  form-horizontal">
+        <div class="form-group">
+            <label for="actJudgesPostion" class="col-xs-2 control-label"><span class="notNull">*</span>评委会职务:</label>
+            <div class="col-xs-4">
+                  <input id="actJudgesPostion" name="actJudgesPostion" type="text" class="form-control" ng-model="activityInfo.tempJudgesRel.actJudgesPostion" >
+            </div>                        
+        </div>        
+     </div>
+    <div class="col-xs-12 form-horizontal">
+        <div class="form-group">
+            <label for="actJudgesName" class="col-xs-2 control-label">评奖委员:</label>
+            <div class="col-xs-4">
+               <input  id="actJudgesName" name="actJudgesName" type="text" class="form-control" ng-model="activityInfo.tempJudgesRel.actJudgesName" >
+               <span><i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.judgesChoose.showDialog()"></i></span>  
+            </div>            
+             <label for="actJudgesTag" class="col-xs-2 control-label"><span class="notNull">*</span>评奖委员标签名:</label>
+            <div class="col-xs-4">
+               <input  id="actJudgesTag" name="actJudgesTag" type="text" class="form-control" ng-model="activityInfo.tempJudgesRel.actJudgesTag" >
+            </div>              
+        </div> 
+     </div>   
+     <div class="col-xs-12 form-horizontal">
+        <div class="form-group">        
+            <label for="actJudgesIntro" class="col-xs-2  control-label">评委介绍:</label>
+            <div class="col-xs-10">
+                <textarea id="actJudgesIntro" name="actJudgesSource" type="text" class="form-control" ng-model="activityInfo.tempJudgesRel.actJudgesIntro"></textarea>
+            </div>                  
+        </div>        
+    </div>	
+</form>

@@ -1,0 +1,25 @@
+<div class="form-horizontal">
+	<div class="col-md-12" lar-search-block="">
+		<div class="form-group">
+			<label class="col-md-1 control-label">测试名称:</label>
+			<div class="col-md-3">
+				<input id="" name="" class="form-control" ng-model="test.query.cons.name">
+			</div>
+			<label class="col-md-1 control-label">测试类别:</label>
+			<div class="col-md-3">
+				<input id="" name="" class="form-control" lar-select="test.types" lar-model="test.query.cons.type">
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-12">
+		<div id="testGrid"></div>
+	</div>
+	
+	
+	
+</div>
+
+<div class="col-md-12">
+		<div ng-include src="test.template.testEdit"></div>
+</div>

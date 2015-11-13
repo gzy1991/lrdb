@@ -1,0 +1,51 @@
+<form id="activityPersionRelFormId">
+    <div class="col-xs-12 form-horizontal">
+        <div class="form-group">
+            <label for="activityTitle" class="col-xs-2 control-label"><span class = "notNull">*</span>活动职务:</label>
+            <div class="col-xs-3">
+               <input  id="activityTitle" name="activityTitle" type="text" class="form-control" ng-model="activityInfo.tempPerionRel.activityTitle" >
+            </div>           
+        </div>        
+    </div>
+     <div class="col-xs-12  form-horizontal">
+        <div class="form-group">
+            <label for="activityPersion" class="col-xs-2 control-label">参与人员姓名:</label>
+            <div class="col-xs-3">
+              <span>
+                <input id="activityPersion" name="activityPersion" type="text" class="form-control" ng-model="activityInfo.tempPerionRel.activityPersion" >     
+                <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.persionChoose.showDialog('-1')" >
+                </i>
+                </span>             
+            </div>
+            <label for="activityPersionTag" class="col-xs-2 control-label"><span class = "notNull">*</span>参与人员标签名:</label>
+            <div class="col-xs-3">
+                <input id="activityPersionTag" name="activityPersionTag" type="text" class="form-control" ng-model="activityInfo.tempPerionRel.activityPersionTag">
+            </div>           
+            <div style="position: absolute; right: 50px; top: 4px;">
+					<a id="addactPersion" class="table-add"> <i class="fa fa-plus-circle" ng-click="activityInfo.addactPersion()">添加</i>
+					</a>
+		   </div>
+        </div>        
+    </div>
+	<div id="actPersionOrgDiv"	ng-repeat="actPersionOrg in activityInfo.actPersionOrgs">
+		<div class="col-xs-12 form-horizontal">		
+				<div class="form-group">				 
+					<label for="actPersionRe" class="col-xs-2 control-label"  style="padding-right: 10px;">参与人员姓名:</label>
+					<div class="col-xs-3" style="padding-left: 20px;">
+						<input  name="actPersionRe" class="form-control" type="text" ng-model="activityInfo.actPersionOrgs[$index].actPersionRe"   >
+						<i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.persionChoose.showDialog($index)" ></i></span>    
+					</div>					
+				    <label for="activityPersionTag" class="col-xs-2 control-label"><span class = "notNull">*</span>参与人员标签名:</label>
+                    <div class="col-xs-3" ">
+                    <input  name="activityPersionTag" type="text" class="form-control" ng-model="activityInfo.actPersionOrgs[$index].activityPersionTag">
+                    </div>           					
+					<div style="position: absolute; right: 50px; top: 4px;">
+						<a id="delactPersion" class="table-add"> 
+						<i class="fa fa-plus-circle" ng-click="activityInfo.delactPersion($index,actPersionOrg)">删除</i>
+						</a>
+					</div>
+				</div>
+		</div>
+	</div>
+
+</form>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<nosqlmanager>
+
+	<nosql-component>
+		<nosql name="mongodb"
+			manager="com.css.sword.core.components.nosql.manager.SwordNosqlMongoDbManager"
+			host="10.1.100.165:27017" dbname="lrdb" readPreference="nearest" />
+	</nosql-component>
+	
+</nosqlmanager>

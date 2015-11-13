@@ -1,0 +1,35 @@
+{
+    "allDataCount":4,
+    "curPageData": [           
+        {
+            "judgesName":"李雪健",
+            "birthdayYear":"43",
+        	"sexName":"男",
+        	"birthPlaceName":"北京",
+        	"artTypeNames":"演员"
+        },        
+        {
+        	"judgesName":"李谷一",
+        	"birthdayYear":"43",
+        	"sexName":"女",
+       		"birthPlaceName":"北京",
+        	"artTypeNames":"音乐家"
+        },        
+        {
+        	"judgesName":"于文华",
+        	"birthdayYear":"43",
+        	"sexName":"女",
+       		"birthPlaceName":"北京",
+        	"artTypeNames":"音乐家"
+        },
+        {
+        	"judgesName":"濮存昕",
+        	"birthdayYear":"43",
+        	"sexName":"男",
+       		"birthPlaceName":"北京",
+        	"artTypeNames":"音乐家"
+        }
+      
+    ],
+    "status" : "200"
+}

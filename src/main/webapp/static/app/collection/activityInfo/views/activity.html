@@ -1,0 +1,48 @@
+<div class="col-md-12 form-horizontal" id="queryActConditions"  lar-search-block ="" >
+
+	<div class="form-group">
+		<label class="col-md-1 control-label" for="activityName">活动名称:</label>
+		<div class="col-md-3">
+			<input type="text" class="form-control" id="activityName" ng-model="activityInfo.query.dto.activityName">
+		</div>		
+	    <label class="col-md-1 control-label" for="actType">活动类别:</label>
+		<div class="col-md-3">
+			<input type="text"  id="actType" name="actType" class="form-control" lar-select="activityInfo.actTypeCodes" lar-model="activityInfo.query.dto.activityType" >       
+		</div>
+		<label class="col-md-1 control-label" for="actArtType">艺术类别:</label>
+		<div class="col-md-3">
+			<input type="text"  id="actArtType" name="actArtType" class="form-control" lar-multi="ture" lar-select="activityInfo.actArtTypeCodes" lar-model="activityInfo.query.dto.actArtType" > 
+		</div>
+	</div>
+	<div class="form-group">
+	   
+		<label class="col-md-1 control-label" for="beginData">活动时间:</label>
+		<div class="col-md-3" >
+		    <div class="input-group">
+			  <input type="text" class="form-control " id="beginData"  cs-datetime="" ng-model="activityInfo.query.dto.beginData" >
+		    </div>
+		</div>
+		<label class="col-md-1 control-label" for="endData">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;至&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+	   <div class="col-md-3">	
+	       <div class="input-group">    
+		    <input type="text" class="form-control" id="endData"  cs-datetime="" ng-model="activityInfo.query.dto.endData" >
+		   </div>
+		</div>
+	
+	</div>
+</div>
+<div class="col-md-12">
+    <div id="activityInfoList">
+    </div>	
+</div>
+ <div>
+ 	
+    <div ng-include src="activityInfo.template.activityInfoEdit"></div>
+</div>
+<div>
+ 
+    <div ng-include src="activityInfo.template.processTrackInfo"></div>
+</div>
+<!-- <div>
+    <div ng-include src="activityInfo.template.activityInfoView"></div>
+</div> -->

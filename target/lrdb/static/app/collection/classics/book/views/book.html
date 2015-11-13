@@ -1,0 +1,50 @@
+<div class="form-horizontal">
+	<div class="col-md-12" id="bookQueryCons"  lar-search-block ="">
+		<form id="bookSearchForm">
+			<div class="form-group">
+				<label class="col-md-1 control-label" for="bookName">图书名称:</label>
+				<div class="col-md-3">
+					<input id="bookName" name="bookName" class="form-control" ng-model="book.query.cons.bookName">
+				</div>
+				<label class="col-md-1 control-label" for="artType">图书类别:</label>
+				<div class="col-md-3">
+					<input id="bookType" name="bookType" class="form-control" lar-select="book.bookTypes" lar-option="--所有类别--" lar-search-able="true" lar-model="book.query.cons.bookType">
+				</div>
+				<label class="col-md-1 control-label" for="author">作者:</label>
+				<div class="col-md-3">
+					<input id="author" name="author" class="form-control" ng-model="book.query.cons.author">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-1 control-label" for="publishHouse">出版单位:</label>
+				<div class="col-md-3">
+					<input id="publishHouse" name="publishHouse" class="form-control" ng-model="book.query.cons.publishHouse">
+				</div>
+				<label class="col-md-1 control-label" for="publishMinTime">出版时间:</label>
+				<div class="col-md-3">
+					<div class="input-group">
+						<input id="publishMinTime" name="publishMinTime" cs-datetime="" class="form-control" readonly ng-model="book.query.cons.publishMinTime">
+					</div>
+				</div>
+				<label class="col-md-1 control-label middle-label" for="publishMaxTime">—</label>
+				<div class="col-md-3">
+					<div class="input-group">
+						<input id="publishMaxTime" name="publishMaxTime" cs-datetime="" class="form-control" readonly ng-model="book.query.cons.publishMaxTime">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-md-1 control-label" for="attach">有否附件:</label>
+				<div class="col-md-3">
+					<input id="attach" name="attach" class="form-control" lar-select="book.exists" lar-option="--请选择--" lar-model="book.query.cons.attach">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="col-md-12">
+		<div id="bookGrid"></div>
+		<!--如果不包含这个模板,那右侧滑出页面无法出来 -->
+    	<div ng-include src="book.template.edit"></div>
+	</div>
+ 	
+</div>

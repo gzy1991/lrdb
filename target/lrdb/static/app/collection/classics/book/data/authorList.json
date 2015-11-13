@@ -1,0 +1,37 @@
+{
+	"status" : "200",
+	"allDataCount" : "5",
+	"curPageData" : [
+		{
+			"artistId" : "A",
+			"artistName" : "高东升",
+			"age" : "30",
+			"bornCity" : "张家口"
+		},
+		{
+			"artistId" : "B",
+			"artistName" : "彭晓飞",
+			"age" : "30",
+			"bornCity" : "延边"
+		},
+		{
+			"artistId" : "C",
+			"artistName" : "谢莹",
+			"age" : "30",
+			"bornCity" : "武汉"
+		},
+		{
+			"artistId" : "D",
+			"artistName" : "任凯光",
+			"age" : "30",
+			"bornCity" : "大庆"
+		},
+		{
+			"artistId" : "E",
+			"artistName" : "梁静",
+			"age" : "30",
+			"bornCity" : "运城"
+		}
+		
+	]
+}

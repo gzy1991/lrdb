@@ -1,0 +1,47 @@
+<div class="col-xs-12" id="queryConditions" lar-search-block>
+	<div class="form-horizontal">
+	<div class="form-group">
+		<label class="col-xs-1 control-label">百科标题:</label>
+		<div class="col-xs-5">
+			<input class="form-control"  ng-model="encyclopedia.queryCondition.conditions.encyclopediaTitle">
+		</div>
+		
+		<label class="col-xs-1 control-label" >来　　源:</label>
+		<div class="col-xs-5">
+			<input class="form-control" ng-model="encyclopedia.queryCondition.conditions.encyclopediaSource">
+		</div>
+	    
+	</div>
+	
+	<div class="form-group">
+	
+		<label class="col-md-1 control-label" for="artType">艺术类别:</label>
+		<div class="col-md-5">
+			<input type="text" id="artType" class="form-control" lar-select="encyclopedia.artTypeCodes" lar-option="--不限--" lar-model="encyclopedia.queryCondition.conditions.artTypeDict" >
+		</div>
+		
+		<label class="col-md-1 control-label" for="encyclopediaType">百科分类:</label>
+		<div class="col-md-5">
+			<input type="text" id="encyclopediaType" class="form-control" lar-select="encyclopedia.encyclopediaType" lar-option="--不限--" lar-model="encyclopedia.queryCondition.conditions.encyclopediaTypeDict" >
+		</div>
+		
+		
+	</div>
+</div>
+</div>
+
+
+<!-- 侧边弹出栏面板    -->
+<div class="col-md-12">
+	<div id="encyclopediaList"></div>
+</div>
+
+<div>
+	<div ng-include src="encyclopedia.template.encyclopediaEdit"></div>
+</div>
+<!-- <div>
+	<div ng-include src="encyclopedia.template.encyclopediaView"></div>
+</div> -->
+<!-- <div>
+	<div ng-include src="encyclopedia.template.encyclopediaTrace"></div>
+</div> -->

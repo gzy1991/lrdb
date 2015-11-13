@@ -1,0 +1,58 @@
+<div>
+
+    <!-- Nav tabs -->
+	<ul class="nav nav-tabs" role="tablist" style="clear:both">
+		<li class="active"><a data-target="#selPicFilePanel" role="tab" data-toggle="tab">图片查询</a></li>
+		<li ><a data-target="#linkPicPanel" role="tab" data-toggle="tab">超链接</a></li>
+		<li ><a data-target="#uploadplugPanel" role="tab" data-toggle="tab">上传</a></li>
+	</ul>
+	
+    <!-- Tab panes -->
+   	<div  class="tab-content">
+    	<div id="selPicFilePanel" class="tab-pane active">
+    	
+        	<div class="col-xs-12 form-horizontal"  id="selPicFileId">	
+        		<!--  -->
+				<form role="form" class="form-horizontal query-form">
+					  <div class="form-group">
+					  
+						  <label class="col-xs-2 control-label" for="queryPicFName">图片名称:</label>
+						  <div class="col-xs-6">
+							  <input type="text" id="picNameID" class="form-control" id="queryPicFName" />
+						  </div>	
+ 
+					  </div>
+				</form>
+				
+			</div>
+			
+			<div class="col-xs-12">
+			    <div id="encyclopedialPicFListId">
+			    </div>
+			</div>
+			
+		</div>
+		
+		<!-- 图片超链接 -->
+		<div id="linkPicPanel" class="tab-pane">
+		   <div class="form-group">
+			  <label class="col-xs-2 control-label" for="queryPicLinksID">源图片超链接:</label>
+			  <div class="col-xs-6">
+				<input type="text" class="form-control" id="queryPicLinksID" value="http://i2.qhimg.com/dr/200__/t01b71ed92dd811b23b.jpg">
+			  </div>	
+			</div>
+		</div>
+
+		<!-- 图片上传组件 -->
+		<div id="uploadplugPanel" class="tab-pane">
+		
+			<div class="form-horizontal">
+			    <div class="col-md-12">
+			        <div id="multi2"></div>
+			    </div>
+			</div>
+			
+		</div>	
+	</div>
+	
+</div>

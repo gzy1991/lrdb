@@ -1,0 +1,15 @@
+<div id="periodicalSelectId" >
+    <div class="tab-content">
+        <div id="" class="col-md-12 form-horizontal "  lar-search-block="">
+            <div class="form-group">
+                <label class="col-md-2 control-label" for="queryGroupName">期刊名称:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" id="queryGroupName" ng-model = "periodicalSelect.perSelect.query.queryGroupName">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div id="periodicalSelectGrid"></div>
+        </div>
+    </div>
+</div>

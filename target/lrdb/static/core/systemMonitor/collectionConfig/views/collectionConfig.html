@@ -1,0 +1,125 @@
+
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司
+ -->
+
+
+
+<!--   监控系统下持久层监控页面
+  @author YaoGuanhong
+  @创建时间 2015年8月12日 上午9:43
+  @History 修订历史<br> -->
+<style>
+.ServerMonitorMenuTitle {
+	height: 35px;
+	line-height: 35px;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+	font-family: '微软雅黑';
+	text-align: center;
+	marginal-bottom: 10px;
+}
+
+.mb12 {
+	margin-bottom: 12px;
+	margin-top: 12px;
+}
+
+.mb5 {
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.form_padding {
+	margin-top: 12px;
+	text-align: center;
+}
+
+.tableBasic {
+	word-wrap: break-word;
+	width: 100%;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	border-spacing: 1px;
+	background-color: #F9F9F9;
+	table-layout：auto;
+}
+
+.table-bordered {
+	border: 1px solid #ddd;
+	border-collapse: separate;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+th, td {
+	padding: 10px;
+	line-height: 20px;
+	text-align: left;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+	font-size: 14px;
+	word-break: break-all;
+}
+
+th {
+	background-color: #F9F9F9;
+}
+
+td {
+	background-color: #FFF;
+}
+
+tbody {
+	display: table-row-group;
+	vertical-align: middle;
+	border-top-color: #ddd;
+	border-right-color: #ddd;
+	border-bottom-color: #ddd;
+	border-left-color: #ddd;
+}
+</style>
+<div class="container-fluid">
+	<div class="row">
+		<div style="padding: 10px;">
+			<form id="monitor_form_server" class="form-horizontal">
+				<!-- 监控采集配置  -->
+				<div class="row ServerMonitorMenuTitle .mb5 bg-info">
+					<span>Sword监控采集信息配置</span>
+				</div>
+				<div class="row form-group ">
+					<label class="col-md-3  .mb12 control-label"
+						for="monitor_collection_switch" style="padding-top: 17px;">监控配置采集总开关</label>
+					<div class="col-md-2">
+						<!-- 监控配置开关 -->
+						<select class="form_padding form-control"
+							id="monitor_collection_switch" name="switch">
+							<option value="N">关闭</option>
+							<option value="Y">开启</option>
+						</select>
+					</div>
+					<label class="col-md-3 .mb12 control-label"
+						for="monitor_collection_frequence" style="padding-top: 17px;">全局采集频率</label>
+					<div class="col-md-2">
+						<!-- 监控采集频率 -->
+						<select class="form_padding form-control"
+							id="monitor_collection_frequence" name="frequence">
+							<option value="60">1分钟</option>
+							<option value="300">5分钟</option>
+							<option value="600">10分钟</option>
+							<option value="1800">30分钟</option>
+							<option value="3600">1小时</option>
+						</select>
+					</div>
+				</div>
+				<div class="row ServerMonitorMenuTitle .mb5 bg-info"
+					style="margin-top: 25px;">
+					<span>设置Sword监控采集任务列表</span>
+				</div>
+				<div class="row" id="monitor_collection_table"></div>
+			</form>
+		</div>
+	</div>
+</div>
+

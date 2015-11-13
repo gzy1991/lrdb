@@ -1,0 +1,35 @@
+{
+  "allDataCount": 25,
+  "curPageData": [
+  	
+    {
+      "id": "1",
+      "name": "mp4"
+    },
+    {
+      "id": "2",
+      "name": "flv"
+    },
+    {
+      "id": "3",
+      "name": "avi"
+    },
+    {
+      "id": "4",
+      "name": "wmv"
+    },
+    {
+      "id": "5",
+      "name": "rmvb"
+    },
+    {
+      "id": "6",
+      "name": "mov"
+    },
+    {
+      "id": "7",
+      "name": "mpg"
+    }
+  ],
+  "status": "200"
+}

@@ -1,0 +1,29 @@
+<div id="searchConditions" class="col-md-12 form-horizontal "  lar-search-block="">
+	<div class="form-group">
+		<label class="col-md-1 control-label" for="queryPerName">期刊名称:</label>
+		<div class="col-md-5">
+			<input type="text" class="form-control" id="queryPerName" ng-model = "periodical.query.conditions.queryPerName">
+		</div>
+		<label class="col-md-1 control-label" for="queryPerType">期刊类别:</label>
+		<div class="col-md-5">
+			<input type="text" class="form-control" id="queryPerType" lar-select="periodical.query.list.queryPerTypes" lar-option="--请选择--" lar-model = "periodical.query.conditions.queryPerType" />
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-1 control-label" for="querySponsor">主办单位:</label>
+		<div class="col-md-5">
+			<input type="text" class="form-control" id="querySponsor"  ng-model = "periodical.query.conditions.querySponsor">
+		</div>
+		<label class="col-md-1 control-label" for="queryPublisher">出版单位:</label>
+		<div class="col-md-5">
+			<input type="text" class="form-control" id="queryPublisher" ng-model = "periodical.query.conditions.queryPublisher" />
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+	<div id="periodicalList"></div>
+</div>
+<!-- 侧边弹出栏面板
+<div>
+	<div ng-include src="periodical.template.periodicalEdit"></div>
+</div>-->

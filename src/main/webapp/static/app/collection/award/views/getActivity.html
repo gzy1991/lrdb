@@ -1,0 +1,35 @@
+<div class="form-horizontal col-md-12" lar-search-block="">
+	<div class="form-group">
+		<label class="col-md-2 control-label">活动名称:</label>
+		<div class="col-md-4">
+			<input id="queryActivityName" name="queryActivityName" class="form-control" ng-model="session.query.activity.activityName">
+		</div>
+		<label class="col-md-2 control-label">艺术类别:</label>
+		<div class="col-md-4">
+			<input id="queryActivityArttype" name="queryActivityArttype" lar-select="session.arttypes" class="form-control" lar-model="session.query.activity.activityArttype">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">开始时间:</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input id="queryActStartDate" name="queryActStartDate" cs-datetime="" readonly class="form-control" ng-model="session.query.activity.startDate">
+			</div>
+		</div>
+		<label class="col-md-2 control-label">结束时间:</label>
+		<div class="col-md-4">
+			<div class="input-group">
+				<input id="queryActEndDate" name="queryActEndDate" cs-datetime="" readonly class="form-control" ng-model="session.query.activity.endDate">
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">活动类别:</label>
+		<div class="col-md-4">
+			<input id="queryActivityType" name="queryActivityType" lar-select="session.activityTypes" class="form-control" lar-model="session.query.activity.activityType">
+		</div>
+	</div>
+</div>
+<div class="col-md-12">
+	<div id="activityGrid"></div>
+</div>

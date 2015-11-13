@@ -1,0 +1,289 @@
+<!-- Sword基础框架 ： sword-monitor 
+  Copyright 中国软件与技术服务股份有限公司
+ -->
+
+
+
+<!--   监控系统下持久层监控页面sql监控的侧边栏
+  @author YaoGuanhong
+  @创建时间 2015年7月10日 下午1:13:56
+  @History 修订历史<br> -->
+
+<style type="text/css">
+.monitor_selfheight_box {
+	min-height: 50px;
+	_height: 120px;
+	padding: 3px;
+	border: 1px solid #ccc;
+	word-wrap: break-word;
+	border-radius: 5px;
+	background-color: #eee;
+}
+</style>
+
+<div class="container-fluid">
+	<div class="single-panel">
+		<form id="monitor_form_sql" class="form-horizontal">
+
+			<div class="menuTitle mb5 bg-info">
+				<span>SQL详细信息</span>
+			</div>
+			<div class="row form-group ">
+				<label class="col-md-3 control-label" for="sqlName">SQL语句</label>
+				<div class="col-md-9">
+					<div class="monitor_selfheight_box" id="sqlName" name="sqlName">
+					</div>
+					<!-- <div class="col-md-8">
+                <textarea  type="text"  class="form-control"  id="sqlName" name="sqlName" />
+           </div> -->
+				</div>
+			</div>
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeCount">执行总次数</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeCount"
+						name="exeCount" />
+				</div>
+				<label class="col-md-3 control-label" for="AveTime">平均执行时间(毫秒)</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="AveTime" name="AveTime" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="slowest">最慢时间(毫秒)</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="slowest" name="slowest" />
+				</div>
+				<label class="col-md-3 control-label" for="inTransaction">总事务数</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="inTransaction"
+						name="inTransaction" />
+				</div>
+			</div>
+
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="errorCount">总错误数</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="errorCount"
+						name="errorCount" />
+				</div>
+				<label class="col-md-3 control-label" for="updateLines">总更新行数</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="updateLines"
+						name="updateLines" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="readLines">总读取行数</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="readLines"
+						name="readLines" />
+				</div>
+				<label class="col-md-3 control-label" for="exe">总执行中</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exe" name="exe" />
+				</div>
+			</div>
+			<div class="menuTitle mb5 bg-info">
+				<span>执行时间分布(次数)</span>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_0_1">0-1毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_0_1"
+						name="exeTime_0_1" />
+				</div>
+				<label class="col-md-3 control-label" for="exeTime_1_10">1-10毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_1_10"
+						name="exeTime_1_10" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_10_100">10-100毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_10_100"
+						name="exeTime_10_100" />
+				</div>
+				<label class="col-md-3 control-label" for="exeTime_100_1000">100-1000毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_100_1000"
+						name="exeTime_100_1000" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_1_10s">1-10秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_1_10s"
+						name="exeTime_1_10s" />
+				</div>
+				<label class="col-md-3 control-label" for="exeTime_10_100s">10-100秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_10_100s"
+						name="exeTime_10_100s" />
+				</div>
+			</div>
+
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_100_1000s">100-1000秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_100_1000s"
+						name="exeTime_100_1000s" />
+				</div>
+				<label class="col-md-3 control-label" for="moreThan1000s">大于1000秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="moreThan1000s"
+						name="moreThan1000s" />
+				</div>
+			</div>
+
+			<div class="menuTitle mb5 bg-info">
+				<span>执行+RS时分布(次数)</span>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_0_1RS">0-1毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_0_1RS"
+						name="exeTime_0_1RS" />
+				</div>
+				<label class="col-md-3 control-label" for="exeTime_1_10RS">1-10毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_1_10RS"
+						name="exeTime_1_10RS" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_10_100RS">10-100毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_10_100RS"
+						name="exeTime_10_100RS" />
+				</div>
+				<label class="col-md-3 control-label" for="exeTime_100_1000RS">100-1000毫秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_100_1000RS"
+						name="exeTime_100_1000RS" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_1_10sRS">1-10秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_1_10sRS"
+						name="exeTime_1_10sRS" />
+				</div>
+				<label class="col-md-3 control-label" for="exeTime_10_100sRS">10-100秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_10_100sRS"
+						name="exeTime_10_100sRS" />
+				</div>
+			</div>
+
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="exeTime_100_1000sRS">100-1000秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="exeTime_100_1000sRS"
+						name="exeTime_100_1000sRS" />
+				</div>
+				<label class="col-md-3 control-label" for="moreThan1000sRS">大于1000秒</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="moreThan1000sRS"
+						name="moreThan1000sRS" />
+				</div>
+			</div>
+
+			<div class="menuTitle mb5 bg-info">
+				<span>读取行分布(次数)</span>
+			</div>
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="readLines0">0行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="readLines0"
+						name="readLines0" />
+				</div>
+				<label class="col-md-3 control-label" for="readLines1_9">1-9行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="readLines1_9"
+						name="readLines1_9" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="readLines10_99">10-99行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="readLines10_99"
+						name="readLines10_99" />
+				</div>
+				<label class="col-md-3 control-label" for="readLines100_999">100-999行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="readLines100_999"
+						name="readLines100_999" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="readLines1000_9999">1000-9999行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="readLines1000_9999"
+						name="readLines1000_9999" />
+				</div>
+				<label class="col-md-3 control-label" for="moreThan9999">大于9999行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="moreThan9999"
+						name="moreThan9999" />
+				</div>
+			</div>
+			<div class="menuTitle mb5 bg-info">
+				<span>更新行分布(次数)</span>
+			</div>
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="upLines0">0行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="upLines0"
+						name="upLines0" />
+				</div>
+				<label class="col-md-3 control-label" for="upLines1_9">1-9行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="upLines1_9"
+						name="upLines1_9" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="upLines10_99">10-99行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="upLines10_99"
+						name="upLines10_99" />
+				</div>
+				<label class="col-md-3 control-label" for="upLines100_999">100-999行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="upLines100_999"
+						name="upLines100_999" />
+				</div>
+			</div>
+
+			<div class="row form-group">
+				<label class="col-md-3 control-label" for="upLines1000_9999">1000-9999行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="upLines1000_9999"
+						name="upLines1000_9999" />
+				</div>
+				<label class="col-md-3 control-label" for="upmoreThan9999">大于9999行</label>
+				<div class="col-md-3">
+					<input type="text" class="form-control" id="upmoreThan9999"
+						name="upmoreThan9999" />
+				</div>
+			</div>
+			
+		</form>
+	</div>
+</div>

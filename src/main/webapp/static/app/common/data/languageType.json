@@ -1,0 +1,18 @@
+{
+    "status": "200",
+    "allDataCount": "5",
+    "curPageData": [
+        {
+            "id": "0",
+            "name": "中文"
+        },
+        {
+            "id": "1",
+            "name": "英文"
+        },
+        {
+            "id": "2",
+            "name": "中英文"
+        }
+    ]
+}

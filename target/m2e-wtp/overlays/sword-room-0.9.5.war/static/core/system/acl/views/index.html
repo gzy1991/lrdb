@@ -1,0 +1,72 @@
+<style>
+	.pd0{
+		padding: 0;
+	}
+	.mb5{
+		margin-bottom: 5px;
+	}
+	.nav-tabs li a{
+		padding-left:30px;
+		padding-right:30px;
+	}
+</style>
+	<div class="container-fluid">
+		<div class="row mb5">
+			<div class="col-md-12 pd0">
+			    <ul class="nav nav-tabs" role="tablist">
+			        <li role="presentation" class="active"><a href="#tab_authRes" role="tab" data-toggle="tab"><!-- <i class="fa fa-tasks"></i>&nbsp; -->资源管理</a></li>
+			        <li role="presentation"><a href="#tab_authSet" role="tab" data-toggle="tab"><!-- <i class="fa fa-pagelines"></i>&nbsp; -->资源授权</a></li>
+			        <li role="presentation"><a href="#tab_authUpdate" role="tab" data-toggle="tab"><!-- <i class="fa fa-yelp"></i>&nbsp; -->查询变更</a></li>
+			    </ul>
+			</div>
+		</div>
+	    <!-- Tab panes -->
+	    <div class="tab-content">
+	    	<!-- 资源管理 -->
+	        <div role="tabpanel" class="tab-pane active" id="tab_authRes">
+	            <div class="row">
+	                <div class="col-md-3 pd0">
+	                    <div id="tree_resDir" class="ztree"></div>
+	                </div>
+	                <div class="col-md-9 pd0">
+	                    <div id="grid_res"></div>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- 授权管理 -->
+	        <div role="tabpanel" class="tab-pane" id="tab_authSet">
+				<div class="row">
+					<div class="col-md-6 pd0">
+						<div id="grid_userSet"></div>
+					</div>
+					<div class="col-md-4 pd0">
+						<div id="treeCheck_menu" class="ztree"></div>
+					</div>
+				</div>
+	        </div>
+	       	<!-- 查询变更 -->
+	        <div role="tabpanel" class="tab-pane" id="tab_authUpdate">
+	        	<div class="row mb5">
+	        		<div class="col-md-3 cold-sm-4 pd0">
+	        			<div class="input-group">
+		        			<input id="input_acl_userSelect" type="text" class="form-control bg-success" placeholder="点此选择授权对象...">
+		        			<span class="input-group-btn">
+								<button id="btn_aclUpdateSearch" class="btn btn-default" type="button" title="查询"><i class="fa fa-search"></i></button>
+							</span>
+	        			</div>
+	        		</div>
+	        		<div class="col-md-8 cold-sm-3" style="line-height: 30px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">
+	        			<span id="text_aclUpdateUser"></span>
+	        		</div>
+	        	</div>
+				<div class="row">
+					<div class="col-md-6 pd0">
+						<div id="grid_userUpdate"></div>
+					</div>
+					<div class="col-md-4 pd0">
+						<div id="treeCheck_aclUpdate" class="ztree"></div>
+					</div>
+				</div>
+	        </div>
+	    </div>
+	</div>

@@ -1,0 +1,38 @@
+{
+    "allDataCount":4,
+    "curPageData": [              
+      {
+      		"resourceTitle":"怀荣北京电影节",
+			"resourceType":"活动信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-02-06 18:30:09",
+			"modifyType":"新增"
+	  },
+	  {
+      		"resourceTitle":"怀荣北京电影节",
+			"resourceType":"活动信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-02-06 18:30:09",
+			"modifyType":"新增"
+	  },
+	  {
+      		"resourceTitle":"怀荣北京电影节",
+			"resourceType":"活动信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-02-06 18:30:09",
+			"modifyType":"新增"
+	  },	   
+	  {
+      		"resourceTitle":"怀荣北京电影节",
+			"resourceType":"活动信息",
+			"modifyMember":"张三",
+			"modifyDep":"中国文联",
+			"modifyTime":"2015-02-06 18:30:09",
+			"modifyType":"新增"
+	  }
+    ],
+    "status" : "200"
+}

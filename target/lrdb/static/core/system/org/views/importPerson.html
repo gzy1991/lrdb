@@ -1,0 +1,29 @@
+一、请按照数据模板的格式准备要导入的数据。 <a href="../static/core/system/org/importTemplete/人员导入.xlsx" id="downloadPsnExcel">下载数据模板</a>
+<div class="attention_content">
+    <p style="margin:0">注意事项：</p>
+    <ol>
+        <li><span style="color:red">如需要同时导入人员和部门、角色的关联关系，请先导入部门和角色</span></li>
+        <li>模板中的表头名称不可更改，表头行不能删除</li>
+        <li>表头列顺序、宽度可调整，单元格不支持公式计算</li>
+        <li>红色底色的为必填，黄色底色的为条件必填</li>
+        <li><code>员工编号</code>，<code>用户名称</code>为必填项，当填写<code>职务名称</code>时，它们所对应的ID必填</li>
+        <li>兼职部门为多个时，请用<code>英文分号</code>分隔开</li>
+        <li>所属角色编号为多个时，请用<code>英文分号</code>分隔开</li>
+        <li><code>员工编号</code>不能重复，如果重复则忽略</li>
+    </ol>
+</div>
+
+二、请选择需要导入的Excel文件。
+<!-- 此部分不需要修改，默认即可 start-->
+<div class="org_excelImport">
+    <div id="ImportExcelPanel">
+
+    </div>
+</div>
+<div class="attention_content" id="importExcelInfo" style="display:none">
+    <div id="importExcelFileName"></div>
+    <p style="margin:0">状态：<span style="color:red" id="importExcelStatus">待上传</span></p>
+    <div id="importExcelErrorInfo">
+    </div>
+</div>
+<!-- 此部分不需要修改，默认即可 end-->

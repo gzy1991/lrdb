@@ -1,0 +1,40 @@
+<div class="tab-header">
+    <div class="title">
+        <i class="fa fa-bars"></i><span>指定工作日</span>
+    </div>
+    <div class="tool">
+        <button id="btn-assign-save" class="btn btn-default">保存</button>
+    </div>
+</div>
+<div class="single-panel">
+	<form id="form-assign" class="form-horizontal">
+		<input type="hidden" name="id" />
+		<div class="form-group">
+            <label class="col-sm-3 control-label" for="menuOpen"><span class="requird">*</span>说明/备注</label>
+            <div class="col-sm-8">
+            	<input type="text" class="form-control" id="assignName" name="assignName" />
+            </div>  
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="assignWeekend"><span class=requird>*</span>工作状态</label>
+            <div class="col-sm-8">
+               	<select class="form-control" id="assignWeekend" name="assignWeekend">
+                	<option value="n" selected="selected">工作日</option>
+                	<option value="y">非工作日</option>
+               	</select>
+            </div>
+        </div>
+		<div class="form-group">
+            <label class="col-sm-3 control-label"><span class=requird>*</span>日期列表</label>
+            <div class="col-sm-8">
+                <div id="grid-day-date"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">工作时间列表</label>
+            <div class="col-sm-8">
+            	<div id="grid-day-time"></div>
+            </div>
+        </div>
+	</form>
+</div>

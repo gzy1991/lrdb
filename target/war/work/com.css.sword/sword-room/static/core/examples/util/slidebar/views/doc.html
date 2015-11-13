@@ -1,0 +1,126 @@
+<h1 id="-slidebar">侧边栏Slidebar</h1>
+<h2 id="-">样例代码</h2>
+<pre class="editor-colors lang-javascript"><div class="line"><span class="source js"><span class="support function js"><span>require</span></span><span class="meta brace round js"><span>(</span></span><span class="meta brace square js"><span>[</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>PDUtilDir/slidebar</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta brace square js"><span>]</span></span><span class="meta delimiter object comma js"><span>,&nbsp;</span></span><span class="meta function js"><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>Slidebar</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="storage modifier js"><span>var</span></span><span>&nbsp;slidebar&nbsp;</span><span class="keyword operator js"><span>=</span></span><span>&nbsp;Slidebar</span><span class="meta brace round js"><span>(</span></span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url&nbsp;</span><span class="keyword operator js"><span>:</span></span><span>&nbsp;getServer</span><span class="meta brace round js"><span>(</span><span>)</span></span><span>&nbsp;</span><span class="keyword operator js"><span>+</span></span><span>&nbsp;</span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>/static/core/examples/util/slidebar/views/template.html</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta delimiter object comma js"><span>,</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta function json js"><span class="entity name function js"><span>afterLoad</span></span><span>&nbsp;:&nbsp;</span><span class="storage type function js"><span>function</span></span><span class="punctuation definition parameters begin js"><span>(</span></span><span class="variable parameter function js"><span>$Panel</span></span><span class="punctuation definition parameters end js"><span>)</span></span></span><span>&nbsp;</span><span class="meta brace curly js"><span>{</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="entity name type object js firebug"><span>console</span></span><span class="support function js firebug"><span>.log</span></span><span class="meta brace round js"><span>(</span></span><span class="string quoted double js"><span class="punctuation definition string begin js"><span>"</span></span><span>模板加载完成，可以使用了</span><span class="punctuation definition string end js"><span>"</span></span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span></span></div><div class="line"><span class="source js"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span><span class="punctuation terminator statement js"><span>;</span></span></span></div><div class="line"><span class="source js"><span class="meta brace curly js"><span>}</span></span><span class="meta brace round js"><span>)</span></span></span></div></pre>
+<h2 id="-">配置属性说明</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">sid</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">自动生成</td>
+<td style="text-align:left">组件唯一id，用来设置组件dom的id</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">页面dom节点id，用来初始化侧边栏内容</td>
+</tr>
+<tr>
+<td style="text-align:left">body</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">侧边栏内容</td>
+</tr>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">远程页面的url，用来初始化侧边栏内容</td>
+</tr>
+<tr>
+<td style="text-align:left">urlCache</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">是否缓存远程url对应的模板</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">侧边栏宽度[不支持页面自适应]</td>
+</tr>
+<tr>
+<td style="text-align:left">size</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">侧边栏宽度[可选值有"lg"和"sm"][支持页面自适应]</td>
+</tr>
+<tr>
+<td style="text-align:left">cache</td>
+<td style="text-align:left">boolean</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">是否缓存组件。缓存后sid做为缓存key，再次初始化时通过sid查找相应缓存的组件</td>
+<td>，</td>
+</tr>
+<tr>
+<td style="text-align:left">afterLoad</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">侧边栏内容设置/加载完成回调</td>
+</tr>
+<tr>
+<td style="text-align:left">afterOpen</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">侧边栏打开完成回调</td>
+</tr>
+<tr>
+<td style="text-align:left">afterClose</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">侧边栏关闭完成回调</td>
+</tr>
+<tr>
+<td style="text-align:left">onDestroy</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">null</td>
+<td style="text-align:left">侧边栏销毁时回调</td>
+</tr>
+</tbody>
+</table>
+<h1 id="-">对象方法说明</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">close</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">关闭侧边栏</td>
+</tr>
+<tr>
+<td style="text-align:left">open</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">打开侧边栏</td>
+</tr>
+<tr>
+<td style="text-align:left">destroy</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">无</td>
+<td style="text-align:left">销毁侧边栏</td>
+</tr>
+<tr>
+<td style="text-align:left">setBody</td>
+<td style="text-align:left">function</td>
+<td style="text-align:left">html</td>
+<td style="text-align:left">设置侧边栏html</td>
+</tr>
+</tbody>
+</table>

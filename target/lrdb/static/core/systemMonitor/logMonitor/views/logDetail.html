@@ -1,0 +1,135 @@
+<style type="text/css">
+.monitor_selfheight_box {
+    min-height: 30px; 
+    _height: 120px; 
+    padding: 3px; 
+    border: 1px solid #a0b3d6; 
+    word-wrap: break-word;
+}
+</style>
+<div id="LogDetail">
+	<div class="row">
+		<div style="float: left">
+			<div style="padding: 10px; font-size: 24px">
+				<i class="menu-icon fa fa-list"></i><span id="logDetailTitle"></span>
+			</div>
+		</div>
+	</div>
+	<form id="logDetailForm">
+		<fieldset class="pd-fieldset">
+			<div class="row">
+				<div class="col-md-6 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailTime" class="col-md-4 col-sm-2 control-label"><span
+							class="requird">*</span>时间:</label>
+						<div class="col-md-8 col-sm-10">
+<!-- 							<input id="time" type="text" name="time" readonly="readonly" class="form-control"> -->
+							<div class="monitor_selfheight_box"  id="logDetailTime" name="logDetailTime"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailLevel" class="col-md-4 col-sm-2 control-label"><span
+							class="requird">*</span>日志级别:</label>
+						<div class="col-md-8 col-sm-10">
+<!-- 							<input id="level" type="text" name="level" readonly="readonly" class="form-control"> -->
+							<div class="monitor_selfheight_box"  id="logDetailLevel" name="logDetailLevel"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailModuleName" class="col-md-4 col-sm-2 control-label"><span
+							class="requird">*</span>模块名:</label>
+						<div class="col-md-8 col-sm-10">
+<!-- 							<input id="moduleName" type="text" name="moduleName" readonly="readonly" class="form-control"> -->
+							<div class="monitor_selfheight_box"  id="logDetailModuleName" name="logDetailModuleName"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailClassName" class="col-md-2 col-sm-2 control-label"><span
+							class="requird">*</span>类名:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<textarea id="className" name="className" rows="2" cols="20" readonly="readonly" class="form-control"></textarea> -->
+							<div class="monitor_selfheight_box"  id="logDetailClassName" name="logDetailClassName"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailSessionID" class="col-md-2 col-sm-2 control-label"><span
+							class="requird">*</span>SessionID:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<input id="sessionID" type="text" name="sessionID" readonly="readonly" class="form-control"> -->
+								<div class="monitor_selfheight_box"  id="logDetailSessionID" name="logDetailSessionID"></div>
+						</div>
+					</div>
+				</div>
+				
+				
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailMsg" class="col-md-2 col-sm-2 control-label"><span
+							class="requird">*</span>消息:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<textarea id="msg" name="msg" rows="2" cols="20" readonly="readonly" class="form-control"></textarea> -->
+							<div class="monitor_selfheight_box"  id="logDetailMsg" name="logDetailMsg"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailSwordExCode" class="col-md-4 col-sm-2 control-label">Sword异常码:</label>
+						<div class="col-md-8 col-sm-10">
+<!-- 							<input id="swordExCode" type="text" name="swordExCode" readonly="readonly" class="form-control"> -->
+							<div class="monitor_selfheight_box"  id="logDetailSwordExCode" name="logDetailSwordExCode"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailExClass" class="col-md-2 col-sm-2 control-label">异常所在类:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<input id="exClass" type="text" name="exClass" readonly="readonly" class="form-control"> -->
+							<div class="monitor_selfheight_box"  id="logDetailExClass" name="logDetailExClass"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailExMsg" class="col-md-2 col-sm-2 control-label">异常信息:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<textarea id="exMsg" name="exMsg" rows="2" cols="20" readonly="readonly" class="form-control"></textarea> -->
+							<div class="monitor_selfheight_box"  id="logDetailExMsg" name="logDetailExMsg"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailSwordStackTrace"
+							class="col-md-2 col-sm-2 control-label">Sword异常堆栈信息:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<textarea id="swordStackTrace" name="swordStackTrace" rows="25" cols="20" readonly="readonly" class="form-control"></textarea> -->
+							<div class="monitor_selfheight_box"  id="logDetailSwordStackTrace" name="logDetailSwordStackTrace"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12 form-horizontal">
+					<div class="form-group">
+						<label for="logDetailExStackTrace" class="col-md-2 col-sm-2 control-label">异常堆栈信息:</label>
+						<div class="col-md-10 col-sm-10">
+<!-- 							<textarea id="exStackTrace" name="exStackTrace" rows="25" cols="20" readonly="readonly" class="form-control"></textarea> -->
+							<div class="monitor_selfheight_box"  id="logDetailExStackTrace" name="logDetailExStackTrace"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</form>
+</div>

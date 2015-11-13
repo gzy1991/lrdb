@@ -1,0 +1,49 @@
+/** 单个上传图标样式 */
+.single-upload {
+	position : absolute;
+	right : 20px;
+	top : 10px;
+}
+.single-upload i.fa {
+	color : black;
+	padding-left:3px;
+	padding-right:3px;
+}
+.upload-progress {
+	background-color : #337ab7;
+	height : 3px;
+	width : 0;
+	position : relative;
+	top : 3px;
+	z-index : 1000;
+}
+.webuploader-container div[id^='rt_rt_'] {
+	width : 100% !important;
+	height : 100% !important;
+}
+/** 上传组件图片预览提示 */
+.upload-info-li {
+	list-style-type:none;
+}
+.upload-edit-panel .upload-info-li , .multi-edit-panel .upload-info-li {
+	padding-top : 7px;
+}
+
+/** 单个上传组件的编辑panel部分样式 */
+.upload-edit-panel {
+	padding-top : 10px;
+}
+.webuploader-container div.webuploader-pick-hover {
+    background-color: transparent !important;
+}
+/** 多文件上传表格样式 */
+.multiUpload-table-th {
+	text-align : center;
+}
+.s_grid_content td i.fa {
+	padding-left:3px;
+	padding-right:3px;
+}
+.multi-edit-panel [name^='detail-'] {
+	background-color : transparent;
+}

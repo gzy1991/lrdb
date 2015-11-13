@@ -1,0 +1,57 @@
+<h2>treeDialog样例</h2>
+
+<input id="treeDialog" type="button" class="btn btn-default" value="请选择">
+<!-- requireJS Load -->
+<script type="text/javascript">
+require(["jquery","PDUtilDir/treeDialog","Bootstrap"],function($,TreeDialog){
+    var zNodes =[
+        { name:"父节点1 - 展开",
+            children: [
+                { name:"父节点11 - 折叠",
+                    children: [
+                        { name:"叶子节点111"},
+                        { name:"叶子节点112"},
+                        { name:"叶子节点113"},
+                        { name:"叶子节点114"},
+                        { name:"叶子节点115"},
+                        { name:"叶子节点116"},
+                        { name:"叶子节点117"}
+                    ]},
+                { name:"父节点12 - 折叠",
+                    children: [
+                        { name:"叶子节点121"},
+                        { name:"叶子节点122"}
+                    ]},
+                { name:"父节点13 - 没有子节点 - 没有子节点 - 没有子节点 - 没有子节点", isParent:true}
+            ]},
+        { name:"父节点2 - 折叠",
+            children: [
+                { name:"父节点21"},
+                { name:"父节点22"},
+                { name:"父节点23"}
+            ]},
+        { name:"父节点3 - 没有子节点", isParent:true},
+        { name:"父节点4 - 没有子节点", isParent:true},
+        { name:"父节点5 - 没有子节点", isParent:true},
+        { name:"父节点6 - 没有子节点", isParent:true},
+        { name:"父节点7 - 没有子节点", isParent:true}
+    ];
+    var treeDialog = TreeDialog({
+        id : "treeDialogTest",
+        searchAble : true,
+        data : zNodes,
+        multi:true,
+        key : {
+            id : "id",
+            name : "name",
+            data : "children"
+        },
+        callback:function(data){
+            console.log(data);
+        }
+    });
+    $("#treeDialog").on("click",function(){
+        treeDialog.init();
+    });
+ });
+</script>

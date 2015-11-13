@@ -1,0 +1,71 @@
+<style>
+	.pd0{
+		padding: 0;
+	}
+	.mb5{
+		margin-bottom: 5px;
+	}
+	.nav-tabs li a{
+		padding-left:30px;
+		padding-right:30px;
+	}
+</style>
+	<div class="container-fluid">
+		<div class="row mb5" >
+			<div class="col-md-12 pd0" >
+			    <ul class="nav nav-tabs" role="tablist">
+			        <li role="presentation" class="active"><a href="#tab_menu" role="tab" data-toggle="tab"><!-- <i class="fa fa-tasks"></i>&nbsp; -->菜单管理</a></li>
+			        <li role="presentation"><a href="#tab_menuSet" role="tab" data-toggle="tab"><!--<i class="fa fa-pagelines"></i>&nbsp; -->菜单授权</a></li>
+			        <li role="presentation"><a href="#tab_menuUpdate" role="tab" data-toggle="tab"><!--<i class="fa fa-yelp"></i>&nbsp; -->查询变更</a></li>
+			    </ul>
+			</div>
+		</div>
+		<div class="tab-content">
+	    	<!-- 菜单管理 -->
+	        <div role="tabpanel" class="tab-pane active" id="tab_menu">
+	        	<div class="row">
+	                <div class="col-md-3 pd0">
+	                    <div id="tree_menuDir" class="ztree"></div>
+	                </div>
+	                <div class="col-md-9 pd0">
+	                    <div id="grid_menu"></div>
+	                </div>
+	        	</div>
+	        </div>
+	        <!-- 授权管理 -->
+	        <div role="tabpanel" class="tab-pane" id="tab_menuSet">
+	        	<div class="row">
+					<div class="col-md-6 pd0">
+						<div id="grid_userSet"></div>
+					</div>
+					<div class="col-md-4 pd0">
+						<div id="treeCheck_menu" class="ztree"></div>
+					</div>
+	        	</div>
+	        </div>
+	        <!-- 查询变更 -->
+	        <div role="tabpanel" class="tab-pane" id="tab_menuUpdate">
+        		<div class="row mb5">
+	        		<div class="col-md-3 cold-sm-4 pd0">
+	        			<div class="input-group">
+		        			<input id="input_menu_userSelect" type="text" class="form-control bg-success" placeholder="点此选择授权对象...">
+		        			<span class="input-group-btn">
+								<button id="btn_menuUpdateSearch" class="btn btn-default" type="button" title="查询"><i class="fa fa-search"></i></button>
+							</span>
+	        			</div>
+	        		</div>
+	        		<div class="col-md-8 cold-sm-3" style="line-height: 30px;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;">
+	        			<span id="text_menuUpdateUser"></span>
+	        		</div>
+        		</div>
+				<div class="row">
+					<div class="col-md-6 pd0">
+						<div id="grid_userUpdate"></div>
+					</div>
+					<div class="col-md-4 pd0">
+						<div id="treeCheck_menuUpdate" class="ztree"></div>
+					</div>
+				</div>
+	        </div>
+		</div>
+	</div>

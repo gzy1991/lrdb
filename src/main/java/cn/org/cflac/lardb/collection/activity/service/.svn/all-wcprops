@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/css/!svn/ver/1741/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service
+END
+ActJudgeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/css/!svn/ver/1639/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActJudgeService.java
+END
+ActPersonService.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/css/!svn/ver/1741/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActPersonService.java
+END
+SiteService.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/css/!svn/ver/1634/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/SiteService.java
+END
+ActAwardTeamService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1731/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActAwardTeamService.java
+END
+AdsSponsorService.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/css/!svn/ver/1638/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/AdsSponsorService.java
+END
+ActAwardTeamListOrganService.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActAwardTeamListOrganService.java
+END
+ActAwardTeamListPersionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/css/!svn/ver/1639/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActAwardTeamListPersionService.java
+END
+ActNewService.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/css/!svn/ver/1732/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActNewService.java
+END
+ActOpusService.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/css/!svn/ver/1732/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActOpusService.java
+END
+ActFestivalAwardService.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/css/!svn/ver/1732/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActFestivalAwardService.java
+END
+ActAwardTeamAwardlistService.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/css/!svn/ver/1730/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActAwardTeamAwardlistService.java
+END
+AdsCoOrganizerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/css/!svn/ver/1638/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/AdsCoOrganizerService.java
+END
+ActivityInfoService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1732/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActivityInfoService.java
+END
+AdsOrganizerService.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1634/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/AdsOrganizerService.java
+END
+ActAwardTeamLlistOpusService.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/css/!svn/ver/1639/lrdb/src/main/java/cn/org/cflac/lardb/collection/activity/service/ActAwardTeamLlistOpusService.java
+END

@@ -1,0 +1,15 @@
+{
+    "allDataCount":1,
+    "curPageData": [      
+      {
+      		"activityName":"第26届中国戏剧梅花奖颁奖典礼",
+      		"activityArtType":"戏剧",
+      		"activityType":"节会比赛",
+      		"activitykeyWord":"梅花奖",
+      		"beginData":"2015-07-05 13:08:09",
+      		"endData":"2015-07-05 13:08:09",
+      		"timeNumber":"26"     		
+      }          
+    ],
+    "status" : "200"
+}

@@ -1,0 +1,176 @@
+<form id="activityWinnerRelFormId">
+    <div class="col-xs-10 form-horizontal">
+        <div class="form-group">
+            <label for="actAwardName" class="col-xs-2 control-label"><span class="notNull">*</span>一级奖项名称:</label>
+            <div class="col-xs-4">
+               <input  id="activityAwardName" name="activityAwardName" type="text" class="form-control" ng-model="activityInfo.tempAwardRel.actAwardName" >
+            </div>           
+        </div>  
+         <div style="position: absolute; right: -40px; top: 4px;">
+					<a id="addactAward" class="table-add"> <i
+						class="fa fa-plus-circle" ng-click="activityInfo.addactAward()">添加</i>
+					</a>
+		 </div>            
+    </div>
+    
+   <div id="actAwardOrgDiv"	ng-repeat="actAwardOrg in activityInfo.actAwardOrgs">
+    <div class="col-xs-10 form-horizontal">
+        <div class="form-group">
+            <label for="actAwardNameRe" class="col-xs-2 control-label"><span class="notNull">*</span>二级奖项名称:</label>
+            <div class="col-xs-4">
+               <input  id="actAwardNameRe" name="actAwardNameRe" type="text" class="form-control" ng-model="activityInfo.actAwardOrgs[$index].actAwardNameRe" >
+            </div>           
+        </div>  
+        <div style="position: absolute; right: -40px; top: 4px;">
+					<a id="delactAward" class="table-del"> <i
+						class="fa fa-plus-circle" ng-click="activityInfo.delactAward()">删除</i>
+					</a>
+		</div>      
+    </div>   
+   </div>
+    
+     <div class="col-xs-10  form-horizontal">
+        <div class="form-group">
+            <label for="actWinnerName" class="col-xs-2 control-label">人员名称:</label>
+            <div class="col-xs-4">
+               <span> 
+                <input id="actWinnerName" name="actWinnerName" type="text" class="form-control" ng-model="activityInfo.tempWinnerRel.actWinnerName" >
+                <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.winnerChoose.showDialog('-1')" >
+                </i>
+                </span>  
+            </div>
+            <label for="actWinnerTag" class="col-xs-2 control-label">人员标签名:</label>
+            <div class="col-xs-4">
+                <input id="actWinnerTag" name="actWinnerTag" type="text" class="form-control" ng-model="activityInfo.tempWinnerRel.actWinnerTag">
+            </div>           
+            <div style="position: absolute; right: -40px; top: 4px;">
+					<a id="addactWinner" class="table-add"> <i
+						class="fa fa-plus-circle" ng-click="activityInfo.addactWinner()">添加</i>
+					</a>
+		   </div>
+        </div>        
+    </div>
+
+	<div id="actWinnerOrgDiv"	ng-repeat="actWinner in activityInfo.actWinnerOrgs">
+		<div class="col-xs-10 form-horizontal">
+				<div class="form-group">				 
+					<label for="actWinnerRe" class="col-xs-2 control-label"  style="padding-right: 10px;">人员名称:</label>
+					<div class="col-xs-4" style="padding-left: 20px;">
+						<input  name="actWinnerRe" class="form-control" type="text" ng-model="activityInfo.actWinnerOrgs[$index].actWinnerRe">						
+					      <span> 
+					      <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.winnerChoose.showDialog($index)" >
+                          </i>
+                          </span>  
+					</div>					
+				    <label for="actWinnerTagRe" class="col-xs-2 control-label">人员标签名:</label>
+                    <div class="col-xs-4">
+                    <input  name="actWinnerTagRe" type="text" class="form-control" ng-model="activityInfo.actWinnerOrgs[$index].actWinnerTagRe">
+                    </div>           					
+					<div style="position: absolute; right: -40px; top: 4px;">
+						<a id="delactWinner" class="table-add"> 
+						<i class="fa fa-plus-circle" ng-click="activityInfo.delactWinner($index,actWinner)">删除</i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+    <div class="col-xs-10  form-horizontal">
+        <div class="form-group">
+            <label for="actGroupOpusName" class="col-xs-2 control-label">作品名称:</label>
+            <div class="col-xs-4">
+                <input id="actGroupOpusName" name="actGroupOpusName" type="text" class="form-control" ng-model="activityInfo.tempGroupOpusRel.actGroupOpusName" >
+             <span> 
+			    <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.groupOpusChoose.showDialog('-1')" >
+                </i>
+             </span> 
+            </div>
+            <label for="actGroupOpusTag" class="col-xs-2 control-label">作品标签名:</label>
+            <div class="col-xs-4">
+                <input id="actGroupOpusTag" name="actGroupOpusTag" type="text" class="form-control" ng-model="activityInfo.tempGroupOpusRel.actGroupOpusTag">
+            </div>           
+            <div style="position: absolute; right: -40px; top: 4px;">
+					<a id="addactGroupOpus" class="table-add"> <i
+						class="fa fa-plus-circle" ng-click="activityInfo.addactGroupOpus()">添加</i>
+					</a>
+		   </div>
+        </div>        
+     </div>
+
+	 <div id="actGroupOpusOrgDiv"	ng-repeat="actGroupOpus in activityInfo.actGroupOpusOrgs">
+		<div class="col-xs-10 form-horizontal">
+				<div class="form-group">
+				 
+					<label for="actGroupOpusRe" class="col-xs-2 control-label"  style="padding-right: 10px;">作品名称:</label>
+					<div class="col-xs-4" style="padding-left: 20px;">
+						<input  name="actGroupOpusRe" class="form-control" type="text" ng-model="activityInfo.actGroupOpusOrgs[$index].actGroupOpusNameRe">						
+					   <span> 
+			             <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.groupOpusChoose.showDialog($index)" >
+                         </i>
+                      </span>
+					</div>
+					
+				    <label for="actGroupOpusTagRe" class="col-xs-2 control-label">作品标签名:</label>
+                    <div class="col-xs-4" >
+                    <input  name="actGroupOpusTagRe" type="text" class="form-control" ng-model="activityInfo.actGroupOpusOrgs[$index].actGroupOpusTagRe">
+                    </div>           
+					
+					<div style="position: absolute; right: -40px; top: 4px;">
+						<a id="delactGroupOpus" class="table-add"> 
+						<i class="fa fa-plus-circle" ng-click="activityInfo.delactGroupOpus($index,actGroupOpus)">删除</i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	 
+	  <div class="col-xs-10  form-horizontal">
+        <div class="form-group">
+            <label for="actOrganizationName" class="col-xs-2 control-label">团体名称:</label>
+            <div class="col-xs-4">
+                <input id="actOrganizationName" name="actOrganizationName" type="text" class="form-control" ng-model="activityInfo.tempOrganizationRel.actOrganizationName" >
+                <span> 
+			        <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.organizationChoose.showDialog('-1')" >
+                    </i>
+                </span>
+            </div>
+            <label for="actOrganizationTag" class="col-xs-2 control-label">团体标签名:</label>
+            <div class="col-xs-4">
+                <input id="actOrganizationTag" name="actOrganizationTag" type="text" class="form-control" ng-model="activityInfo.tempOrganizationRel.actOrganizationTag">
+            </div>           
+            <div style="position: absolute; right: -40px; top: 4px;">
+					<a id="addactOrganization" class="table-add"> <i
+						class="fa fa-plus-circle" ng-click="activityInfo.addactOrganization()">添加</i>
+					</a>
+		   </div>
+        </div>        
+     </div>
+
+	 <div id="actOrganizatonOrgDiv"	ng-repeat="actOrganization in activityInfo.actOrganizationOrgs">
+		<div class="col-xs-10 form-horizontal">
+				<div class="form-group">				 
+					<label for="actOrganizationRe" class="col-xs-2 control-label"  style="padding-right: 10px;">团体名称:</label>
+					<div class="col-xs-4" style="padding-left: 20px;">
+						<input  name="actOrganizationRe" class="form-control" type="text" ng-model="activityInfo.actOrganizationOrgs[$index].actOrganizationNameRe">						
+					    <span> 
+			              <i class="fa fa-plus" style="position: absolute; right: 20px; top: 10px; title="查询" ng-click="activityInfo.organizationChoose.showDialog($index)" >
+                          </i>
+                        </span>
+					</div>					
+				    <label for="actOrganizationTagRe" class="col-xs-2 control-label">团体标签名:</label>
+                    <div class="col-xs-4" >
+                    <input  name="actOrganizationTagRe" type="text" class="form-control" ng-model="activityInfo.actOrganizationOrgs[$index].actOrganizationTagRe">
+                    </div>           
+					
+					<div style="position: absolute; right: -40px; top: 4px;">
+						<a id="delactOrganization" class="table-add"> 
+						<i class="fa fa-plus-circle" ng-click="activityInfo.delactOrganization($index,actOrganization)">删除</i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</form>

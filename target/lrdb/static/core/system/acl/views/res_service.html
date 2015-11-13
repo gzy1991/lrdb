@@ -1,0 +1,31 @@
+<style> 
+.ztree li a span {
+	overflow: visible !important;
+} 
+</style>
+<div class="container-fluid">
+	<form id="form_authServiceSearch" class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-6">
+				<div class="input-group">
+					<input id="text_serviceSearch" placeholder="请输入资源URL" type="text" class="form-control" id="inputSuccess3" aria-describedby="inputSuccess3Status">
+					<span class="input-group-btn">
+						<button id="btn_serviceSearch" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+					</span>
+				</div>
+			</div>
+			<div class="col-sm-6" style="padding-top: 10px;">
+				<label>保存选项:&nbsp;</label>
+	           	<label style="font-weight: normal;"><input type="radio" name="saveType" value="1" />资源分类</label>
+	           	&nbsp;
+	           	<label style="font-weight: normal;"><input type="radio" name="saveType" value="2" checked />资源实体</label>
+			</div>
+		</div>
+	</form>
+	<div class="row">
+		<div class="container-fluid" style="height: 420px; overflow:auto;">
+			<div class="loading_serviceSearch" style="display:none;"><span><i class="fa fa-spinner fa-spin"></i>&nbsp;正在查找...</span></div>
+			<div id="tree_serviceSearch" class="ztree"></div>
+		</div>
+	</div>
+</div> 

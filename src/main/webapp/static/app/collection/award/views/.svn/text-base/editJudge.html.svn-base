@@ -1,0 +1,31 @@
+<div class="form-horizontal">
+	<div class="form-group">
+		<label class="col-md-2 control-label">评奖委员:</label>
+		<div class="col-md-5">
+			<div class="input-group">
+				<input id="judgeName" name="judgeName" readonly class="form-control" ng-model="session.judge.judgeName">
+				<span ng-click="session.getJudge()" class="input-group-addon" title="选择"><i class="fa fa-search"></i></span>
+			</div>
+		</div>
+		<label class="col-md-2 control-label"><span class="notNull">*</span>评奖委员标签名:</label>
+		<div class="col-md-3">
+			<input id="judgeShowName" name="judgeShowName" class="form-control" ng-model="session.judge.judgeAutograph">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label"><span class="notNull">*</span>评委会职务:</label>
+		<div class="col-md-5">
+			<input id="dutyName" name="dutyName" class="form-control" ng-model="session.judge.judgePosition">
+		</div>
+		<label class="col-md-2 control-label"><span class="notNull">*</span>评委排序:</label>
+		<div class="col-md-3">
+			<input id="judgeOrder" name="judgeOrder" class="form-control" ng-model="session.judge.judgeSortNumber">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-md-2 control-label">评委介绍 :</label>
+		<div class="col-md-10">
+			<textarea rows="5" id="judgeIntro" name="judgeIntro" class="form-control" ng-model="session.judge.judgeIntroduction"></textarea>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,82 @@
+<style>
+#form_menu .mb15 {
+	margin-bottom: 15px;
+}
+
+#form_menu .mt15 {
+	margin-top: 15px;
+}
+
+#form_menu .fs18 {
+	font-size: 18px;
+}
+</style>
+<div role="tabpanel">
+	<ul class=" nav nav-tabs" role="tablist">
+		<li id="pdCurrentDataDisplay" role="presentation" class="active"><a
+			href="#pdCurrentDataDisplayPanel" role="tab" data-toggle="tab">服务器当前状态显示 &nbsp;<i id="pdMonitorBtnRefreshCurrentData" class="fa fa-refresh" style="cursor:pointer">刷新</i></a></li>
+		<li id="pdHistoricalDataDisplay" role="presentation" class=""><a
+			href="#pdHistoricalDataDisplayPanel" role="tab" data-toggle="tab">服务器历史状态显示</a></li>
+	</ul>
+	<div class="tab-content">
+		<div role="tabpanel" class="tab-pane active" id="pdCurrentDataDisplayPanel">
+			<div class="container-fluid">
+				<div class="row">
+						<div class="col-md-12" id="gauge1" style="height: 500px"></div>
+						<div class="col-md-12" id="gauge2" style="height: 500px"></div>
+						<div class="col-md-12" id="secondCacheGauge" style="height: 500px"></div>
+						<div class="col-md-12" id="persisitenceGauge" style="height: 500px"></div>
+				</div>
+			</div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="pdHistoricalDataDisplayPanel">
+			<form id="pdMonitorSearchInfoEditor">
+				<fieldset>
+					<div class="col-md-12 form-horizontal">
+						<div class=" form-group">
+							<label for="" class="col-md-2 col-sm-2 control-label">统计显示单位选择:</label>
+							<div class="col-md-10 col-sm-7">
+								<label class="radio-inline"> <input type="radio"
+									name="showUnit" value="ORIGIN" checked="checked">按原始数据统计显示
+								</label> <label class="radio-inline"> <input type="radio"
+									name="showUnit" value="5_MINUTE">按5分钟统计显示
+								</label><label class="radio-inline"> <input type="radio"
+									name="showUnit" value="HALF_AN_HOUR">按半小时统计显示
+								</label><label class="radio-inline"> <input type="radio"
+									name="showUnit" value="HOUR" checked="checked">按小时统计显示
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 form-horizontal">
+						<div class="form-group">
+							<label for="searchStartTime"
+								class="col-md-4 col-sm-2 control-label">起始时间:</label>
+							<div class="col-md-8 col-sm-10">
+								<input id="searchStartTime" type="text" name="searchStartTime"
+									class="form-control" tabindex="3" >
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 form-horizontal">
+						<div class="form-group">
+							<label for="searchEndTime"
+								class="col-md-4 col-sm-2 control-label">结束时间:</label>
+							<div class="col-md-8 col-sm-10">
+								<input id="searchEndTime" type="text" name="searchEndTime"
+									class="form-control" tabindex="3" >
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend class="mb15 mt15 fs18 text-primary">服务器历史数据显示变化曲线</legend>
+					<div class="col-md-12" id="historicalEchart1" style="height: 300px"></div>
+					<div class="col-md-12" id="historicalEchart2" style="height: 300px"></div>
+					<div class="col-md-12" id="historicalEchart3" style="height: 300px"></div>
+					<div class="col-md-12" id="historicalEchart4" style="height: 300px"></div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>

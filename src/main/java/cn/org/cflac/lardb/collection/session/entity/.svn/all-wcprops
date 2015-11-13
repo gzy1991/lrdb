@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/css/!svn/ver/1671/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity
+END
+TYearThUnitEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThUnitEntity.java
+END
+TYearThOpusGroupingEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThOpusGroupingEntity.java
+END
+TYearThActivityRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/css/!svn/ver/1671/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThActivityRelEntity.java
+END
+TYearThOpusEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThOpusEntity.java
+END
+TYearThAwardRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThAwardRelEntity.java
+END
+TYearThNewsRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThNewsRelEntity.java
+END
+TYearThCommentRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThCommentRelEntity.java
+END
+TYearThScheduleGroupingEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThScheduleGroupingEntity.java
+END
+TYearThScheduleEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThScheduleEntity.java
+END
+TWinnersOpusRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TWinnersOpusRelEntity.java
+END
+TWinnersStaffRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TWinnersStaffRelEntity.java
+END
+TYearThAwardEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThAwardEntity.java
+END
+TWinnersOrgRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TWinnersOrgRelEntity.java
+END
+TYearThInfoEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThInfoEntity.java
+END
+TYearThJudgeEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThJudgeEntity.java
+END
+TYearThWinnersGroupingEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThWinnersGroupingEntity.java
+END
+TYearThOthersRelEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/css/!svn/ver/1648/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThOthersRelEntity.java
+END
+TYearThWinnersEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/css/!svn/ver/1581/lrdb/src/main/java/cn/org/cflac/lardb/collection/session/entity/TYearThWinnersEntity.java
+END
