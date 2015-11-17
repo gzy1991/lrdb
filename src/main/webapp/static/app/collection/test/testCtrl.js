@@ -2,12 +2,14 @@
  * 
  */
 
-define(['jquery','LrdbTestDir/testSupport'],function($,support){
+define(['jquery','LrdbTestDir/testSupport'],function($,testSupport){
 	
 	return function($compile,$scope){
 		$scope.test = {
 				template : {
-					testEdit : getStaticPath() + '/app/collection/test/views/testEdit.html'
+					testEdit : getStaticPath() + '/app/collection/test/views/testEdit.html',
+					addEdit : getStaticPath() + '/app/collection/test/views/addAPerson.html',
+					editAPerson:getStaticPath()+'/app/collection/test/views/editAPerson.html'
 				},
 				entity : {},
 				query : {
@@ -15,13 +17,11 @@ define(['jquery','LrdbTestDir/testSupport'],function($,support){
 				},
 				types : [],
 				save : function(){
-					support.save($scope);
+					testSupport.save($scope);
 				}
-				
-				
 		};
 		
-		support.init($compile,$scope);
+		testSupport.init($compile,$scope);
 	};
 	
 });
